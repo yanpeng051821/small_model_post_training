@@ -1,0 +1,10002 @@
+[
+  {
+    "local_index": 0,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 15616
+  },
+  {
+    "local_index": 1,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2093
+  },
+  {
+    "local_index": 2,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3639
+  },
+  {
+    "local_index": 3,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8948
+  },
+  {
+    "local_index": 4,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6389
+  },
+  {
+    "local_index": 5,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3972
+  },
+  {
+    "local_index": 6,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4605
+  },
+  {
+    "local_index": 7,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 17389
+  },
+  {
+    "local_index": 8,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4795
+  },
+  {
+    "local_index": 9,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1441
+  },
+  {
+    "local_index": 10,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8643
+  },
+  {
+    "local_index": 11,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2475
+  },
+  {
+    "local_index": 12,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2858
+  },
+  {
+    "local_index": 13,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6409
+  },
+  {
+    "local_index": 14,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3440
+  },
+  {
+    "local_index": 15,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6869
+  },
+  {
+    "local_index": 16,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2167
+  },
+  {
+    "local_index": 17,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1950
+  },
+  {
+    "local_index": 18,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2866
+  },
+  {
+    "local_index": 19,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8191
+  },
+  {
+    "local_index": 20,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 965
+  },
+  {
+    "local_index": 21,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5899
+  },
+  {
+    "local_index": 22,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6824
+  },
+  {
+    "local_index": 23,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12749
+  },
+  {
+    "local_index": 24,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5627
+  },
+  {
+    "local_index": 25,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2050
+  },
+  {
+    "local_index": 26,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3789
+  },
+  {
+    "local_index": 27,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4069
+  },
+  {
+    "local_index": 28,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1800
+  },
+  {
+    "local_index": 29,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3790
+  },
+  {
+    "local_index": 30,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4244
+  },
+  {
+    "local_index": 31,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4336
+  },
+  {
+    "local_index": 32,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7142
+  },
+  {
+    "local_index": 33,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7586
+  },
+  {
+    "local_index": 34,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1198
+  },
+  {
+    "local_index": 35,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2518
+  },
+  {
+    "local_index": 36,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2845
+  },
+  {
+    "local_index": 37,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4219
+  },
+  {
+    "local_index": 38,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7341
+  },
+  {
+    "local_index": 39,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4734
+  },
+  {
+    "local_index": 40,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5514
+  },
+  {
+    "local_index": 41,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7832
+  },
+  {
+    "local_index": 42,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9503
+  },
+  {
+    "local_index": 43,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3166
+  },
+  {
+    "local_index": 44,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2636
+  },
+  {
+    "local_index": 45,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8628
+  },
+  {
+    "local_index": 46,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4387
+  },
+  {
+    "local_index": 47,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7772
+  },
+  {
+    "local_index": 48,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2541
+  },
+  {
+    "local_index": 49,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8948
+  },
+  {
+    "local_index": 50,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2967
+  },
+  {
+    "local_index": 51,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3796
+  },
+  {
+    "local_index": 52,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2945
+  },
+  {
+    "local_index": 53,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3979
+  },
+  {
+    "local_index": 54,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8643
+  },
+  {
+    "local_index": 55,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8175
+  },
+  {
+    "local_index": 56,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6545
+  },
+  {
+    "local_index": 57,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1929
+  },
+  {
+    "local_index": 58,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3594
+  },
+  {
+    "local_index": 59,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3858
+  },
+  {
+    "local_index": 60,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1844
+  },
+  {
+    "local_index": 61,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3394
+  },
+  {
+    "local_index": 62,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4083
+  },
+  {
+    "local_index": 63,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8421
+  },
+  {
+    "local_index": 64,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9282
+  },
+  {
+    "local_index": 65,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11826
+  },
+  {
+    "local_index": 66,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3463
+  },
+  {
+    "local_index": 67,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 16724
+  },
+  {
+    "local_index": 68,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3884
+  },
+  {
+    "local_index": 69,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8107
+  },
+  {
+    "local_index": 70,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1263
+  },
+  {
+    "local_index": 71,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4929
+  },
+  {
+    "local_index": 72,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8161
+  },
+  {
+    "local_index": 73,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3175
+  },
+  {
+    "local_index": 74,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8246
+  },
+  {
+    "local_index": 75,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8357
+  },
+  {
+    "local_index": 76,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 14398
+  },
+  {
+    "local_index": 77,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3072
+  },
+  {
+    "local_index": 78,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2440
+  },
+  {
+    "local_index": 79,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11063
+  },
+  {
+    "local_index": 80,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 13813
+  },
+  {
+    "local_index": 81,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1960
+  },
+  {
+    "local_index": 82,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 17119
+  },
+  {
+    "local_index": 83,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1911
+  },
+  {
+    "local_index": 84,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2303
+  },
+  {
+    "local_index": 85,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2615
+  },
+  {
+    "local_index": 86,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7685
+  },
+  {
+    "local_index": 87,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5617
+  },
+  {
+    "local_index": 88,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5291
+  },
+  {
+    "local_index": 89,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2587
+  },
+  {
+    "local_index": 90,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2287
+  },
+  {
+    "local_index": 91,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11687
+  },
+  {
+    "local_index": 92,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2096
+  },
+  {
+    "local_index": 93,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4461
+  },
+  {
+    "local_index": 94,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6664
+  },
+  {
+    "local_index": 95,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10051
+  },
+  {
+    "local_index": 96,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2211
+  },
+  {
+    "local_index": 97,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11158
+  },
+  {
+    "local_index": 98,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2722
+  },
+  {
+    "local_index": 99,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4500
+  },
+  {
+    "local_index": 100,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7476
+  },
+  {
+    "local_index": 101,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5114
+  },
+  {
+    "local_index": 102,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 14002
+  },
+  {
+    "local_index": 103,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 17145
+  },
+  {
+    "local_index": 104,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7872
+  },
+  {
+    "local_index": 105,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4459
+  },
+  {
+    "local_index": 106,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3738
+  },
+  {
+    "local_index": 107,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2258
+  },
+  {
+    "local_index": 108,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1316
+  },
+  {
+    "local_index": 109,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3888
+  },
+  {
+    "local_index": 110,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6084
+  },
+  {
+    "local_index": 111,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5752
+  },
+  {
+    "local_index": 112,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5894
+  },
+  {
+    "local_index": 113,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4546
+  },
+  {
+    "local_index": 114,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4124
+  },
+  {
+    "local_index": 115,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6685
+  },
+  {
+    "local_index": 116,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1587
+  },
+  {
+    "local_index": 117,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11221
+  },
+  {
+    "local_index": 118,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3106
+  },
+  {
+    "local_index": 119,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2389
+  },
+  {
+    "local_index": 120,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2135
+  },
+  {
+    "local_index": 121,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3179
+  },
+  {
+    "local_index": 122,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3464
+  },
+  {
+    "local_index": 123,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9506
+  },
+  {
+    "local_index": 124,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3500
+  },
+  {
+    "local_index": 125,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2270
+  },
+  {
+    "local_index": 126,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6262
+  },
+  {
+    "local_index": 127,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9104
+  },
+  {
+    "local_index": 128,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8418
+  },
+  {
+    "local_index": 129,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2560
+  },
+  {
+    "local_index": 130,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3060
+  },
+  {
+    "local_index": 131,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4811
+  },
+  {
+    "local_index": 132,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3239
+  },
+  {
+    "local_index": 133,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 17172
+  },
+  {
+    "local_index": 134,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1853
+  },
+  {
+    "local_index": 135,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5997
+  },
+  {
+    "local_index": 136,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10774
+  },
+  {
+    "local_index": 137,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7426
+  },
+  {
+    "local_index": 138,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4826
+  },
+  {
+    "local_index": 139,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5215
+  },
+  {
+    "local_index": 140,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1355
+  },
+  {
+    "local_index": 141,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2739
+  },
+  {
+    "local_index": 142,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5460
+  },
+  {
+    "local_index": 143,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3186
+  },
+  {
+    "local_index": 144,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4325
+  },
+  {
+    "local_index": 145,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1981
+  },
+  {
+    "local_index": 146,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10201
+  },
+  {
+    "local_index": 147,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7675
+  },
+  {
+    "local_index": 148,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 13156
+  },
+  {
+    "local_index": 149,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 19841
+  },
+  {
+    "local_index": 150,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3585
+  },
+  {
+    "local_index": 151,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6911
+  },
+  {
+    "local_index": 152,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4578
+  },
+  {
+    "local_index": 153,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3336
+  },
+  {
+    "local_index": 154,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4551
+  },
+  {
+    "local_index": 155,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5474
+  },
+  {
+    "local_index": 156,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10930
+  },
+  {
+    "local_index": 157,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3066
+  },
+  {
+    "local_index": 158,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6999
+  },
+  {
+    "local_index": 159,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4491
+  },
+  {
+    "local_index": 160,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8759
+  },
+  {
+    "local_index": 161,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2741
+  },
+  {
+    "local_index": 162,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2293
+  },
+  {
+    "local_index": 163,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6270
+  },
+  {
+    "local_index": 164,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2853
+  },
+  {
+    "local_index": 165,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4210
+  },
+  {
+    "local_index": 166,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7419
+  },
+  {
+    "local_index": 167,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3836
+  },
+  {
+    "local_index": 168,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 965
+  },
+  {
+    "local_index": 169,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6712
+  },
+  {
+    "local_index": 170,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1308
+  },
+  {
+    "local_index": 171,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6462
+  },
+  {
+    "local_index": 172,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3355
+  },
+  {
+    "local_index": 173,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4723
+  },
+  {
+    "local_index": 174,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3221
+  },
+  {
+    "local_index": 175,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2140
+  },
+  {
+    "local_index": 176,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 871
+  },
+  {
+    "local_index": 177,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7179
+  },
+  {
+    "local_index": 178,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1408
+  },
+  {
+    "local_index": 179,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8670
+  },
+  {
+    "local_index": 180,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1423
+  },
+  {
+    "local_index": 181,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4108
+  },
+  {
+    "local_index": 182,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3531
+  },
+  {
+    "local_index": 183,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7407
+  },
+  {
+    "local_index": 184,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3042
+  },
+  {
+    "local_index": 185,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9298
+  },
+  {
+    "local_index": 186,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5275
+  },
+  {
+    "local_index": 187,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11316
+  },
+  {
+    "local_index": 188,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8140
+  },
+  {
+    "local_index": 189,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1288
+  },
+  {
+    "local_index": 190,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12883
+  },
+  {
+    "local_index": 191,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3070
+  },
+  {
+    "local_index": 192,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10631
+  },
+  {
+    "local_index": 193,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6523
+  },
+  {
+    "local_index": 194,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11750
+  },
+  {
+    "local_index": 195,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4139
+  },
+  {
+    "local_index": 196,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1851
+  },
+  {
+    "local_index": 197,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 14808
+  },
+  {
+    "local_index": 198,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4607
+  },
+  {
+    "local_index": 199,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2997
+  },
+  {
+    "local_index": 200,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1287
+  },
+  {
+    "local_index": 201,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11354
+  },
+  {
+    "local_index": 202,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6771
+  },
+  {
+    "local_index": 203,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 15679
+  },
+  {
+    "local_index": 204,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4606
+  },
+  {
+    "local_index": 205,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2355
+  },
+  {
+    "local_index": 206,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4052
+  },
+  {
+    "local_index": 207,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2563
+  },
+  {
+    "local_index": 208,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1524
+  },
+  {
+    "local_index": 209,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8446
+  },
+  {
+    "local_index": 210,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3878
+  },
+  {
+    "local_index": 211,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2118
+  },
+  {
+    "local_index": 212,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7102
+  },
+  {
+    "local_index": 213,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4962
+  },
+  {
+    "local_index": 214,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2249
+  },
+  {
+    "local_index": 215,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 913
+  },
+  {
+    "local_index": 216,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 15266
+  },
+  {
+    "local_index": 217,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9086
+  },
+  {
+    "local_index": 218,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 868
+  },
+  {
+    "local_index": 219,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2593
+  },
+  {
+    "local_index": 220,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2599
+  },
+  {
+    "local_index": 221,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5936
+  },
+  {
+    "local_index": 222,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4699
+  },
+  {
+    "local_index": 223,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 15580
+  },
+  {
+    "local_index": 224,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 13715
+  },
+  {
+    "local_index": 225,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4900
+  },
+  {
+    "local_index": 226,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2974
+  },
+  {
+    "local_index": 227,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4429
+  },
+  {
+    "local_index": 228,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2614
+  },
+  {
+    "local_index": 229,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3542
+  },
+  {
+    "local_index": 230,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5174
+  },
+  {
+    "local_index": 231,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4128
+  },
+  {
+    "local_index": 232,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8894
+  },
+  {
+    "local_index": 233,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3839
+  },
+  {
+    "local_index": 234,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3775
+  },
+  {
+    "local_index": 235,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1062
+  },
+  {
+    "local_index": 236,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10641
+  },
+  {
+    "local_index": 237,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2857
+  },
+  {
+    "local_index": 238,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4804
+  },
+  {
+    "local_index": 239,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4570
+  },
+  {
+    "local_index": 240,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5155
+  },
+  {
+    "local_index": 241,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6952
+  },
+  {
+    "local_index": 242,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4789
+  },
+  {
+    "local_index": 243,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 15178
+  },
+  {
+    "local_index": 244,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5499
+  },
+  {
+    "local_index": 245,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9911
+  },
+  {
+    "local_index": 246,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10255
+  },
+  {
+    "local_index": 247,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2398
+  },
+  {
+    "local_index": 248,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3061
+  },
+  {
+    "local_index": 249,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1898
+  },
+  {
+    "local_index": 250,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6531
+  },
+  {
+    "local_index": 251,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5757
+  },
+  {
+    "local_index": 252,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2054
+  },
+  {
+    "local_index": 253,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5034
+  },
+  {
+    "local_index": 254,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3696
+  },
+  {
+    "local_index": 255,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10154
+  },
+  {
+    "local_index": 256,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 15924
+  },
+  {
+    "local_index": 257,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2452
+  },
+  {
+    "local_index": 258,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6201
+  },
+  {
+    "local_index": 259,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4364
+  },
+  {
+    "local_index": 260,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2983
+  },
+  {
+    "local_index": 261,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9111
+  },
+  {
+    "local_index": 262,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2534
+  },
+  {
+    "local_index": 263,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11024
+  },
+  {
+    "local_index": 264,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1837
+  },
+  {
+    "local_index": 265,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5709
+  },
+  {
+    "local_index": 266,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6336
+  },
+  {
+    "local_index": 267,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9025
+  },
+  {
+    "local_index": 268,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6744
+  },
+  {
+    "local_index": 269,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3686
+  },
+  {
+    "local_index": 270,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6036
+  },
+  {
+    "local_index": 271,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3332
+  },
+  {
+    "local_index": 272,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7240
+  },
+  {
+    "local_index": 273,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3640
+  },
+  {
+    "local_index": 274,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5723
+  },
+  {
+    "local_index": 275,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4162
+  },
+  {
+    "local_index": 276,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6599
+  },
+  {
+    "local_index": 277,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5331
+  },
+  {
+    "local_index": 278,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11313
+  },
+  {
+    "local_index": 279,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11246
+  },
+  {
+    "local_index": 280,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5599
+  },
+  {
+    "local_index": 281,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4415
+  },
+  {
+    "local_index": 282,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4704
+  },
+  {
+    "local_index": 283,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2383
+  },
+  {
+    "local_index": 284,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6284
+  },
+  {
+    "local_index": 285,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11398
+  },
+  {
+    "local_index": 286,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12273
+  },
+  {
+    "local_index": 287,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4716
+  },
+  {
+    "local_index": 288,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5992
+  },
+  {
+    "local_index": 289,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 15594
+  },
+  {
+    "local_index": 290,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1452
+  },
+  {
+    "local_index": 291,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9062
+  },
+  {
+    "local_index": 292,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3542
+  },
+  {
+    "local_index": 293,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9431
+  },
+  {
+    "local_index": 294,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5027
+  },
+  {
+    "local_index": 295,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1654
+  },
+  {
+    "local_index": 296,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2190
+  },
+  {
+    "local_index": 297,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4399
+  },
+  {
+    "local_index": 298,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1314
+  },
+  {
+    "local_index": 299,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4340
+  },
+  {
+    "local_index": 300,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6272
+  },
+  {
+    "local_index": 301,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6040
+  },
+  {
+    "local_index": 302,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 16191
+  },
+  {
+    "local_index": 303,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2121
+  },
+  {
+    "local_index": 304,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2961
+  },
+  {
+    "local_index": 305,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 14260
+  },
+  {
+    "local_index": 306,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 15409
+  },
+  {
+    "local_index": 307,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3111
+  },
+  {
+    "local_index": 308,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1424
+  },
+  {
+    "local_index": 309,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3115
+  },
+  {
+    "local_index": 310,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10286
+  },
+  {
+    "local_index": 311,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12307
+  },
+  {
+    "local_index": 312,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2639
+  },
+  {
+    "local_index": 313,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2483
+  },
+  {
+    "local_index": 314,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1859
+  },
+  {
+    "local_index": 315,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 15033
+  },
+  {
+    "local_index": 316,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6814
+  },
+  {
+    "local_index": 317,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6247
+  },
+  {
+    "local_index": 318,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 13553
+  },
+  {
+    "local_index": 319,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4580
+  },
+  {
+    "local_index": 320,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11090
+  },
+  {
+    "local_index": 321,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7786
+  },
+  {
+    "local_index": 322,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3771
+  },
+  {
+    "local_index": 323,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4691
+  },
+  {
+    "local_index": 324,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11227
+  },
+  {
+    "local_index": 325,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10411
+  },
+  {
+    "local_index": 326,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 13700
+  },
+  {
+    "local_index": 327,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2005
+  },
+  {
+    "local_index": 328,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6899
+  },
+  {
+    "local_index": 329,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8699
+  },
+  {
+    "local_index": 330,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2005
+  },
+  {
+    "local_index": 331,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4379
+  },
+  {
+    "local_index": 332,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7423
+  },
+  {
+    "local_index": 333,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2398
+  },
+  {
+    "local_index": 334,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3853
+  },
+  {
+    "local_index": 335,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10562
+  },
+  {
+    "local_index": 336,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11701
+  },
+  {
+    "local_index": 337,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 17755
+  },
+  {
+    "local_index": 338,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 16907
+  },
+  {
+    "local_index": 339,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10995
+  },
+  {
+    "local_index": 340,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5792
+  },
+  {
+    "local_index": 341,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5599
+  },
+  {
+    "local_index": 342,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2539
+  },
+  {
+    "local_index": 343,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5593
+  },
+  {
+    "local_index": 344,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1164
+  },
+  {
+    "local_index": 345,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7228
+  },
+  {
+    "local_index": 346,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 14599
+  },
+  {
+    "local_index": 347,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 13100
+  },
+  {
+    "local_index": 348,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4135
+  },
+  {
+    "local_index": 349,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3233
+  },
+  {
+    "local_index": 350,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 13298
+  },
+  {
+    "local_index": 351,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4859
+  },
+  {
+    "local_index": 352,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12665
+  },
+  {
+    "local_index": 353,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4567
+  },
+  {
+    "local_index": 354,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8598
+  },
+  {
+    "local_index": 355,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9255
+  },
+  {
+    "local_index": 356,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1704
+  },
+  {
+    "local_index": 357,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4614
+  },
+  {
+    "local_index": 358,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7713
+  },
+  {
+    "local_index": 359,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1754
+  },
+  {
+    "local_index": 360,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11026
+  },
+  {
+    "local_index": 361,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2783
+  },
+  {
+    "local_index": 362,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9439
+  },
+  {
+    "local_index": 363,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12542
+  },
+  {
+    "local_index": 364,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2217
+  },
+  {
+    "local_index": 365,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2764
+  },
+  {
+    "local_index": 366,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2175
+  },
+  {
+    "local_index": 367,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3987
+  },
+  {
+    "local_index": 368,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 14792
+  },
+  {
+    "local_index": 369,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 16464
+  },
+  {
+    "local_index": 370,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12165
+  },
+  {
+    "local_index": 371,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2559
+  },
+  {
+    "local_index": 372,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5579
+  },
+  {
+    "local_index": 373,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3774
+  },
+  {
+    "local_index": 374,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2842
+  },
+  {
+    "local_index": 375,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1368
+  },
+  {
+    "local_index": 376,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3700
+  },
+  {
+    "local_index": 377,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 13817
+  },
+  {
+    "local_index": 378,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 16048
+  },
+  {
+    "local_index": 379,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1944
+  },
+  {
+    "local_index": 380,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6245
+  },
+  {
+    "local_index": 381,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2096
+  },
+  {
+    "local_index": 382,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7521
+  },
+  {
+    "local_index": 383,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6100
+  },
+  {
+    "local_index": 384,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2956
+  },
+  {
+    "local_index": 385,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 14655
+  },
+  {
+    "local_index": 386,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11472
+  },
+  {
+    "local_index": 387,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1702
+  },
+  {
+    "local_index": 388,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3020
+  },
+  {
+    "local_index": 389,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6143
+  },
+  {
+    "local_index": 390,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4701
+  },
+  {
+    "local_index": 391,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1925
+  },
+  {
+    "local_index": 392,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2247
+  },
+  {
+    "local_index": 393,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2665
+  },
+  {
+    "local_index": 394,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9073
+  },
+  {
+    "local_index": 395,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2923
+  },
+  {
+    "local_index": 396,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12549
+  },
+  {
+    "local_index": 397,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2952
+  },
+  {
+    "local_index": 398,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12622
+  },
+  {
+    "local_index": 399,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8405
+  },
+  {
+    "local_index": 400,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5511
+  },
+  {
+    "local_index": 401,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4051
+  },
+  {
+    "local_index": 402,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3440
+  },
+  {
+    "local_index": 403,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8800
+  },
+  {
+    "local_index": 404,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7750
+  },
+  {
+    "local_index": 405,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4243
+  },
+  {
+    "local_index": 406,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4846
+  },
+  {
+    "local_index": 407,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3923
+  },
+  {
+    "local_index": 408,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4739
+  },
+  {
+    "local_index": 409,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4490
+  },
+  {
+    "local_index": 410,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6764
+  },
+  {
+    "local_index": 411,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4656
+  },
+  {
+    "local_index": 412,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11663
+  },
+  {
+    "local_index": 413,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5028
+  },
+  {
+    "local_index": 414,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7822
+  },
+  {
+    "local_index": 415,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5229
+  },
+  {
+    "local_index": 416,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10290
+  },
+  {
+    "local_index": 417,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2348
+  },
+  {
+    "local_index": 418,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 16780
+  },
+  {
+    "local_index": 419,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3449
+  },
+  {
+    "local_index": 420,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2729
+  },
+  {
+    "local_index": 421,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3593
+  },
+  {
+    "local_index": 422,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 13086
+  },
+  {
+    "local_index": 423,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5746
+  },
+  {
+    "local_index": 424,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2019
+  },
+  {
+    "local_index": 425,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7469
+  },
+  {
+    "local_index": 426,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10572
+  },
+  {
+    "local_index": 427,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1947
+  },
+  {
+    "local_index": 428,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5372
+  },
+  {
+    "local_index": 429,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3191
+  },
+  {
+    "local_index": 430,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3759
+  },
+  {
+    "local_index": 431,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10622
+  },
+  {
+    "local_index": 432,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3444
+  },
+  {
+    "local_index": 433,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6159
+  },
+  {
+    "local_index": 434,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8058
+  },
+  {
+    "local_index": 435,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5132
+  },
+  {
+    "local_index": 436,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1777
+  },
+  {
+    "local_index": 437,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4249
+  },
+  {
+    "local_index": 438,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2855
+  },
+  {
+    "local_index": 439,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4215
+  },
+  {
+    "local_index": 440,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6658
+  },
+  {
+    "local_index": 441,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2648
+  },
+  {
+    "local_index": 442,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2529
+  },
+  {
+    "local_index": 443,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5371
+  },
+  {
+    "local_index": 444,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8899
+  },
+  {
+    "local_index": 445,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3631
+  },
+  {
+    "local_index": 446,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8270
+  },
+  {
+    "local_index": 447,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3102
+  },
+  {
+    "local_index": 448,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4041
+  },
+  {
+    "local_index": 449,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2925
+  },
+  {
+    "local_index": 450,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4540
+  },
+  {
+    "local_index": 451,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3558
+  },
+  {
+    "local_index": 452,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3424
+  },
+  {
+    "local_index": 453,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5094
+  },
+  {
+    "local_index": 454,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1873
+  },
+  {
+    "local_index": 455,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3822
+  },
+  {
+    "local_index": 456,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 858
+  },
+  {
+    "local_index": 457,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3388
+  },
+  {
+    "local_index": 458,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2664
+  },
+  {
+    "local_index": 459,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4730
+  },
+  {
+    "local_index": 460,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12017
+  },
+  {
+    "local_index": 461,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9129
+  },
+  {
+    "local_index": 462,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2706
+  },
+  {
+    "local_index": 463,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9758
+  },
+  {
+    "local_index": 464,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5218
+  },
+  {
+    "local_index": 465,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4438
+  },
+  {
+    "local_index": 466,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5291
+  },
+  {
+    "local_index": 467,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1606
+  },
+  {
+    "local_index": 468,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1874
+  },
+  {
+    "local_index": 469,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4434
+  },
+  {
+    "local_index": 470,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 13581
+  },
+  {
+    "local_index": 471,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 15024
+  },
+  {
+    "local_index": 472,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 15644
+  },
+  {
+    "local_index": 473,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1913
+  },
+  {
+    "local_index": 474,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3106
+  },
+  {
+    "local_index": 475,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3962
+  },
+  {
+    "local_index": 476,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9708
+  },
+  {
+    "local_index": 477,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 13202
+  },
+  {
+    "local_index": 478,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10138
+  },
+  {
+    "local_index": 479,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 17942
+  },
+  {
+    "local_index": 480,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3941
+  },
+  {
+    "local_index": 481,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4413
+  },
+  {
+    "local_index": 482,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1420
+  },
+  {
+    "local_index": 483,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11328
+  },
+  {
+    "local_index": 484,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5298
+  },
+  {
+    "local_index": 485,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4646
+  },
+  {
+    "local_index": 486,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2187
+  },
+  {
+    "local_index": 487,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2541
+  },
+  {
+    "local_index": 488,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4051
+  },
+  {
+    "local_index": 489,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1759
+  },
+  {
+    "local_index": 490,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 16623
+  },
+  {
+    "local_index": 491,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1833
+  },
+  {
+    "local_index": 492,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2528
+  },
+  {
+    "local_index": 493,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 13299
+  },
+  {
+    "local_index": 494,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3524
+  },
+  {
+    "local_index": 495,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1563
+  },
+  {
+    "local_index": 496,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1071
+  },
+  {
+    "local_index": 497,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5434
+  },
+  {
+    "local_index": 498,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 17574
+  },
+  {
+    "local_index": 499,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5308
+  },
+  {
+    "local_index": 500,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3290
+  },
+  {
+    "local_index": 501,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1974
+  },
+  {
+    "local_index": 502,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8522
+  },
+  {
+    "local_index": 503,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3438
+  },
+  {
+    "local_index": 504,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9532
+  },
+  {
+    "local_index": 505,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7680
+  },
+  {
+    "local_index": 506,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9083
+  },
+  {
+    "local_index": 507,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5446
+  },
+  {
+    "local_index": 508,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8106
+  },
+  {
+    "local_index": 509,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4225
+  },
+  {
+    "local_index": 510,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3045
+  },
+  {
+    "local_index": 511,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5358
+  },
+  {
+    "local_index": 512,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7303
+  },
+  {
+    "local_index": 513,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7685
+  },
+  {
+    "local_index": 514,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6911
+  },
+  {
+    "local_index": 515,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7815
+  },
+  {
+    "local_index": 516,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1895
+  },
+  {
+    "local_index": 517,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3563
+  },
+  {
+    "local_index": 518,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4740
+  },
+  {
+    "local_index": 519,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6431
+  },
+  {
+    "local_index": 520,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5144
+  },
+  {
+    "local_index": 521,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4263
+  },
+  {
+    "local_index": 522,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2477
+  },
+  {
+    "local_index": 523,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1815
+  },
+  {
+    "local_index": 524,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5081
+  },
+  {
+    "local_index": 525,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10340
+  },
+  {
+    "local_index": 526,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4977
+  },
+  {
+    "local_index": 527,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3137
+  },
+  {
+    "local_index": 528,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5273
+  },
+  {
+    "local_index": 529,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7476
+  },
+  {
+    "local_index": 530,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7217
+  },
+  {
+    "local_index": 531,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2309
+  },
+  {
+    "local_index": 532,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 15690
+  },
+  {
+    "local_index": 533,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3726
+  },
+  {
+    "local_index": 534,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3557
+  },
+  {
+    "local_index": 535,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1325
+  },
+  {
+    "local_index": 536,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4428
+  },
+  {
+    "local_index": 537,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7197
+  },
+  {
+    "local_index": 538,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3395
+  },
+  {
+    "local_index": 539,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2339
+  },
+  {
+    "local_index": 540,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3493
+  },
+  {
+    "local_index": 541,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5549
+  },
+  {
+    "local_index": 542,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2264
+  },
+  {
+    "local_index": 543,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9557
+  },
+  {
+    "local_index": 544,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3612
+  },
+  {
+    "local_index": 545,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3965
+  },
+  {
+    "local_index": 546,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8296
+  },
+  {
+    "local_index": 547,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5940
+  },
+  {
+    "local_index": 548,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5670
+  },
+  {
+    "local_index": 549,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3749
+  },
+  {
+    "local_index": 550,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7941
+  },
+  {
+    "local_index": 551,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1518
+  },
+  {
+    "local_index": 552,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3439
+  },
+  {
+    "local_index": 553,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11320
+  },
+  {
+    "local_index": 554,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3933
+  },
+  {
+    "local_index": 555,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5794
+  },
+  {
+    "local_index": 556,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1599
+  },
+  {
+    "local_index": 557,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2340
+  },
+  {
+    "local_index": 558,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2471
+  },
+  {
+    "local_index": 559,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12833
+  },
+  {
+    "local_index": 560,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11486
+  },
+  {
+    "local_index": 561,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9618
+  },
+  {
+    "local_index": 562,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2929
+  },
+  {
+    "local_index": 563,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3024
+  },
+  {
+    "local_index": 564,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2279
+  },
+  {
+    "local_index": 565,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6515
+  },
+  {
+    "local_index": 566,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6919
+  },
+  {
+    "local_index": 567,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2257
+  },
+  {
+    "local_index": 568,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2458
+  },
+  {
+    "local_index": 569,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11356
+  },
+  {
+    "local_index": 570,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4467
+  },
+  {
+    "local_index": 571,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4803
+  },
+  {
+    "local_index": 572,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2939
+  },
+  {
+    "local_index": 573,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2373
+  },
+  {
+    "local_index": 574,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7898
+  },
+  {
+    "local_index": 575,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11539
+  },
+  {
+    "local_index": 576,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4890
+  },
+  {
+    "local_index": 577,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8238
+  },
+  {
+    "local_index": 578,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5972
+  },
+  {
+    "local_index": 579,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2224
+  },
+  {
+    "local_index": 580,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7653
+  },
+  {
+    "local_index": 581,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8279
+  },
+  {
+    "local_index": 582,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3922
+  },
+  {
+    "local_index": 583,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 16155
+  },
+  {
+    "local_index": 584,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2292
+  },
+  {
+    "local_index": 585,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5642
+  },
+  {
+    "local_index": 586,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1935
+  },
+  {
+    "local_index": 587,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4800
+  },
+  {
+    "local_index": 588,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8620
+  },
+  {
+    "local_index": 589,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7548
+  },
+  {
+    "local_index": 590,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3346
+  },
+  {
+    "local_index": 591,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12875
+  },
+  {
+    "local_index": 592,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11722
+  },
+  {
+    "local_index": 593,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9053
+  },
+  {
+    "local_index": 594,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8750
+  },
+  {
+    "local_index": 595,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3635
+  },
+  {
+    "local_index": 596,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7735
+  },
+  {
+    "local_index": 597,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3443
+  },
+  {
+    "local_index": 598,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6034
+  },
+  {
+    "local_index": 599,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1812
+  },
+  {
+    "local_index": 600,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6528
+  },
+  {
+    "local_index": 601,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6490
+  },
+  {
+    "local_index": 602,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3099
+  },
+  {
+    "local_index": 603,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5983
+  },
+  {
+    "local_index": 604,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7213
+  },
+  {
+    "local_index": 605,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12150
+  },
+  {
+    "local_index": 606,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8810
+  },
+  {
+    "local_index": 607,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6503
+  },
+  {
+    "local_index": 608,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4972
+  },
+  {
+    "local_index": 609,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3221
+  },
+  {
+    "local_index": 610,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1564
+  },
+  {
+    "local_index": 611,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3030
+  },
+  {
+    "local_index": 612,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5375
+  },
+  {
+    "local_index": 613,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6400
+  },
+  {
+    "local_index": 614,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2834
+  },
+  {
+    "local_index": 615,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2959
+  },
+  {
+    "local_index": 616,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 14209
+  },
+  {
+    "local_index": 617,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8167
+  },
+  {
+    "local_index": 618,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4636
+  },
+  {
+    "local_index": 619,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2567
+  },
+  {
+    "local_index": 620,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2565
+  },
+  {
+    "local_index": 621,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10234
+  },
+  {
+    "local_index": 622,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6431
+  },
+  {
+    "local_index": 623,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10627
+  },
+  {
+    "local_index": 624,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4514
+  },
+  {
+    "local_index": 625,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3110
+  },
+  {
+    "local_index": 626,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6943
+  },
+  {
+    "local_index": 627,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6752
+  },
+  {
+    "local_index": 628,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3748
+  },
+  {
+    "local_index": 629,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4175
+  },
+  {
+    "local_index": 630,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3210
+  },
+  {
+    "local_index": 631,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4192
+  },
+  {
+    "local_index": 632,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11523
+  },
+  {
+    "local_index": 633,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4412
+  },
+  {
+    "local_index": 634,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4196
+  },
+  {
+    "local_index": 635,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3564
+  },
+  {
+    "local_index": 636,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3285
+  },
+  {
+    "local_index": 637,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4092
+  },
+  {
+    "local_index": 638,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2170
+  },
+  {
+    "local_index": 639,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 13974
+  },
+  {
+    "local_index": 640,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6878
+  },
+  {
+    "local_index": 641,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3367
+  },
+  {
+    "local_index": 642,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1377
+  },
+  {
+    "local_index": 643,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8161
+  },
+  {
+    "local_index": 644,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5632
+  },
+  {
+    "local_index": 645,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7170
+  },
+  {
+    "local_index": 646,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2424
+  },
+  {
+    "local_index": 647,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4543
+  },
+  {
+    "local_index": 648,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9287
+  },
+  {
+    "local_index": 649,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3178
+  },
+  {
+    "local_index": 650,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1996
+  },
+  {
+    "local_index": 651,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1833
+  },
+  {
+    "local_index": 652,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3694
+  },
+  {
+    "local_index": 653,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10853
+  },
+  {
+    "local_index": 654,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5939
+  },
+  {
+    "local_index": 655,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2889
+  },
+  {
+    "local_index": 656,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7393
+  },
+  {
+    "local_index": 657,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4121
+  },
+  {
+    "local_index": 658,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8337
+  },
+  {
+    "local_index": 659,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8525
+  },
+  {
+    "local_index": 660,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1099
+  },
+  {
+    "local_index": 661,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8218
+  },
+  {
+    "local_index": 662,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3092
+  },
+  {
+    "local_index": 663,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2092
+  },
+  {
+    "local_index": 664,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3494
+  },
+  {
+    "local_index": 665,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5245
+  },
+  {
+    "local_index": 666,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3486
+  },
+  {
+    "local_index": 667,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4749
+  },
+  {
+    "local_index": 668,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2425
+  },
+  {
+    "local_index": 669,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1982
+  },
+  {
+    "local_index": 670,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9791
+  },
+  {
+    "local_index": 671,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5778
+  },
+  {
+    "local_index": 672,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2090
+  },
+  {
+    "local_index": 673,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3832
+  },
+  {
+    "local_index": 674,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6542
+  },
+  {
+    "local_index": 675,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3666
+  },
+  {
+    "local_index": 676,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1598
+  },
+  {
+    "local_index": 677,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3769
+  },
+  {
+    "local_index": 678,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3642
+  },
+  {
+    "local_index": 679,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2889
+  },
+  {
+    "local_index": 680,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2272
+  },
+  {
+    "local_index": 681,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2066
+  },
+  {
+    "local_index": 682,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2328
+  },
+  {
+    "local_index": 683,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 14276
+  },
+  {
+    "local_index": 684,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7572
+  },
+  {
+    "local_index": 685,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4001
+  },
+  {
+    "local_index": 686,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8937
+  },
+  {
+    "local_index": 687,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3733
+  },
+  {
+    "local_index": 688,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1437
+  },
+  {
+    "local_index": 689,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3125
+  },
+  {
+    "local_index": 690,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 16230
+  },
+  {
+    "local_index": 691,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 875
+  },
+  {
+    "local_index": 692,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2085
+  },
+  {
+    "local_index": 693,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4169
+  },
+  {
+    "local_index": 694,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4735
+  },
+  {
+    "local_index": 695,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2683
+  },
+  {
+    "local_index": 696,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1203
+  },
+  {
+    "local_index": 697,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6444
+  },
+  {
+    "local_index": 698,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9702
+  },
+  {
+    "local_index": 699,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4704
+  },
+  {
+    "local_index": 700,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4473
+  },
+  {
+    "local_index": 701,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3140
+  },
+  {
+    "local_index": 702,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4663
+  },
+  {
+    "local_index": 703,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9137
+  },
+  {
+    "local_index": 704,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5965
+  },
+  {
+    "local_index": 705,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4556
+  },
+  {
+    "local_index": 706,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2258
+  },
+  {
+    "local_index": 707,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3716
+  },
+  {
+    "local_index": 708,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2287
+  },
+  {
+    "local_index": 709,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8102
+  },
+  {
+    "local_index": 710,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1534
+  },
+  {
+    "local_index": 711,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3655
+  },
+  {
+    "local_index": 712,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4561
+  },
+  {
+    "local_index": 713,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5619
+  },
+  {
+    "local_index": 714,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12609
+  },
+  {
+    "local_index": 715,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4841
+  },
+  {
+    "local_index": 716,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7173
+  },
+  {
+    "local_index": 717,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5158
+  },
+  {
+    "local_index": 718,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3212
+  },
+  {
+    "local_index": 719,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5762
+  },
+  {
+    "local_index": 720,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10922
+  },
+  {
+    "local_index": 721,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6327
+  },
+  {
+    "local_index": 722,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3036
+  },
+  {
+    "local_index": 723,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4182
+  },
+  {
+    "local_index": 724,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11440
+  },
+  {
+    "local_index": 725,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2110
+  },
+  {
+    "local_index": 726,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2249
+  },
+  {
+    "local_index": 727,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9243
+  },
+  {
+    "local_index": 728,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3993
+  },
+  {
+    "local_index": 729,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5254
+  },
+  {
+    "local_index": 730,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3501
+  },
+  {
+    "local_index": 731,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 14364
+  },
+  {
+    "local_index": 732,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4581
+  },
+  {
+    "local_index": 733,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1968
+  },
+  {
+    "local_index": 734,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4492
+  },
+  {
+    "local_index": 735,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1339
+  },
+  {
+    "local_index": 736,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3470
+  },
+  {
+    "local_index": 737,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7341
+  },
+  {
+    "local_index": 738,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8631
+  },
+  {
+    "local_index": 739,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8801
+  },
+  {
+    "local_index": 740,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1879
+  },
+  {
+    "local_index": 741,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5398
+  },
+  {
+    "local_index": 742,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6270
+  },
+  {
+    "local_index": 743,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3747
+  },
+  {
+    "local_index": 744,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2784
+  },
+  {
+    "local_index": 745,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9343
+  },
+  {
+    "local_index": 746,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5809
+  },
+  {
+    "local_index": 747,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4304
+  },
+  {
+    "local_index": 748,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4248
+  },
+  {
+    "local_index": 749,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3907
+  },
+  {
+    "local_index": 750,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 15916
+  },
+  {
+    "local_index": 751,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2910
+  },
+  {
+    "local_index": 752,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 16321
+  },
+  {
+    "local_index": 753,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5676
+  },
+  {
+    "local_index": 754,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12030
+  },
+  {
+    "local_index": 755,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 14420
+  },
+  {
+    "local_index": 756,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3373
+  },
+  {
+    "local_index": 757,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9197
+  },
+  {
+    "local_index": 758,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2670
+  },
+  {
+    "local_index": 759,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5942
+  },
+  {
+    "local_index": 760,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6950
+  },
+  {
+    "local_index": 761,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3479
+  },
+  {
+    "local_index": 762,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10162
+  },
+  {
+    "local_index": 763,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10973
+  },
+  {
+    "local_index": 764,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2291
+  },
+  {
+    "local_index": 765,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3021
+  },
+  {
+    "local_index": 766,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3834
+  },
+  {
+    "local_index": 767,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7563
+  },
+  {
+    "local_index": 768,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4785
+  },
+  {
+    "local_index": 769,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4364
+  },
+  {
+    "local_index": 770,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2923
+  },
+  {
+    "local_index": 771,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5935
+  },
+  {
+    "local_index": 772,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9620
+  },
+  {
+    "local_index": 773,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1505
+  },
+  {
+    "local_index": 774,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12914
+  },
+  {
+    "local_index": 775,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4491
+  },
+  {
+    "local_index": 776,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4251
+  },
+  {
+    "local_index": 777,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 13459
+  },
+  {
+    "local_index": 778,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 171
+  },
+  {
+    "local_index": 779,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1314
+  },
+  {
+    "local_index": 780,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2415
+  },
+  {
+    "local_index": 781,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2133
+  },
+  {
+    "local_index": 782,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2268
+  },
+  {
+    "local_index": 783,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2153
+  },
+  {
+    "local_index": 784,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5597
+  },
+  {
+    "local_index": 785,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11225
+  },
+  {
+    "local_index": 786,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6718
+  },
+  {
+    "local_index": 787,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5985
+  },
+  {
+    "local_index": 788,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7553
+  },
+  {
+    "local_index": 789,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1518
+  },
+  {
+    "local_index": 790,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8453
+  },
+  {
+    "local_index": 791,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5723
+  },
+  {
+    "local_index": 792,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 18572
+  },
+  {
+    "local_index": 793,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 15479
+  },
+  {
+    "local_index": 794,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1817
+  },
+  {
+    "local_index": 795,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4438
+  },
+  {
+    "local_index": 796,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7281
+  },
+  {
+    "local_index": 797,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8522
+  },
+  {
+    "local_index": 798,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12858
+  },
+  {
+    "local_index": 799,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 14890
+  },
+  {
+    "local_index": 800,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 15719
+  },
+  {
+    "local_index": 801,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1839
+  },
+  {
+    "local_index": 802,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6441
+  },
+  {
+    "local_index": 803,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2333
+  },
+  {
+    "local_index": 804,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2293
+  },
+  {
+    "local_index": 805,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5111
+  },
+  {
+    "local_index": 806,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8577
+  },
+  {
+    "local_index": 807,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3420
+  },
+  {
+    "local_index": 808,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1331
+  },
+  {
+    "local_index": 809,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6263
+  },
+  {
+    "local_index": 810,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9668
+  },
+  {
+    "local_index": 811,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8667
+  },
+  {
+    "local_index": 812,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3959
+  },
+  {
+    "local_index": 813,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2338
+  },
+  {
+    "local_index": 814,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3078
+  },
+  {
+    "local_index": 815,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2778
+  },
+  {
+    "local_index": 816,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7183
+  },
+  {
+    "local_index": 817,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2578
+  },
+  {
+    "local_index": 818,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9619
+  },
+  {
+    "local_index": 819,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9244
+  },
+  {
+    "local_index": 820,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6473
+  },
+  {
+    "local_index": 821,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1124
+  },
+  {
+    "local_index": 822,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1693
+  },
+  {
+    "local_index": 823,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1301
+  },
+  {
+    "local_index": 824,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2917
+  },
+  {
+    "local_index": 825,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6814
+  },
+  {
+    "local_index": 826,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4341
+  },
+  {
+    "local_index": 827,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9795
+  },
+  {
+    "local_index": 828,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3239
+  },
+  {
+    "local_index": 829,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9769
+  },
+  {
+    "local_index": 830,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7114
+  },
+  {
+    "local_index": 831,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5417
+  },
+  {
+    "local_index": 832,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10915
+  },
+  {
+    "local_index": 833,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8491
+  },
+  {
+    "local_index": 834,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12806
+  },
+  {
+    "local_index": 835,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 14664
+  },
+  {
+    "local_index": 836,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4750
+  },
+  {
+    "local_index": 837,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4730
+  },
+  {
+    "local_index": 838,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7898
+  },
+  {
+    "local_index": 839,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1281
+  },
+  {
+    "local_index": 840,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3645
+  },
+  {
+    "local_index": 841,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4743
+  },
+  {
+    "local_index": 842,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2415
+  },
+  {
+    "local_index": 843,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4057
+  },
+  {
+    "local_index": 844,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7153
+  },
+  {
+    "local_index": 845,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2185
+  },
+  {
+    "local_index": 846,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5769
+  },
+  {
+    "local_index": 847,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2579
+  },
+  {
+    "local_index": 848,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5243
+  },
+  {
+    "local_index": 849,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5495
+  },
+  {
+    "local_index": 850,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 18988
+  },
+  {
+    "local_index": 851,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2973
+  },
+  {
+    "local_index": 852,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4379
+  },
+  {
+    "local_index": 853,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1465
+  },
+  {
+    "local_index": 854,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5010
+  },
+  {
+    "local_index": 855,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4530
+  },
+  {
+    "local_index": 856,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4589
+  },
+  {
+    "local_index": 857,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8701
+  },
+  {
+    "local_index": 858,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4792
+  },
+  {
+    "local_index": 859,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1180
+  },
+  {
+    "local_index": 860,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7064
+  },
+  {
+    "local_index": 861,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12316
+  },
+  {
+    "local_index": 862,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6718
+  },
+  {
+    "local_index": 863,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5883
+  },
+  {
+    "local_index": 864,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4446
+  },
+  {
+    "local_index": 865,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2594
+  },
+  {
+    "local_index": 866,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12083
+  },
+  {
+    "local_index": 867,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3683
+  },
+  {
+    "local_index": 868,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7054
+  },
+  {
+    "local_index": 869,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8267
+  },
+  {
+    "local_index": 870,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1816
+  },
+  {
+    "local_index": 871,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3913
+  },
+  {
+    "local_index": 872,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3608
+  },
+  {
+    "local_index": 873,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2936
+  },
+  {
+    "local_index": 874,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 17554
+  },
+  {
+    "local_index": 875,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2522
+  },
+  {
+    "local_index": 876,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2907
+  },
+  {
+    "local_index": 877,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9928
+  },
+  {
+    "local_index": 878,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8095
+  },
+  {
+    "local_index": 879,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1524
+  },
+  {
+    "local_index": 880,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2404
+  },
+  {
+    "local_index": 881,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2731
+  },
+  {
+    "local_index": 882,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5498
+  },
+  {
+    "local_index": 883,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4991
+  },
+  {
+    "local_index": 884,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8779
+  },
+  {
+    "local_index": 885,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3163
+  },
+  {
+    "local_index": 886,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8123
+  },
+  {
+    "local_index": 887,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6397
+  },
+  {
+    "local_index": 888,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 16168
+  },
+  {
+    "local_index": 889,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1145
+  },
+  {
+    "local_index": 890,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4848
+  },
+  {
+    "local_index": 891,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5550
+  },
+  {
+    "local_index": 892,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2373
+  },
+  {
+    "local_index": 893,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7279
+  },
+  {
+    "local_index": 894,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3142
+  },
+  {
+    "local_index": 895,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6319
+  },
+  {
+    "local_index": 896,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8590
+  },
+  {
+    "local_index": 897,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5905
+  },
+  {
+    "local_index": 898,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1141
+  },
+  {
+    "local_index": 899,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 14154
+  },
+  {
+    "local_index": 900,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2464
+  },
+  {
+    "local_index": 901,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 12341
+  },
+  {
+    "local_index": 902,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1742
+  },
+  {
+    "local_index": 903,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2859
+  },
+  {
+    "local_index": 904,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7241
+  },
+  {
+    "local_index": 905,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2914
+  },
+  {
+    "local_index": 906,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3795
+  },
+  {
+    "local_index": 907,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8020
+  },
+  {
+    "local_index": 908,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1531
+  },
+  {
+    "local_index": 909,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11484
+  },
+  {
+    "local_index": 910,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11279
+  },
+  {
+    "local_index": 911,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2668
+  },
+  {
+    "local_index": 912,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3551
+  },
+  {
+    "local_index": 913,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 16139
+  },
+  {
+    "local_index": 914,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8388
+  },
+  {
+    "local_index": 915,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7679
+  },
+  {
+    "local_index": 916,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4696
+  },
+  {
+    "local_index": 917,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10135
+  },
+  {
+    "local_index": 918,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11632
+  },
+  {
+    "local_index": 919,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 7635
+  },
+  {
+    "local_index": 920,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4539
+  },
+  {
+    "local_index": 921,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 13963
+  },
+  {
+    "local_index": 922,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10962
+  },
+  {
+    "local_index": 923,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1227
+  },
+  {
+    "local_index": 924,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5971
+  },
+  {
+    "local_index": 925,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8567
+  },
+  {
+    "local_index": 926,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2634
+  },
+  {
+    "local_index": 927,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1417
+  },
+  {
+    "local_index": 928,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6587
+  },
+  {
+    "local_index": 929,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1396
+  },
+  {
+    "local_index": 930,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4967
+  },
+  {
+    "local_index": 931,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5304
+  },
+  {
+    "local_index": 932,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2255
+  },
+  {
+    "local_index": 933,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1575
+  },
+  {
+    "local_index": 934,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1650
+  },
+  {
+    "local_index": 935,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2408
+  },
+  {
+    "local_index": 936,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3454
+  },
+  {
+    "local_index": 937,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5825
+  },
+  {
+    "local_index": 938,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3276
+  },
+  {
+    "local_index": 939,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 14463
+  },
+  {
+    "local_index": 940,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9359
+  },
+  {
+    "local_index": 941,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2650
+  },
+  {
+    "local_index": 942,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4764
+  },
+  {
+    "local_index": 943,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9319
+  },
+  {
+    "local_index": 944,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6010
+  },
+  {
+    "local_index": 945,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3934
+  },
+  {
+    "local_index": 946,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4932
+  },
+  {
+    "local_index": 947,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11674
+  },
+  {
+    "local_index": 948,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1561
+  },
+  {
+    "local_index": 949,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1347
+  },
+  {
+    "local_index": 950,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1584
+  },
+  {
+    "local_index": 951,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2884
+  },
+  {
+    "local_index": 952,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1501
+  },
+  {
+    "local_index": 953,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 14308
+  },
+  {
+    "local_index": 954,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6017
+  },
+  {
+    "local_index": 955,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2708
+  },
+  {
+    "local_index": 956,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9405
+  },
+  {
+    "local_index": 957,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1452
+  },
+  {
+    "local_index": 958,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6930
+  },
+  {
+    "local_index": 959,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6925
+  },
+  {
+    "local_index": 960,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8328
+  },
+  {
+    "local_index": 961,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2661
+  },
+  {
+    "local_index": 962,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8800
+  },
+  {
+    "local_index": 963,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6559
+  },
+  {
+    "local_index": 964,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1579
+  },
+  {
+    "local_index": 965,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6661
+  },
+  {
+    "local_index": 966,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2560
+  },
+  {
+    "local_index": 967,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4399
+  },
+  {
+    "local_index": 968,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3612
+  },
+  {
+    "local_index": 969,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5352
+  },
+  {
+    "local_index": 970,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 10127
+  },
+  {
+    "local_index": 971,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3691
+  },
+  {
+    "local_index": 972,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 14967
+  },
+  {
+    "local_index": 973,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4747
+  },
+  {
+    "local_index": 974,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3562
+  },
+  {
+    "local_index": 975,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 11347
+  },
+  {
+    "local_index": 976,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1521
+  },
+  {
+    "local_index": 977,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9276
+  },
+  {
+    "local_index": 978,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6909
+  },
+  {
+    "local_index": 979,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 15693
+  },
+  {
+    "local_index": 980,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4538
+  },
+  {
+    "local_index": 981,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8099
+  },
+  {
+    "local_index": 982,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8154
+  },
+  {
+    "local_index": 983,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3049
+  },
+  {
+    "local_index": 984,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 6332
+  },
+  {
+    "local_index": 985,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2778
+  },
+  {
+    "local_index": 986,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2388
+  },
+  {
+    "local_index": 987,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 1251
+  },
+  {
+    "local_index": 988,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3797
+  },
+  {
+    "local_index": 989,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5364
+  },
+  {
+    "local_index": 990,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 16801
+  },
+  {
+    "local_index": 991,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 9048
+  },
+  {
+    "local_index": 992,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2079
+  },
+  {
+    "local_index": 993,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2276
+  },
+  {
+    "local_index": 994,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 5836
+  },
+  {
+    "local_index": 995,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2259
+  },
+  {
+    "local_index": 996,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 2818
+  },
+  {
+    "local_index": 997,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 4686
+  },
+  {
+    "local_index": 998,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 3992
+  },
+  {
+    "local_index": 999,
+    "source": "open-r1/OpenR1-Math-220k",
+    "num_messages": 2,
+    "roles": [
+      "user",
+      "assistant"
+    ],
+    "dataset_num_tokens": 8554
+  }
+]

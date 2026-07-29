@@ -1,0 +1,50 @@
+# W4 SFT 正式训练配置 (LoRA)
+# 精度: FP32 权重 + AMP fp16 + LoRA = T4 16GB 可行
+# LoRA: 只训练 adapter 矩阵, optimizer 开销忽略不计
+
+# === Model ===
+model_name_or_path: Qwen/Qwen3-0.6B-Base
+model_revision: main
+trust_remote_code: false
+
+# === Dataset ===
+dataset_name: open-r1/Mixture-of-Thoughts
+dataset_config: math
+max_seq_length: 4096
+dataset_num_proc: 1
+
+# === LoRA ===
+use_peft: true
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+# === Training ===
+num_train_epochs: 1
+max_steps: 2000
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 4
+gradient_checkpointing: true
+
+# === Optimizer ===
+learning_rate: 5.0e-5
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+weight_decay: 0.01
+
+# === Precision ===
+fp16: false
+bf16: false
+
+# === Logging ===
+logging_steps: 10
+save_steps: 1000
+save_total_limit: 3
+output_dir: /data/workspace/minimind-practice/small_model_post_training/open_r1_reproduction/baselines/local/open-r1-qwen3-0.6b/checkpoints/sft_train
+run_name: sft_train_lora
+report_to: none
+seed: 42
+dataloader_num_workers: 0
+
+do_eval: false
