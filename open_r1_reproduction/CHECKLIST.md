@@ -5,8 +5,8 @@
 - baseline id：`open-r1-qwen3-0.6b`
 - route：`reproduce`
 - owner stage：`baseline`
-- current phase：`setup`
-- trust status：`unverified`
+- current phase：`sft_smoke`
+- trust status：`b0_acquired`
 
 ## Core
 
@@ -14,16 +14,16 @@
 - [x] 数据、split 和 metric contract 已明确到足以判断可比性；硬件相关数值有正式运行前测量门。
 - [x] `PLAN.md` 已记录已知命令入口、预期输出、验收条件和 fallback。
 - [x] Source commit/version 已固定：`1416fa0cf21595d2083b399a2a0bbddd7f6e9563`。
-- [ ] Smoke decision 已完成并有持久证据。
-- [ ] 正式 validation/run 决策已明确。
+- [x] Smoke decision 已完成并有持久证据。（W2-4 smoke: vLLM + LightEval 链路通过）
+- [x] 正式 validation/run 决策已明确。（W2-5 canonical: 500题, temperature=0.6, 1n+4n pass@1）
 - [x] 预期结果文件和要求指标已经核对并写入 `PLAN.md`。
 - [ ] Baseline 已以 accepted、blocked 或 waived 之一关闭。
 
 ## Weekly Gates
 
 - [x] Week 1：完成源码地图、版本固定和复现合同。
-- [ ] Week 2：完成环境与 B0 baseline。
-- [ ] Week 3：完成数据审计和 SFT smoke test。
+- [x] Week 2：完成环境与 B0 baseline。(B0: MATH-500 ≈ 27%)
+- [x] Week 3：完成数据审计和 SFT smoke test。(max_seq_length=5120, FP16 weights, expandable_segments)
 - [ ] Week 4：完成 SFT 缩放复现。
 - [ ] Week 5：完成 B1 验证与失败分析。
 - [ ] Week 6：完成 GRPO smoke test。
@@ -41,9 +41,9 @@
 - [x] Source repo 已识别。
 - [x] Paper 已读到足以准确复述本次涉及的 distillation、R1-Zero 与 multi-stage 方法边界。
 - [x] Repo 已读到足以确认 SFT、GRPO、reward 与单 GPU evaluation entrypoints。
-- [ ] 工作目录和服务器路径已确认。
-- [ ] `uv` 环境路线已验证。
-- [ ] 关键依赖已核对。
-- [ ] 模型与数据下载路径已确认。
+- [x] 工作目录和服务器路径已确认。
+- [x] `uv` 环境路线已验证。（LD_PRELOAD fix applied）
+- [x] 关键依赖已核对。
+- [x] 模型与数据下载路径已确认。
 - [ ] 所有执行偏差已同步回 `PLAN.md`。
 - [ ] `verification.md` 已完成。

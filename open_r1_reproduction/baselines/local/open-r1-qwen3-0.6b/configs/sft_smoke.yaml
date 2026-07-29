@@ -1,0 +1,50 @@
+# W3-4 SFT Smoke Test Config
+# 目标: 用最少样本跑通训练闭环，验证 T4 上不 OOM
+# 如果 OOM → 先降 max_seq_length，再考虑 LoRA
+
+# === Model ===
+model_name_or_path: Qwen/Qwen3-0.6B-Base
+model_revision: main
+torch_dtype: float16
+trust_remote_code: false
+
+# === Dataset ===
+dataset_name: open-r1/Mixture-of-Thoughts
+dataset_config: math
+max_seq_length: 5120
+dataset_num_proc: 1
+max_train_samples: 32
+
+# === Training (smoke: only a few steps) ===
+num_train_epochs: 1
+max_steps: 4
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 4
+gradient_checkpointing: true
+
+# === Optimizer ===
+learning_rate: 2.0e-5
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+weight_decay: 0.01
+
+# === Precision ===
+fp16: false
+bf16: false
+
+# === Logging ===
+logging_steps: 1
+save_steps: 10
+save_total_limit: 1
+output_dir: /data/workspace/minimind-practice/small_model_post_training/open_r1_reproduction/baselines/local/open-r1-qwen3-0.6b/checkpoints/sft_smoke
+run_name: sft_smoke
+report_to: none
+seed: 42
+dataloader_num_workers: 0
+
+# === Eval (disabled for smoke) ===
+do_eval: false
+
+# === Knowledge Distillation (disabled) ===
+# We use full-sequence LM loss, not KD
+use_liger_kernel: false

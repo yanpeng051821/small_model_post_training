@@ -1,0 +1,38 @@
+{
+  "model": "Qwen/Qwen3-0.6B-Base",
+  "dataset": "open-r1/Mixture-of-Thoughts",
+  "config": "math",
+  "seed": 42,
+  "messages_roles": [
+    "user",
+    "assistant"
+  ],
+  "input_ids_length": 3514,
+  "user_part_length": 152,
+  "assistant_part_length": 3362,
+  "special_token_positions": [
+    {
+      "index": 0,
+      "token": "<|im_start|>(151644)"
+    },
+    {
+      "index": 147,
+      "token": "<|im_end|>(151645)"
+    },
+    {
+      "index": 149,
+      "token": "<|im_start|>(151644)"
+    },
+    {
+      "index": 3512,
+      "token": "<|im_end|>(151645)"
+    }
+  ],
+  "eos_token_id": 151643,
+  "bos_token_id": null,
+  "pad_token_id": 151643,
+  "labels_policy": "full_sequence (所有非PAD位置参与loss)",
+  "effective_loss_tokens": 3514,
+  "ignored_tokens": 0,
+  "note": "此为预期配置: PLAN.md 要求 full-sequence LM loss"
+}

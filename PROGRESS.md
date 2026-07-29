@@ -1,6 +1,6 @@
 # 小参数模型后训练专项：总进度
 
-最后更新：2026-07-23
+最后更新：2026-07-27
 
 ## 1. 当前状态
 
@@ -9,12 +9,13 @@
 | 专项目标 | 掌握并验证小参数模型的完整后训练流程 |
 | 当前主线 | Open-R1 缩放复现 |
 | 基础模型 | Qwen3-0.6B-Base |
-| 当前阶段 | Baseline Setup |
-| 当前周 | Week 2：环境审计、真实样本检查与 B0 baseline 准备 |
-| Baseline 信任状态 | `unverified` |
+| 当前阶段 | SFT Smoke & Reproduction |
+| 当前周 | Week 3：数据审计与 SFT smoke test |
+| Baseline 信任状态 | B0 acquired (MATH-500: 26-28%) |
 | 当前是否允许自定义实验 | 否；先通过 Open-R1 baseline gate |
+| B0 评测合同 | temperature=0.6, max_new_tokens=512, max_model_length=4096, chat_template=Qwen3 default, 1n+4n pass@1 |
 
-Week 1 已完成：项目使命与边界、SFT/GRPO 数据流、源码边界、LightEval、B2 初始化、SFT `math` config、子集规则、主指标和 seed policy 已形成统一合同。Week 2 将用真实 T4 测量冻结 precision、训练方式、长度、数据量和 canonical eval 响应数；尚未运行训练。
+Week 1-2 已完成：源码固定、环境审计、tokenizer/推理验证、数据审计、vLLM+LightEval 链路验证、B0 canonical eval 完成（MATH-500 全部 500 题）。评测合同已冻结。Week 3 进入 SFT 数据审计和最小训练闭环。
 
 ## 2. 大阶段看板
 
@@ -38,8 +39,8 @@ Week 1 已完成：项目使命与边界、SFT/GRPO 数据流、源码边界、L
 
 进入 TinyTutor 自定义实验前，Open-R1 子项目必须满足：
 
-- [ ] 固定上游源码 commit 和环境版本。
-- [ ] 获得 Qwen3-0.6B-Base 训练前 baseline。
+- [x] 固定上游源码 commit 和环境版本。
+- [x] 获得 Qwen3-0.6B-Base 训练前 baseline。（B0: MATH-500 ≈ 27%）
 - [ ] 使用官方 `sft.py` 完成一次可信 SFT 复现。
 - [ ] 使用官方 `grpo.py` 完成一次可信 GRPO 复现。
 - [ ] B0、B1、B2 使用同一评测合同。
