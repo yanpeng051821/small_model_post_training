@@ -22,7 +22,7 @@
 
 ```bash
 export OPENR1_REPO="/absolute/path/to/open-r1"
-export OPENR1_BASELINE_ROOT="/absolute/path/to/minimind-practice/small_model_post_training/open_r1_reproduction/baselines/local/open-r1-qwen3-0.6b"
+export OPENR1_BASELINE_ROOT="/absolute/path/to/small_model_post_training/open_r1_reproduction/baselines/local/open-r1-qwen3-0.6b"
 
 mkdir -p "$OPENR1_BASELINE_ROOT/setup"
 mkdir -p "$OPENR1_BASELINE_ROOT/logs"

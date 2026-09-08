@@ -1,12 +1,14 @@
 # Open-R1 Baseline Checklist
 
+本清单只关闭项目级 L0 Open-R1 八周运行子路线；后续课程、CS336 终验和论文复现 gate 见[项目级主路线](../small_model_post_training_research_and_roadmap.md)。
+
 ## Identity
 
 - baseline id：`open-r1-qwen3-0.6b`
 - route：`reproduce`
 - owner stage：`baseline`
-- current phase：`sft_smoke`
-- trust status：`b0_acquired`
+- current phase：`b1_evidence_and_eval_sync`
+- trust status：`b0_reported_evidence_pointer_missing`
 
 ## Core
 
@@ -22,10 +24,10 @@
 ## Weekly Gates
 
 - [x] Week 1：完成源码地图、版本固定和复现合同。
-- [x] Week 2：完成环境与 B0 baseline。(B0: MATH-500 ≈ 27%)
-- [x] Week 3：完成数据审计和 SFT smoke test。(max_seq_length=5120, FP16 weights, expandable_segments)
-- [ ] Week 4：完成 SFT 缩放复现。
-- [ ] Week 5：完成 B1 验证与失败分析。
+- [ ] Week 2：执行报告称 B0 MATH-500 ≈ 27%；需补结果摘要、实际命令和服务器证据指针后关闭。
+- [ ] Week 3：数据与 collator 审计完成；历史 SFT smoke 第 2-4 step 出现 `loss=0`、`grad_norm=NaN`，需补与后续 B1 正式训练的关系和根因证据。
+- [ ] Week 4：B1 已报告训练完成；补齐最终配置、实际命令、日志、checkpoint 指针/hash 和可用性测试后关闭。
+- [ ] Week 5：B1 LightEval 进行中或结果待同步；补齐 B0/B1 同合同对照与失败分析后关闭。
 - [ ] Week 6：完成 GRPO smoke test。
 - [ ] Week 7：完成 GRPO 缩放复现。
 - [ ] Week 8：完成 B0/B1/B2 同条件验证与 baseline 判定。

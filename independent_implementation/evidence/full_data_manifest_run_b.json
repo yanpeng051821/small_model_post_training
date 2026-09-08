@@ -1,0 +1,142 @@
+{
+  "accepted_count": 64212,
+  "created_at": "2026-09-04T02:34:48.398149+00:00",
+  "length_statistics": {
+    "sequence_tokens": {
+      "count": 64212,
+      "max": 22295,
+      "mean": 5987.118389086152,
+      "min": 105,
+      "p50": 4940,
+      "p95": 14084,
+      "p99": 16850
+    },
+    "supervised_tokens": {
+      "count": 64212,
+      "max": 22222,
+      "mean": 5888.240578085093,
+      "min": 41,
+      "p50": 4843,
+      "p95": 13972,
+      "p99": 16727
+    }
+  },
+  "reason_counts": {
+    "duplicate_problem": 46,
+    "evaluation_8gram_overlap:arc_challenge": 5,
+    "evaluation_8gram_overlap:gsm8k": 14,
+    "evaluation_8gram_overlap:math500": 509,
+    "evaluation_8gram_overlap:mmlu": 165,
+    "incomplete_reasoning": 188,
+    "math_verify_failed": 28627,
+    "missing_boxed_answer": 8,
+    "unclosed_think_tags": 12
+  },
+  "rejected": {
+    "count": 29521,
+    "sha256": "e23d2ad1936a2671cfd5b729916dcc34fcd3739db1dacf4579ff70ac6ac3a253"
+  },
+  "rejected_count": 29521,
+  "review": {
+    "count": 47,
+    "sha256": "1c2e1846981d5bb2fbeeb01c2132c553082f1d9a363acfb5ca119a88f1b56645"
+  },
+  "settings": {
+    "accepted_review_size": 20,
+    "max_length": 32768,
+    "ngram_size": 8,
+    "rejected_review_size_per_reason": 3,
+    "split_salt": "independent-sft-v1",
+    "validation_size": 2000
+  },
+  "source": {
+    "dataset": "open-r1/OpenR1-Math-220k",
+    "environment": {
+      "datasets": "3.6.0",
+      "python": "3.11.9",
+      "transformers": "4.52.3"
+    },
+    "evaluation_sources": {
+      "arc_challenge": {
+        "field": "question",
+        "fingerprint": "a4361c3f3e560fcd",
+        "name": "ARC-Challenge",
+        "path": "allenai/ai2_arc",
+        "revision": "210d026faf9955653af8916fad021475a3f00453",
+        "rows": 1172,
+        "split": "test"
+      },
+      "gsm8k": {
+        "field": "question",
+        "fingerprint": "59ec1b7f9357c7a2",
+        "name": "main",
+        "path": "openai/gsm8k",
+        "revision": "740312add88f781978c0658806c59bc2815b9866",
+        "rows": 1319,
+        "split": "test"
+      },
+      "hellaswag": {
+        "field": "ctx",
+        "fingerprint": "71a62ba9d49be089",
+        "name": null,
+        "path": "Rowan/hellaswag",
+        "revision": "218ec52e09a7e7462a5400043bb9a69a41d06b76",
+        "rows": 10042,
+        "split": "validation"
+      },
+      "math500": {
+        "field": "problem",
+        "fingerprint": "f3124375297911ba",
+        "name": null,
+        "path": "HuggingFaceH4/MATH-500",
+        "revision": "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be",
+        "rows": 500,
+        "split": "test"
+      },
+      "mmlu": {
+        "field": "question",
+        "fingerprint": "436299c1c09696bb",
+        "name": "all",
+        "path": "cais/mmlu",
+        "revision": "c30699e8356da336a370243923dbaf21066bb9fe",
+        "rows": 14042,
+        "split": "test"
+      }
+    },
+    "fingerprint": "ef5cefa19fe8a27b",
+    "frozen_candidate": true,
+    "limited_rows": null,
+    "revision": "e4e141ec9dea9f8326f4d347be56105859b2bd68",
+    "rows": 93733,
+    "tokenizer": "Qwen/Qwen3-0.6B-Base",
+    "tokenizer_chat_template_sha256": "87a2728cb8dc9fe424d624542f6060ec05a1d285ebbec578bb078900e33396b5",
+    "tokenizer_revision": "311c62e88814bff7206909ccd330bab0a784743b",
+    "tokenizer_special_tokens": {
+      "additional_special_tokens": [
+        "<|im_start|>",
+        "<|im_end|>",
+        "<|object_ref_start|>",
+        "<|object_ref_end|>",
+        "<|box_start|>",
+        "<|box_end|>",
+        "<|quad_start|>",
+        "<|quad_end|>",
+        "<|vision_start|>",
+        "<|vision_end|>",
+        "<|vision_pad|>",
+        "<|image_pad|>",
+        "<|video_pad|>"
+      ],
+      "eos_token": "<|endoftext|>",
+      "pad_token": "<|endoftext|>"
+    }
+  },
+  "train": {
+    "count": 62212,
+    "sha256": "de1d09abae28a9af1117e1677e74a4c62d417ea4a8670af293f6263803a4c18b"
+  },
+  "validation": {
+    "count": 2000,
+    "sha256": "18b56115fd332838edecd9606cd67fd67cdcf5a50280a2a07339d796424cb8c6"
+  }
+}

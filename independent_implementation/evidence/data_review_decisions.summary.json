@@ -1,0 +1,15 @@
+{
+  "completed_count": 1,
+  "created_at": "2026-09-04T14:29:36.692265+00:00",
+  "decision_artifact": "D:\\pythonlearning\\small_model_post_training\\independent_implementation\\evidence\\data_review_decisions.jsonl",
+  "decision_artifact_sha256": "6aec8419513c329776e964ce7671ed6a495ac051f6bc8bb6680a691f6954803a",
+  "expected_count": 47,
+  "passed": false,
+  "review_artifact_sha256": "1c2e1846981d5bb2fbeeb01c2132c553082f1d9a363acfb5ca119a88f1b56645",
+  "reviewer": "learner",
+  "status": "incomplete",
+  "unresolved_count": 1,
+  "verdict_counts": {
+    "flag": 1
+  }
+}

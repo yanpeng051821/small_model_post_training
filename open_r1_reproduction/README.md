@@ -1,6 +1,8 @@
 # Open-R1 缩放复现
 
-本子项目用于在单张 T4 16GB 上建立一条可解释、可复现的小模型后训练基线：理解源码与算法，但复用 Open-R1/TRL 官方实现完成训练，不先重造后训练框架。
+本子项目用于在单张 T4 16GB 上建立一条可解释、可复现的小模型后训练基线：复用 Open-R1/TRL 官方实现完成真实训练和评测。
+
+它是项目级学习主路线的 L0“运行验证子路线”，不是完整学习路线。后续 nanochat、基础查漏、算法练习、CS336 终验和论文复现由[总路线](../small_model_post_training_research_and_roadmap.md)单独验收。
 
 ## 1. 项目使命
 
@@ -20,7 +22,7 @@ Qwen3-0.6B-Base
 - 基础模型：`Qwen/Qwen3-0.6B-Base`
 - 复现路线：`Base Eval -> Reasoning SFT -> SFT Eval -> GRPO/RLVR -> Final Eval`
 - 复现性质：单张 T4 16GB 条件下的缩放复现，不宣称匹配 7B/H100 官方绝对指标
-- 当前状态：Week 1 已完成，进入 Week 2 setup；尚未运行训练
+- 当前状态：B0 约 27% 与 B1 训练完成均已有运行侧报告，但本地结果摘要、命令、checkpoint 指针和 B1 LightEval 结论尚未闭环；B2 未运行
 
 ## 3. 范围边界
 
@@ -34,13 +36,13 @@ Qwen3-0.6B-Base
 本项目不做：
 
 - 从随机参数重新预训练 0.6B 模型。
-- 在 baseline 前从零重写 TRL、GRPO loss 或 rollout engine。
+- 在本运行子项目内重写 TRL、GRPO loss 或 rollout engine；独立参考实现属于总路线，不替换这里的官方 baseline。
 - 声称完整复现 DeepSeek-R1 的大规模多阶段工业流程。
 - 用 TinyTutor、Agent 或自定义 reward 污染第一条 Open-R1 baseline。
 
 ## 4. 为什么先跟 Open-R1
 
-Open-R1 已经提供 SFT、GRPO、数据生成、评测和配置入口。当前原则是：
+Open-R1 已经提供 SFT、GRPO、数据生成、评测和配置入口。本子路线的原则是：
 
 - 不重写 Trainer。
 - 不重写 GRPO loss。
@@ -53,15 +55,15 @@ Open-R1 已经提供 SFT、GRPO、数据生成、评测和配置入口。当前�
 
 - [`PLAN.md`](PLAN.md)：唯一权威复现合同；模型、数据、评测、门控值和验收条件均以此为准。
 - [`CHECKLIST.md`](CHECKLIST.md)：baseline gate 的 living checklist。
-- [`open_r1_8_week_roadmap.md`](open_r1_8_week_roadmap.md)：八周总看板。
+- [`open_r1_8_week_roadmap.md`](open_r1_8_week_roadmap.md)：Open-R1 八周运行与验证看板。
 - [`weeks/week_01_source_and_contract.md`](weeks/week_01_source_and_contract.md)：Week 1 唯一知识文档，内部按知识、源码、数据流、对照、合同和进度分节。
 
 ## 6. 三个模型状态
 
 | ID | 模型 | 说明 | 当前状态 |
 |---|---|---|---|
-| B0 | Qwen3-0.6B-Base | 训练前对照 | 未评测 |
-| B1 | Open-R1-SFT-0.6B | Reasoning SFT 后模型 | 未训练 |
+| B0 | Qwen3-0.6B-Base | 训练前对照 | 已报告 MATH-500 ≈ 27%，结果摘要与证据指针待补 |
+| B1 | Open-R1-SFT-0.6B | Reasoning SFT 后模型 | 已报告训练完成；配置、checkpoint、可用性测试和 LightEval 证据待同步 |
 | B2 | Open-R1-GRPO-0.6B | GRPO/RLVR 后模型 | 未训练 |
 
 ## 7. 完成标准

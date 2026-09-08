@@ -1,0 +1,16 @@
+{
+  "compared_training_rows": 93733,
+  "decision": "Use the pinned Open-R1/s1 whitespace word 8-gram contract for the main experiment; do not add an unregistered fuzzy-matching method.",
+  "openr1_compatible_matches": 890,
+  "openr1_commit": "1416fa0cf21595d2083b399a2a0bbddd7f6e9563",
+  "openr1_script": "scripts/decontaminate.py",
+  "previous_regex_only_matches": 1296,
+  "previous_regex_shared_matches": 885,
+  "previous_regex_total_matches": 2181,
+  "reference": "https://github.com/huggingface/open-r1/blob/1416fa0cf21595d2083b399a2a0bbddd7f6e9563/scripts/decontaminate.py",
+  "unicode_normalization_comparison": {
+    "different_match_decisions": 0,
+    "matching_decisions": 93733
+  },
+  "whitespace_reference_only_matches": 5
+}

@@ -1,0 +1,4 @@
+{"id":"arithmetic","prompt":"What is 17 + 25? Show your reasoning and put the final answer in \\boxed{}."}
+{"id":"equation","prompt":"Solve 3x + 5 = 20. Show your reasoning and put the final answer in \\boxed{}."}
+{"id":"fraction","prompt":"Compute 2/3 + 1/6. Show your reasoning and put the final answer in \\boxed{}."}
+{"id":"geometry","prompt":"A square has side length 4. What is its area? Show your reasoning and put the final answer in \\boxed{}."}

@@ -1,11 +1,15 @@
 # 小参数模型后训练：研究与学习路线
 
 调研日期：2026-07-19
+路线修订：2026-08-23
 目标范围：稠密模型约 `0.3B-8B`，或 MoE 激活参数不超过约 `4B`
 
 ## 1. 结论
 
-当前已经具备进入“小参数模型后训练”方向的理论基础。下一阶段不应继续横向收集概念，而应完成一个可复现的 `0.6B-3B` 后训练实验项目。
+当前已经具备进入“小参数模型后训练”方向的理论基础。下一阶段不能只停留在调用训练框架，也不应继续横向收集概念，而应同时建立两种能力：
+
+1. 不依赖 Trainer 封装，独立实现单卡参考版 SFT、DPO、PPO 核心损失和 GRPO 训练闭环。
+2. 使用 Open-R1/TRL 完成真实模型实验，并通过固定评测合同形成可信证据。
 
 建议将专项收敛为：
 
@@ -13,16 +17,18 @@
 
 这条路线与现有 MiniMind 学习成果高度衔接：LoRA、知识蒸馏、DPO、GRPO、reward、trajectory 和 Agentic RL 都能直接进入实验，而不是重新从零学习。
 
+最终目标不是“会配置 TRL”，而是能够从论文公式或伪代码出发，写出最小正确实现，用单元测试和数值对齐证明实现可信，再接入成熟框架完成规模化实验、复现论文并提出自己的消融假设。
+
 ## 2. 当前学习进展审阅
 
 ### 2.1 路线图状态
 
-MiniMind 路线图顶部总表存在滞后：
+MiniMind 路线图状态已在 2026-08-23 对齐：
 
-- 第 1-10 周，以及插入的第 6.5、7.5 周已经完成。
-- 第 11 周总表仍写“进行中”，但详细章节已经标记为“已完成”。
+- 第 1-11 周，以及插入的第 6.5、7.5 周已经完成。
 - 第 11 周的 GRPO、PPO、advantage、ratio、clip、KL 等核心任务已经完成。
-- 第 12 周并非“未开始”，详细状态已经是“进行中”，并已有完整的 Agentic RL 理论文档。
+- 第 12 周理论主线已完成；真实 `train_agent.py`、轨迹调试、`eval_toolcall.py` 和 reward 观察保留在独立实践待办中。
+- MiniMind 十二周用于证明概念与数据流理解，不替代当前 SFT/DPO/GRPO 的独立实现验收。
 
 本地依据：
 
@@ -299,102 +305,87 @@ NVIDIA 的相关岗位明确要求构建服务 Nemotron 预训练与后训练的
 - 分离训练、验证和测试任务
 - 保存随机种子、代码版本、数据版本与完整配置
 
-## 6. 八周执行路线
+## 6. 项目级学习路线
 
-### 第 1 周：补完现有 Week 12 实践
+本路线不再按固定周数推进，而使用带验收门的阶段。一次只激活一个阶段；已经掌握的内容通过诊断后跳过，不能因为“看完了资料”就标记完成。
 
-- 跑通 `eval_toolcall.py` baseline。
-- 跑通最小 GRPO/Agent RL smoke test。
-- 保存一条真实多轮 trajectory。
-- 解释 reward、advantage、KL、action mask 和 observation mask。
-- 验证正确轨迹、错误工具、错误参数、unfinished 的 reward 排序。
+### 6.1 路线依据与分工
 
-### 第 2 周：建立教育工具评测集
+| 资源 | 在本项目中的职责 | 使用方式 |
+|---|---|---|
+| [Open-R1](https://github.com/huggingface/open-r1) | 真实后训练、评测与工程集成基线 | 完整完成当前 B0/B1/B2 子路线 |
+| [Karpathy nanochat](https://github.com/karpathy/nanochat) | tokenizer、预训练、微调、评测、推理的最小端到端系统 | 追踪并修改完整调用链，不以高成本复训 GPT-2 为目标 |
+| [Happy-LLM](https://github.com/datawhalechina/happy-llm) | Transformer、LLaMA、Tokenizer、预训练和 SFT 基础查漏 | 先诊断，已掌握部分直接跳过 |
+| [DeepLearning.AI 后训练课程](https://www.deeplearning.ai/courses/fine-tuning-and-reinforcement-learning-for-llms-intro-to-post-training) | 数据、方法选择、eval、错误分析与生产闭环 | 形成方法选择和评测检查表 |
+| [北大后训练实践课程](https://posttrain.gaozhijun.me/docs/) | SFT、DPO、GRPO、蒸馏与综合项目的课程化实践 | 补齐统一模型下的方法对照和实验报告 |
+| [llm-algo-leetcode](https://github.com/datawhalechina/llm-algo-leetcode) | PyTorch 算法、测试、反向传播、显存与分布式练习 | 选择训练与对齐相关题目闭卷完成 |
+| [Stanford CS336 Assignment 5](https://github.com/stanford-cs336/assignment5-alignment) | DPO/GRPO 独立实现终验 | 不提前看答案，直到测试通过 |
 
-设计约 100-200 个可验证任务，覆盖：
+3Blue1Brown、Karpathy Zero to Hero 等基础材料不单列为必修阶段。只有诊断发现梯度、交叉熵、反向传播或注意力直觉存在缺口时，才定向回补。
 
-- 工具选择
-- 参数抽取
-- 多轮 observation 利用
-- 最终答案正确性
-- 错误工具和错误参数
-- 循环调用
-- 不应调用工具时的克制能力
+### 6.2 七阶段看板
 
-### 第 3 周：构造后训练数据
+| 阶段 | 主题 | 当前状态 | 核心产出与通过条件 |
+|---|---|---|---|
+| L0 | Open-R1 真实复现 | 并行收尾 | B0/B1/B2 使用同一评测合同；配置、日志、checkpoint、失败样本和 verdict 可追溯 |
+| L1 | 独立 SFT 与 token log-prob | 进行中 | 不依赖 Trainer 完成 shift、mask、loss、单卡更新、极小数据过拟合和数值对齐 |
+| L2 | 独立 DPO | 未开始 | 从 preference batch 到 chosen/rejected sequence log-prob 和 DPO loss；通过不变量与参考实现对齐 |
+| L3 | 独立 GRPO | 未开始 | 完成 rollout、reward、group advantage、policy/reference log-prob、KL/clip/loss 和更新闭环 |
+| L4 | 端到端系统与定向补缺 | 未开始 | 追踪并修改 nanochat；Happy-LLM、后训练课程和 llm-algo 只补当前实现暴露的缺口 |
+| L5 | CS336 Assignment 5 终验 | 未开始 | 独立补全 DPO/GRPO；全部要求测试通过；能把论文公式、shape、mask 和实现逐项对应 |
+| L6 | 论文复现与自主实验 | 未开始 | 根据可信 baseline 的失败现象选论文，完成预注册、复现、消融、失败分析和一个自主假设 |
 
-从同一批 seed prompts 生成：
+Open-R1 的八周文件仍是 L0 的服务器运行子路线：[`open_r1_reproduction/open_r1_8_week_roadmap.md`](open_r1_reproduction/open_r1_8_week_roadmap.md)。L0 与 L1 可以并行，但不能同时启动 nanochat、Happy-LLM、完整课程和其他新路线；Open-R1 负责框架实证，L1 负责算法独立实现。
 
-- 普通 SFT 数据
-- Reasoning SFT 数据
-- Reasoning/Non-reasoning 混合数据
-- chosen/rejected 偏好对
-- 带可验证答案的 RL prompts
+### 6.3 学习与验收方法
 
-同时记录教师模型、生成参数、过滤规则和拒绝样本原因。
+每个核心方法都经过四遍：
 
-### 第 4 周：SFT baseline
+1. **公式与数据流**：从原始样本走到 scalar loss，标出 shape、mask 和语义。
+2. **闭卷最小实现**：先不照抄 Trainer 或参考答案，独立写出 PyTorch 参考版。
+3. **测试与数值对齐**：覆盖边界条件，并与手算结果或固定版本实现对齐。
+4. **真实实验与评测**：运行模型，分析质量、稳定性、资源消耗和失败样本。
 
-比较普通 SFT 与 Reasoning SFT：
+Eval 不是最终阶段才做的任务。每一次 SFT、DPO 和 GRPO 实验都必须先固定训练前 baseline、数据切分和评测合同，训练后再进行同条件比较。
 
-- 正确率
-- 工具成功率
-- 平均输出 token
-- 推理延迟
-- 格式错误
-- 失败类型
+核心算法由学习者先完成首版；AI 负责调用链讲解、测试合同、代码审查、边界条件和数值验证。基础设施可以协助搭建，但不能在首次尝试前直接代写全部核心 loss 和 trainer。
 
-### 第 5 周：DPO/APO
+### 6.4 基础阶段毕业门
 
-重点回答：
+L5 关闭后，才判定具备进入论文复现阶段的基础。最低能力包括：
 
-- 能否降低非法格式和错误工具选择？
-- 能否控制无效长推理？
-- 是否出现基础能力损伤？
-- 对偏好数据噪声是否敏感？
+- 从一条原始样本追踪到 scalar loss、梯度和参数更新。
+- 独立实现并测试 SFT、DPO 和 GRPO 的核心数据流与 loss。
+- 解释 PPO 中 old/current/reference policy、critic、GAE、ratio 和 clip。
+- 诊断 AMP、梯度累积、NaN、OOM、checkpoint/resume 和常见数据错误。
+- 建立训练前 baseline，并保证训练前后评测合同一致。
+- 阅读论文公式，定位作者代码中的实现，并设计对照实验和消融。
 
-### 第 6 周：GRPO/RLVR
+这表示可以在单卡或小规模算力下开始论文复现，不表示已经掌握大规模分布式 RL、异步 rollout、CUDA/Triton kernel 或工业级数据生产；这些应在真实研究需要出现后再作为专项补充。
 
-使用规则型可验证 reward，分析：
+### 6.5 论文研究循环
 
-- Reward 各分项
-- 同 prompt 的组内 reward 方差
-- Advantage 分布
-- KL 与策略漂移
-- 输出长度变化
-- Reward hacking 案例
+进入 L6 后，不再无限增加“知识周”，而反复执行：
 
-### 第 7 周：蒸馏对照
+1. 根据 baseline 失败现象选择论文，拆公式并预注册假设、指标、预算和停止条件。
+2. 独立实现论文核心增量，先复现作者 baseline，再做受控主实验。
+3. 做消融、鲁棒性和失败分析，形成自己的解释或下一轮改进方向。
 
-- 先完成离线 reasoning distillation。
-- 比较 teacher 数据质量、温度和数据量。
-- 条件允许时实现简化 On-Policy Distillation。
-- 比较蒸馏与 RLVR 的样本效率和最终能力。
-
-### 第 8 周：形成公开作品
-
-最终成果应包括：
-
-- 数据集与 dataset card
-- 可重复训练配置
-- Eval harness
-- 多组 adapter/checkpoint
-- 训练曲线和系统指标
-- 失败案例分类
-- 技术报告
-- 一键复现实验说明
+Dr. GRPO、DAPO 等只保留为候选，不预先指定首篇论文。最终选择必须由 L0-L5 暴露的问题、可验证性和实际算力共同决定。
 
 ## 7. 项目验收标准
 
-专项不能只证明“成功微调了一个聊天模型”，而应证明：
+专项不能只证明“成功微调了一个聊天模型”或“会调用 Trainer”，而应证明：
 
 1. 提出了边界清楚、可以证伪的研究问题。
 2. 建立了训练前 baseline。
 3. 固定了公平的评测合同。
-4. 比较了至少三种后训练方法。
-5. 记录了质量、成本和系统指标。
-6. 分析了失败机制，而不只报告平均分。
-7. 所有结论均能由配置、日志和样本复现。
-8. 能说明下一轮实验为何值得进行。
+4. 关闭 L0-L4，并留下可核对的代码、测试、实验和查漏记录。
+5. 不依赖参考答案完成 CS336 Assignment 5，作为基础阶段终验。
+6. 能独立写出 SFT、DPO 和 GRPO 的单卡核心实现，并解释 PPO 的完整更新语义。
+7. 核心实现通过边界测试、手算样例和固定版本框架的数值对齐。
+8. 至少完成一次论文级受控复现，而不只是复跑作者命令。
+9. 记录质量、成本和系统指标，并分析失败机制，而不只报告平均分。
+10. 所有结论均能由代码、配置、日志和样本复现，并能提出自己的消融假设。
 
 达到这些标准后，这个专项就不仅是学习练习，也可以作为后训练算法、数据、评测或 RL Infra 岗位的作品集项目。

@@ -1,6 +1,6 @@
 # Week 3：数据审计与 SFT Smoke Test
 
-状态：已完成（2026-07-29）
+状态：审计已完成，SFT smoke gate 未通过（2026-07-29）
 前置门：Week 2 的 B0 canonical 合同和结果已保存。
 
 ## 1. 本周目标
@@ -78,9 +78,9 @@ Smoke 只需要少量样本和至少 2 个 optimizer steps，不用追求 loss �
 
 ## 6. Smoke 检查
 
-- [ ] 实际加载的是 B0 和固定 SFT 子集。
-- [ ] 至少完成 2 个 optimizer steps。
-- [ ] loss、grad norm 没有 NaN/Inf。
+- [ ] 实际加载的是 B0 和固定 SFT 子集；当前配置直接读取数据集，manifest 尚未约束训练输入。
+- [x] 至少完成 2 个 optimizer steps；执行记录为 4 steps。
+- [ ] loss、grad norm 没有 NaN/Inf；第 2-4 step 为 `loss=0`、`grad_norm=NaN`。
 - [ ] checkpoint、trainer state 和 metrics 文件存在。
 - [ ] checkpoint 能重新加载并生成文本。
 - [ ] 日志记录实际吞吐、序列长度和所有配置覆盖项。
@@ -141,7 +141,7 @@ smoke checkpoint 与 metrics 路径
 - 特殊 token: `<|im_start|>`, `<|im_end|>` 确认正确渲染
 - 无 `<|endoftext|>` 在数据中
 
-### 9.4 W3-4：SFT Smoke Test ✅ （经过多次迭代）
+### 9.4 W3-4：SFT Smoke Test 已执行，但未通过 gate（经过多次迭代）
 
 **最终可用配置（`configs/sft_smoke.yaml`）：**
 
@@ -219,4 +219,8 @@ accelerate launch --num_processes 1 --mixed_precision no \
 
 2. **`max_train_samples` 预处理**：SFTTrainer 预处理全量数据，需要找到优化方案或接受每次 ~20 分钟开销
 
-3. **grad_norm=NaN**：16 条样本过拟合 + FP16 导致，正式训练数据量大几倍，应该不会出现
+3. **grad_norm=NaN**：当前证据只能定位到纯 FP16 路线不稳定，不能假设增加数据量后会自行消失。必须先用新的 smoke 证明连续 steps 的 loss 和 grad norm 有限，再启动 Week 4。
+
+4. **数据冻结未闭环**：manifest 没有记录 dataset revision/fingerprint 或稳定样本内容哈希，正式配置也没有消费该 manifest。当前只能复现选择脚本，不能证明训练时使用了同一批样本。
+
+5. **运行证据未入库**：日志、metrics、checkpoint 被 `.gitignore` 排除，但仓库内也没有对应的摘要和服务器路径指针。需要增加轻量结果摘要，记录命令、退出码、关键 metrics、产物路径和 hash。

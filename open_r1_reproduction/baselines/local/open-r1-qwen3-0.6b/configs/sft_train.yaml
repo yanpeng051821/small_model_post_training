@@ -41,7 +41,8 @@ bf16: false
 logging_steps: 10
 save_steps: 1000
 save_total_limit: 3
-output_dir: /data/workspace/minimind-practice/small_model_post_training/open_r1_reproduction/baselines/local/open-r1-qwen3-0.6b/checkpoints/sft_train
+# The launch script overrides this with $OPENR1_BASELINE_ROOT/checkpoints/sft_train.
+output_dir: data/sft_train
 run_name: sft_train_lora
 report_to: none
 seed: 42

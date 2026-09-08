@@ -1,7 +1,7 @@
 # Week 4：Reasoning SFT 正式缩放复现
 
-状态：未开始
-前置门：Week 3 smoke 通过，数据 manifest、collator 语义和可运行配置均已验证。
+状态：B1 正式训练已报告完成；配置、日志、checkpoint 与可用性证据待同步
+证据门：必须说明历史 Week 3 NaN 与本次正式训练的关系，并证明训练输入与冻结数据合同一致。
 
 ## 1. 本周目标
 

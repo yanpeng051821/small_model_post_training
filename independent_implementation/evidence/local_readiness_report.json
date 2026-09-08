@@ -1,0 +1,135 @@
+{
+  "checks": [
+    {
+      "evidence": {
+        "command": [
+          "D:\\pythonlearning\\small_model_post_training\\independent_implementation\\.venv\\Scripts\\python.exe",
+          "-m",
+          "ruff",
+          "check",
+          "src",
+          "tests",
+          "scripts"
+        ],
+        "output_tail": "All checks passed!\n",
+        "returncode": 0
+      },
+      "name": "ruff",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "command": [
+          "D:\\pythonlearning\\small_model_post_training\\independent_implementation\\.venv\\Scripts\\python.exe",
+          "-m",
+          "pytest",
+          "-q"
+        ],
+        "output_tail": "........................................................................ [ 55%]\n..........................................................               [100%]\n",
+        "returncode": 0
+      },
+      "name": "unit_tests",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "command": [
+          "D:\\pythonlearning\\small_model_post_training\\independent_implementation\\.venv\\Scripts\\python.exe",
+          "-m",
+          "pytest",
+          "-q",
+          "-m",
+          "integration"
+        ],
+        "output_tail": ".                                                                        [100%]\n",
+        "returncode": 0
+      },
+      "name": "pinned_qwen_tokenizer_integration",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "first_hashes": {
+          "rejected": "e23d2ad1936a2671cfd5b729916dcc34fcd3739db1dacf4579ff70ac6ac3a253",
+          "review": "1c2e1846981d5bb2fbeeb01c2132c553082f1d9a363acfb5ca119a88f1b56645",
+          "train": "de1d09abae28a9af1117e1677e74a4c62d417ea4a8670af293f6263803a4c18b",
+          "validation": "18b56115fd332838edecd9606cd67fd67cdcf5a50280a2a07339d796424cb8c6"
+        },
+        "first_manifest": "E:\\small_model_post_training_gate0b\\artifacts\\gate0b-full-openr1-a\\data_manifest.json",
+        "full_frozen_scan": true,
+        "mismatched_fields": [],
+        "second_hashes": {
+          "rejected": "e23d2ad1936a2671cfd5b729916dcc34fcd3739db1dacf4579ff70ac6ac3a253",
+          "review": "1c2e1846981d5bb2fbeeb01c2132c553082f1d9a363acfb5ca119a88f1b56645",
+          "train": "de1d09abae28a9af1117e1677e74a4c62d417ea4a8670af293f6263803a4c18b",
+          "validation": "18b56115fd332838edecd9606cd67fd67cdcf5a50280a2a07339d796424cb8c6"
+        },
+        "second_manifest": "E:\\small_model_post_training_gate0b\\artifacts\\gate0b-full-openr1-b\\data_manifest.json"
+      },
+      "name": "real_data_audit_is_reproducible",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "run_dir": "E:\\small_model_post_training_gate0b\\preflight-complete\\local-real-qwen-preflight",
+        "summary": {
+          "audited_train_sha256": "de1d09abae28a9af1117e1677e74a4c62d417ea4a8670af293f6263803a4c18b",
+          "checkpoint_bytes_before_cleanup": 7184994400,
+          "checkpoint_inference_assets_complete": true,
+          "checkpoints_retained": false,
+          "config_hash": "73ee18c9849fdd41c0e635fe26b72d8ef220de78a16067a6921694eb8445c05f",
+          "final_status": "completed",
+          "first_process_seconds": 113.63641720000305,
+          "max_cuda_memory_mb_by_step": [
+            5731.1279296875,
+            5731.1279296875
+          ],
+          "optimizer_steps": 2,
+          "project_tree_sha256": "b004494e7f4fef5fe4e6f82699e4fda7f0e1a322e396c3f41c9bd9983b3c95d2",
+          "resume_process_seconds": 113.17821060000279,
+          "sample_id": "ba97dd8b30c123fbc2296a8961815e85bd858d57b0d142e9c9bed6358dc3220e",
+          "sequence_length": 105
+        },
+        "train_steps": [
+          1,
+          2
+        ],
+        "validation_steps": [
+          0,
+          1,
+          2
+        ]
+      },
+      "name": "real_qwen_bf16_train_and_cross_process_resume",
+      "passed": true
+    }
+  ],
+  "created_at": "2026-09-04T12:15:12.141851+00:00",
+  "environment": {
+    "bf16_supported": true,
+    "cuda_available": true,
+    "cuda_runtime": "12.4",
+    "gpu": "NVIDIA GeForce RTX 4060 Ti",
+    "packages": {
+      "accelerate": "1.6.0",
+      "datasets": "3.6.0",
+      "torch": "2.6.0+cu124",
+      "transformers": "4.52.3",
+      "trl": "0.18.0"
+    },
+    "platform": "Windows-10-10.0.22631-SP0",
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "torch": "2.6.0+cu124"
+  },
+  "frozen_inputs": {
+    "project_tree_sha256": "b004494e7f4fef5fe4e6f82699e4fda7f0e1a322e396c3f41c9bd9983b3c95d2",
+    "uv_lock_sha256": "f5544ae99bde8453e14f9a978526acbd36780c088087446f531c87bf3ae472d7"
+  },
+  "gate": "local_readiness",
+  "passed": true,
+  "resource_observations": {
+    "checkpoint_bytes": 7184994400,
+    "minimum_recommended_server_free_bytes": 28739977600,
+    "project_disk_free_bytes": 32069066752
+  }
+}

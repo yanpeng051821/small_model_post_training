@@ -7,13 +7,23 @@ Week 2-2: B0 模型推理冒烟测试（不是 MATH-500 评测！）
 import json
 import os
 import sys
+from pathlib import Path
+
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 MODEL_ID = "Qwen/Qwen3-0.6B-Base"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_BASELINE_ROOT = (
+    PROJECT_ROOT
+    / "open_r1_reproduction"
+    / "baselines"
+    / "local"
+    / "open-r1-qwen3-0.6b"
+)
 OUTPUT_ROOT = os.environ.get(
     "OPENR1_BASELINE_ROOT",
-    "/data/workspace/minimind-practice/small_model_post_training/open_r1_reproduction/baselines/local/open-r1-qwen3-0.6b",
+    str(DEFAULT_BASELINE_ROOT),
 )
 OUTPUT_FILE = os.path.join(OUTPUT_ROOT, "setup", "b0_tokenizer_inference.txt")
 os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
