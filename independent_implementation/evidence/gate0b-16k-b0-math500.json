@@ -1,0 +1,74 @@
+{
+  "artifact": "gate0b-16k-b0-math500",
+  "created_at": "2026-09-11T09:35:37+00:00",
+  "stage": "阶段 C：B0 训练前基线（MATH-500 主评测）",
+  "contract": {
+    "path": "configs/gate0b/evaluation.yaml",
+    "sha256": "1c5f027244143c1af0f49e19068b7031b15c606ec1575f2e0134c72d398295fc",
+    "version": "gate0b-eval-v1",
+    "suite": "math500",
+    "task": "lighteval|math_500|0|0",
+    "use_chat_template": true,
+    "model_args": {
+      "dtype": "bfloat16",
+      "max_model_length": 32768,
+      "gpu_memory_utilization": 0.8,
+      "seed": 1234,
+      "generation_parameters": {
+        "max_new_tokens": 32768,
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "seed": 1234
+      }
+    },
+    "samples_per_question": 4,
+    "questions": 500
+  },
+  "model": {
+    "name": "Qwen/Qwen3-0.6B-Base",
+    "path": "/workspace/hf-cache/hub/models--Qwen--Qwen3-0.6B-Base/snapshots/311c62e88814bff7206909ccd330bab0a784743b",
+    "revision": "311c62e88814bff7206909ccd330bab0a784743b"
+  },
+  "results": {
+    "math_pass@1:1_samples": 0.432,
+    "math_pass@1:1_samples_stderr": 0.02217510926561317,
+    "math_pass@1:4_samples": 0.449,
+    "math_pass@1:4_samples_stderr": 0.018026311208663354
+  },
+  "supersedes_historical_value": {
+    "historical_claim": "MATH-500 ≈ 26-28%（仓库内历史报告，无可核对证据）",
+    "measured": 0.432,
+    "note": "历史值与冻结合同下的实测值相差 15 个百分点以上；合同 §2.2 与 §8 要求的重新执行 B0 是必要的，历史值不得作为对照证据"
+  },
+  "runtime": {
+    "created_at": "2026-09-11T07:47:01+00:00",
+    "completed_at": "2026-09-11T09:35:37+00:00",
+    "wall_time_minutes": 108.6,
+    "generation_seconds": 6256,
+    "aggregate_output_tokens_per_second": 824.04,
+    "note": "2000 次生成的长尾极长：快样本数百 token 即停止，少数样本跑满 32768 token 上限"
+  },
+  "generation_health": {
+    "generations": 2000,
+    "completion_tokens": {
+      "min": 15,
+      "p50": 526,
+      "mean": 2577.9,
+      "p95": 32571,
+      "max": 32679
+    },
+    "stopped_with_endoftext": 1880,
+    "stopped_with_endoftext_rate": 0.94,
+    "hit_length_cap": 0,
+    "note": "末 token 分布为 151643（<|endoftext|>）1880 次，其余为普通文本 token。约 6% 的生成跑到长度上限附近并被截断，这部分约占整体 GPU 时间的一半；p50 只有 526 token，说明多数回答很短。"
+  },
+  "dataset_revision_used": {
+    "HuggingFaceH4/MATH-500": "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be"
+  },
+  "artifacts": {
+    "output_dir": "runs/gate0b-16k/b0/evals/math500/",
+    "invocation_manifest": "runs/gate0b-16k/b0/evals/math500/invocation_manifest.json",
+    "results_json": "runs/gate0b-16k/b0/evals/math500/results/Qwen/Qwen3-0.6B-Base/",
+    "details_parquet": "runs/gate0b-16k/b0/evals/math500/details/Qwen/Qwen3-0.6B-Base/"
+  }
+}

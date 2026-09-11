@@ -1,0 +1,68 @@
+{
+  "artifact": "gate0b-16k-b0-regression",
+  "created_at": "2026-09-11T07:36:52+00:00",
+  "stage": "阶段 C：B0 训练前基线（通用能力回归面板）",
+  "contract": {
+    "path": "configs/gate0b/evaluation.yaml",
+    "sha256": "1c5f027244143c1af0f49e19068b7031b15c606ec1575f2e0134c72d398295fc",
+    "version": "gate0b-eval-v1",
+    "suite": "regression",
+    "task_file": "configs/gate0b/regression_tasks.txt",
+    "task_count": 59,
+    "use_chat_template": false,
+    "model_args": {
+      "dtype": "bfloat16",
+      "max_model_length": 32768,
+      "gpu_memory_utilization": 0.8,
+      "seed": 1234
+    },
+    "request_type": "LOG_LIKELIHOOD",
+    "note": "59 个任务在单次 lighteval 调用中完成；纯 log-likelihood 打分，不做生成"
+  },
+  "model": {
+    "name": "Qwen/Qwen3-0.6B-Base",
+    "path": "/workspace/hf-cache/hub/models--Qwen--Qwen3-0.6B-Base/snapshots/311c62e88814bff7206909ccd330bab0a784743b",
+    "revision": "311c62e88814bff7206909ccd330bab0a784743b"
+  },
+  "results": {
+    "mmlu_average_acc": 0.5451570633195864,
+    "arc_challenge_acc": 0.4189419795221843,
+    "arc_challenge_acc_norm": 0.4539249146757679,
+    "hellaswag_acc": 0.4086835291774547,
+    "hellaswag_acc_norm": 0.5334594702250548,
+    "aggregate_all_acc": 0.540704713862984,
+    "aggregate_all_acc_norm": 0.49369219245041135
+  },
+  "sanity_check": "MMLU 54.5 / ARC-norm 45.4 / HellaSwag-norm 53.3 与 Qwen3-0.6B-Base 公开水平同量级，支持评测栈配置正确",
+  "dataset_revisions_used": {
+    "cais/mmlu": "c30699e8356da336a370243923dbaf21066bb9fe",
+    "allenai/ai2_arc": "210d026faf9955653af8916fad021475a3f00453",
+    "Rowan/hellaswag": "218ec52e09a7e7462a5400043bb9a69a41d06b76"
+  },
+  "runtime": {
+    "started_at": "2026-09-11T06:46:00+00:00",
+    "completed_at": "2026-09-11T07:36:52+00:00",
+    "wall_time_minutes": 50,
+    "dataset_preparation_minutes": 15,
+    "request_construction_minutes": 20,
+    "note": "log-likelihood 路径先在 CPU 构造约 10 万条请求，再提交 vLLM 打分"
+  },
+  "launch_recipe": {
+    "env": {
+      "PATH": ".venv/bin:$PATH",
+      "HF_HOME": "/workspace/hf-cache",
+      "HF_HUB_ETAG_TIMEOUT": "120",
+      "HF_HUB_DOWNLOAD_TIMEOUT": "120",
+      "VLLM_WORKER_MULTIPROC_METHOD": "spawn",
+      "LIBRARY_PATH": "/usr/local/cuda/lib64/stubs"
+    },
+    "note": "HF_HUB_OFFLINE=1 会让 datasets 无法解析旧式数据集短名（如 ai2_arc），必须关闭"
+  },
+  "artifacts": {
+    "output_dir": "runs/gate0b-16k/b0/evals/regression/",
+    "invocation_manifest": "runs/gate0b-16k/b0/evals/regression/invocation_manifest.json",
+    "results_json": "runs/gate0b-16k/b0/evals/regression/results/Qwen/Qwen3-0.6B-Base/",
+    "details_parquet": "runs/gate0b-16k/b0/evals/regression/details/Qwen/Qwen3-0.6B-Base/",
+    "failure_record": "runs/gate0b-16k/b0/evals/failures/regression-offline-mode-failure.*"
+  }
+}

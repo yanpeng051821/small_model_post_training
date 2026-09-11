@@ -1,0 +1,35 @@
+{
+  "artifact": "gate0b-16k-b0-validation-nll",
+  "created_at": "2026-09-11T09:55:15+00:00",
+  "stage": "阶段 C：B0 训练前基线（held-out assistant-only completion token NLL）",
+  "config": {
+    "path": "configs/gate0b/sft_train_16k.yaml",
+    "config_hash": "46f05cc59e1a75812afa7ff1882f2634ae54510f644c840c2fc8c8680916c0d5",
+    "validation_sample_limit": null,
+    "note": "该 config 未设 validation_sample_limit，因此覆盖全量 validation"
+  },
+  "model": {
+    "name": "Qwen/Qwen3-0.6B-Base",
+    "path": "/workspace/hf-cache/hub/models--Qwen--Qwen3-0.6B-Base/snapshots/311c62e88814bff7206909ccd330bab0a784743b",
+    "revision": "311c62e88814bff7206909ccd330bab0a784743b"
+  },
+  "results": {
+    "mean_nll": 0.780483179537682,
+    "record_count": 1968,
+    "valid_tokens": 11367594,
+    "total_loss_sum": 8872215.908813477
+  },
+  "artifacts": {
+    "output_dir": "runs/gate0b-16k/b0/validation-nll/",
+    "summary": "runs/gate0b-16k/b0/validation-nll/summary.json",
+    "records": "runs/gate0b-16k/b0/validation-nll/records.jsonl",
+    "records_sha256": "8727388ef3369fd8706493795020e822c64b48053c59f78f6db283e547a6475f",
+    "validation_artifact": "artifacts/gate0b-16k-derived-a/validation.jsonl",
+    "validation_artifact_sha256": "60bbe71d35d86504527ee30860ad54ff83745de1549196c27ba86ea3678f3ff9"
+  },
+  "notes": [
+    "这是 H2 判据所需的 B0 侧基线；S1 与 S1-ind 必须使用同一 config、同一 validation artifact hash 复跑，并用 scripts/compare_validation_nll.py 做逐样本配对",
+    "此前 128 条子集的基线为 0.8050（runs/gate0b-16k-eval128-sdpa/baseline），子集与全量不可直接比较；两者量级一致",
+    "对比：20 步 pilot 在 128 条子集上的 validation NLL 为 0.6754，相对同子集基线下降 16.1%"
+  ]
+}

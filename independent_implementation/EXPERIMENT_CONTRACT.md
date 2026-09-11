@@ -93,7 +93,7 @@ DPO 需要 chosen/rejected 偏好对来优化相对偏好；GRPO 需要同一 pr
 | split salt | `independent-sft-v1` |
 | 去重 | 对规范化 problem 做 SHA-256 精确去重；缺失或无效 UUID 不影响稳定主键；近重复扫描结果必须归档 |
 | 评测泄漏检查 | 对 MATH-500、GSM8K 和通用回归任务执行规范化精确匹配与 pinned Open-R1/s1 whitespace word 8-gram overlap；命中样本在 split 前删除 |
-| 最大长度 | 候选 `32768`，使用冻结 tokenizer 对全部合格样本重测后确认 |
+| 最大长度 | `16384`；由 A100-80GB 最长样本训练探针确定（22,295-token 样本失败、16,384-token 通过），冻结为 `gate0b-16k-derived-a`（实测 `max 16,384`、`p99 15,626`、`p50 4,863`） |
 | 截断策略 | 不静默截断 reasoning 或最终答案；超过模型合同长度的样本从本实验排除并单独报告数量、来源和长度分布 |
 | prompt/assistant mask | prompt/system/user/assistant header/padding 为 `-100`；仅 assistant completion 和结尾 `<|im_end|>` 参与 loss |
 
@@ -235,11 +235,14 @@ MATH-500 和 GSM8K 必须分开启动，因为两者 generation config 不同。
 | 实验 | checkpoint | 用途 | 训练变化 |
 | --- | --- | --- | --- |
 | B0 | `Qwen/Qwen3-0.6B-Base@311c62e88814bff7206909ccd330bab0a784743b` | 训练前 baseline | 无 |
-| S1 | B0 经过独立实现 SFT 后的 checkpoint | 主实验 | 仅进行本合同定义的 SFT 更新 |
-| R1a | B0，不保存新 checkpoint | PyTorch/TRL 首 batch shadow 对照 | 同一 batch 只做 forward/backward，不 step |
-| R1b | B0 经过固定参考框架的短程 checkpoint | 100 个 optimizer step 工程对照 | 使用与 S1 相同样本顺序和优化语义，不要求完成整轮训练 |
+| S1 | B0 经**固定版本 Open-R1/TRL 训练栈**完成本合同 SFT 后的 checkpoint | **主实验**；H2/H3 的主证据 | 仅进行本合同定义的 SFT 更新，1 个 epoch |
+| S1-ind | B0 经**独立实现 runner**完成同一合同 SFT 后的 checkpoint | 实现级同条件对照；验证自研实现与固定 TRL 栈在完整 epoch 尺度上语义一致 | 与 S1 相同的 train artifact、样本顺序、effective batch、loss mask、optimizer 与 scheduler；**不作为 H2/H3 的主证据** |
+| R1a | B0，不保存新 checkpoint | PyTorch/TRL 首 batch shadow 数值对照 | 同一 batch 只做 forward/backward，不 step |
+| R1b | B0 经固定参考框架的短程 checkpoint | 100 个 optimizer step 的双实现工程对照（TRL 与自研 runner 同条件） | 使用与 S1 相同样本顺序和优化语义，不要求完成整轮训练 |
 
-### 6.1 S1 优化合同
+### 6.1 S1 与 S1-ind 共用的优化合同
+
+下表同时适用于 S1（固定 TRL 栈）与 S1-ind（独立实现 runner）。两者的差异只允许出现在实现拓扑上，不允许出现在下列冻结值上。
 
 | 字段 | 冻结值 |
 | --- | --- |
@@ -253,7 +256,7 @@ MATH-500 和 GSM8K 必须分开启动，因为两者 generation config 不同。
 | epochs | 1 个完整 train split epoch |
 | effective batch | 每个完整 optimizer window 为 128 条 sequence；S1 单轮最后一个 window 是剩余 4 条，不跨 epoch 填充；不同长度的有效 token 数另外记录 |
 | packing | false |
-| max length | `32768`；超长样本按数据合同排除，不截断 |
+| max length | `16384`；与冻结 artifact `gate0b-16k-derived-a` 一致（实测 `max 16,384`）。超长样本已按数据合同排除，不截断 |
 | train seed | `42` |
 | sample order | 对稳定样本键做固定 seed shuffle；恢复训练必须恢复 sampler/RNG 状态 |
 
@@ -261,7 +264,9 @@ MATH-500 和 GSM8K 必须分开启动，因为两者 generation config 不同。
 
 ### 6.2 与 pinned Open-R1 / TRL 的实现关系
 
-本实验追求的是核心训练语义有公开参考、差异可解释，而不是声称复现 Open-R1-Distill-7B 的最终 checkpoint。对照版本固定为 Open-R1 `1416fa0...`、TRL `0.18.0` 和 Transformers `4.52.3`：
+本实验追求的是核心训练语义有公开参考、差异可解释，而不是声称复现 Open-R1-Distill-7B 的最终 checkpoint。对照版本固定为 Open-R1 `1416fa0...`、TRL `0.18.0` 和 Transformers `4.52.3`。
+
+自 2026-09-11 起 **S1 使用固定版本的 TRL 训练栈**（见 §6 与 §11 变更记录），因此下表的"本实验"列指 **S1 的单卡 TRL 运行**。表中以"独立计算""独立实现"描述的路径属于自研 runner，它在 S1-ind 中按同一合同运行，用于验证两侧在完整 epoch 尺度上语义一致；其数值对齐证据由 H1 与首 batch shadow（R1a）承担。
 
 | 项目 | pinned 参考实现 | 本实验 | 判定 |
 | --- | --- | --- | --- |
@@ -321,7 +326,7 @@ def masked_sft_loss(
 
 - [ ] smoke run 无 NaN/Inf。
 - [ ] 有效 token、loss、grad norm 和 learning rate 可追踪。
-- [ ] checkpoint 可加载、可生成并能正常 EOS。
+- [ ] checkpoint 可加载、可生成；EOS 行为按相对 B0 的对照记录（smoke 阶段只记录不判定，见 §11 变更记录）。
 - [ ] 与固定版本参考框架比较首 batch loss、梯度或单步更新。
 - [ ] B0/S1 使用同一评测合同。
 - [ ] 保存逐样本输出和错误分析。
@@ -353,6 +358,8 @@ B0/S1 LightEval 结果必须通过 `scripts/compare_lighteval_results.py` 配对
 2. **H2 支持**：S1 在固定 validation 上的逐样本 assistant-only completion NLL 相对 B0 下降，配对 bootstrap 的 95% CI 上界小于 0；EOS 率与可解析率均未下降超过 2 个百分点。
 3. **H3 得到正向证据**：MATH-500 或 GSM8K 的配对差值为正，且 95% CI 下界大于 0。若只提高格式/解析率但最终答案指标没有可信变化，应报告为“格式改善”，不能报告为“数学能力提升”。
 4. **Gate 0 主实验通过**：H1、H2 均成立，checkpoint round-trip 通过，且通用回归面板没有第 5.5 节定义的明确回归。H3 是否正向单独报告，不作为证明核心 SFT 实现正确的必要条件。
+
+H1 的对象是**独立实现本身**，由 tiny 测试、PyTorch 参考对齐和首 batch shadow（R1a）判定，不依赖 S1。H2 与 H3 在 **S1（固定 TRL 栈）** 上判定。S1-ind 用于回答"自研实现与固定 TRL 栈在同一合同下是否语义一致"；若两者差异超出冻结容差，应先按 §6.2 定位实现差异，不得挑选更有利的一侧作为结论。
 
 ### 否定假设
 
@@ -400,3 +407,6 @@ B0/S1 LightEval 结果必须通过 `scripts/compare_lighteval_results.py` 配对
 | 2026-09-04 | Full automated data audit superseded | 固定 93,733 条原始数据，首次生成并双跑复现 train/validation/rejected/review artifact | 后续发现正则去标点切分与 pinned Open-R1 不一致，因此该组 artifact 和 bundle 被否决 |
 | 2026-09-04 | Open-R1 decontamination alignment | 将正则去标点 8-gram 修正为 pinned Open-R1/s1 whitespace word 8-gram，并重新完成两次全量审计 | 旧规则在 1,301 行上与参考实现不同，因此旧 artifact/bundle 被否决；新 artifact 双跑哈希一致，人工抽样仍待完成 |
 | 2026-09-04 | Open-R1/TRL implementation audit | 修正 warmup 向上取整，补齐 tokenizer/EOS/use-cache checkpoint 合同，并冻结单设备拓扑与最长样本显存门禁 | 将参考实现一致项、实验有意差异和真实工程缺陷分开，避免把“参考 Open-R1”误写成逐项复制 |
+| 2026-09-11 | 服务器 smoke 生成门校正 | 明确 EOS 率只按相对 B0 判定，smoke 阶段不设绝对 EOS 要求；§7.2 对应条目改为"记录并对照"；生成门脚本的 `--stop-tokens` 与 `--attn-implementation` 参数化 | greedy 下 B0 与 20 步 SFT 均 `0/4` EOS；合同采样配置（`temperature=0.6, top_p=0.95`）下分别为 `0/8` 与 `1/8`，SFT 相对 B0 提升 `12.5` 个百分点，而 B0 输出完全退化。终止信号只占监督 token 的 `0.017%`；原阶段 E 门要求 `eos_rate=1.0`，不可达且严于 §9 H2。证据：`evidence/gate0b-16k-generation-gate-diagnosis.json`、`evidence/gate0b-16k-generation-gate-sampled-comparison.json` |
+| 2026-09-11 | 实验组重新定义：S1 归属固定 TRL 栈 | §6 实验组表：S1 改为固定版本 Open-R1/TRL 训练栈，新增 S1-ind 作为自研 runner 的同条件对照；§6.1 标题改为 S1/S1-ind 共用合同；§6.2 明确"本实验"列指单卡 TRL 运行；§9 明确 H1 由 tiny 测试与首 batch shadow 判定、H2/H3 在 S1 上判定 | 解决 `REAL_SFT_EXECUTION_PLAN.md` §6.1 记录的合同冲突：计划已决定正式能力实验优先使用锁定版本的 Open-R1/TRL、自研 runner 作为语义显微镜与小规模验证路径，而原合同仍把自研 runner 的 1 epoch 定义为 S1 |
+| 2026-09-11 | 训练最大长度按实测冻结为 16384 | §4 数据合同与 §6.1 优化合同的 `max length` 由过时的 `32768` 改为 `16384`；§5.2 评测生成预算（`max_model_length` / `max_new_tokens` = `32768`）**保持不变** | 实测冻结 artifact `gate0b-16k-derived-a` 序列长度为 `max 16,384 / p99 15,626 / p50 4,863`；该上限由 A100-80GB 显存探针确定（22,295 失败、16,384 通过）。§5.2 的 `32768` 是生成预算而非训练长度，且与 Open-R1 公开 MATH-500 口径对齐，B0/S1 必须一致 |

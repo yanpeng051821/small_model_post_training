@@ -1,6 +1,6 @@
 # Gate 0B Server Runbook
 
-> Status: prepared but not executed. Stop immediately when any earlier command returns nonzero. Commands assume a Linux CUDA host and the `independent_implementation` repository root.
+> Status: executed on 2026-09-11 on an A100-80GB host. See §11 for the launch recipe that actually worked, the required environment variables, and measured timings. Stop immediately when any earlier command returns nonzero. Commands assume a Linux CUDA host and the `independent_implementation` repository root.
 
 After the full audit and human review pass, generate the handoff identity on the local machine from the completed full-audit manifest:
 
@@ -223,3 +223,67 @@ uv run python scripts/compare_lighteval_results.py \
 ```
 
 The LightEval comparison refuses different contracts, task sets, prompts, few-shot counts, input tokens, golds, or choices. It writes aggregate per-metric deltas plus every changed prediction and regression to `changed_samples.jsonl`. Do not change prompts, sampling, few-shot counts, scorer, or task versions between B0 and S1. Final claims require this paired per-sample analysis and the decision rules in `EXPERIMENT_CONTRACT.md`.
+
+## 11. Measured Execution Notes (2026-09-11)
+
+This section records the deviations observed on the first real execution. The commands above remain the contract; the notes below say what had to change in practice.
+
+### 11.1 Use a local snapshot path instead of repo id + revision
+
+`--model Qwen/Qwen3-0.6B-Base --model-revision <sha>` triggers a `repo_info` network call. The link to `huggingface.co` from this host is unreliable (the same day `scripts/audit_openr1_math.py` failed with `requests.exceptions.ReadTimeout`), and the call can stall for minutes. Pass the cached snapshot path instead:
+
+```bash
+MODEL=/workspace/hf-cache/hub/models--Qwen--Qwen3-0.6B-Base/snapshots/311c62e88814bff7206909ccd330bab0a784743b
+```
+
+### 11.2 Required environment variables
+
+```bash
+cd /workspace/small_model_post_training/independent_implementation
+setsid env \
+  PATH="/workspace/small_model_post_training/independent_implementation/.venv/bin:$PATH" \
+  HF_HOME=/workspace/hf-cache \
+  HF_HUB_ETAG_TIMEOUT=120 \
+  HF_HUB_DOWNLOAD_TIMEOUT=120 \
+  VLLM_WORKER_MULTIPROC_METHOD=spawn \
+  LIBRARY_PATH=/usr/local/cuda/lib64/stubs \
+  .venv/bin/python scripts/run_frozen_eval.py \
+    --suite <math500|gsm8k|regression> \
+    --model "$MODEL" \
+    --output-dir "runs/gate0b-16k/b0/evals/<suite>" \
+  > /workspace/b0-<suite>.log 2>&1 < /dev/null &
+```
+
+| Variable | Why it is required |
+| --- | --- |
+| `PATH=.venv/bin:$PATH` | `lighteval` is installed only inside the venv; the default login `PATH` does not contain it |
+| `HF_HOME=/workspace/hf-cache` | persistent model and dataset cache; avoids re-downloading on every rented session |
+| `HF_HUB_ETAG_TIMEOUT` / `HF_HUB_DOWNLOAD_TIMEOUT=120` | the default 10 s read timeout is too short for this host's link to `huggingface.co` |
+| `VLLM_WORKER_MULTIPROC_METHOD=spawn` | after flash-attn is installed, importing it initialises CUDA in the parent; vLLM's default forked engine then dies with `RuntimeError: Cannot re-initialize CUDA in forked subprocess` |
+| `LIBRARY_PATH=/usr/local/cuda/lib64/stubs` | the host has `libcuda.so.1` but no `libcuda.so` development symlink, so Triton's runtime compile fails with `/usr/bin/ld: cannot find -lcuda` |
+
+Do **not** set `HF_HUB_OFFLINE=1`. `datasets` still needs the network to resolve the legacy dataset short names LightEval uses (for example `ai2_arc`) into full repository ids; offline mode fails with `ConnectionError: Couldn't reach 'ai2_arc' on the Hub (OfflineModeIsEnabled)`. The dataset payloads are already cached, so online access is used only for name resolution. A failed attempt is archived under `runs/gate0b-16k/b0/evals/failures/`.
+
+### 11.3 Dataset prefetch
+
+`cais/mmlu`, `allenai/ai2_arc`, `Rowan/hellaswag` and `openai/gsm8k` were not cached and had to be fetched once:
+
+```bash
+setsid env HF_HOME=/workspace/hf-cache HF_HUB_ETAG_TIMEOUT=120 HF_HUB_DOWNLOAD_TIMEOUT=120 \
+  .venv/bin/python -c "from huggingface_hub import snapshot_download; [print('OK', r, snapshot_download(r, repo_type='dataset')) for r in ['cais/mmlu','allenai/ai2_arc','Rowan/hellaswag','openai/gsm8k']]" \
+  > /workspace/b0-dataset-prefetch.log 2>&1 < /dev/null &
+```
+
+`repo_type='dataset'` is required; omitting it makes `huggingface_hub` query the model API and fail with `RepositoryNotFoundError`. The resolved revisions matched the ones pinned in `artifacts/gate0b-16k-derived-a/data_manifest.json`.
+
+### 11.4 Measured timings (A100-80GB, Qwen3-0.6B-Base)
+
+| Suite | Wall time | Notes |
+| --- | --- | --- |
+| `regression` | ~50 min | ~15 min dataset preparation, ~20 min CPU-side construction of ~100k log-likelihood requests, remainder scoring. GPU stays idle during request construction. |
+| `gsm8k` | ~3.5 min | 1319 prompts, 31 s of generation, ~5,020 aggregate output tokens/s |
+| `math500` | hours | see 11.5 |
+
+### 11.5 Long tail on generative suites
+
+`math500` uses `max_new_tokens=32768`. Samples that do not emit a stop token run to that cap, so a single evaluation has a long tail: the first ~half of the 2,000 generations complete quickly (a few hundred tokens each), while the remainder can take hours. Budget for this, and note that the same cost applies again to the S1 evaluation. A model that stops reliably would make the same suite much cheaper.

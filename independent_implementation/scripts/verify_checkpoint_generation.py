@@ -48,9 +48,32 @@ def main() -> int:
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--max-new-tokens", type=int, default=256)
     parser.add_argument("--minimum-eos-rate", type=float, default=1.0)
+    parser.add_argument(
+        "--stop-tokens",
+        default="151645",
+        help=(
+            "comma-separated token ids treated as stop tokens; "
+            "default 151645 is <|im_end|>"
+        ),
+    )
+    parser.add_argument("--attn-implementation", default="flash_attention_2")
+    parser.add_argument("--do-sample", action="store_true")
+    parser.add_argument("--temperature", type=float, default=1.0)
+    parser.add_argument("--top-p", type=float, default=1.0)
+    parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--num-return-sequences", type=int, default=1)
     args = parser.parse_args()
     if args.max_new_tokens <= 0:
         raise ValueError("max_new_tokens must be positive")
+    if args.num_return_sequences <= 0:
+        raise ValueError("num_return_sequences must be positive")
+    stop_token_ids = [
+        int(value) for value in args.stop_tokens.split(",") if value.strip()
+    ]
+    if not stop_token_ids:
+        raise ValueError("at least one stop token id is required")
+    if args.do_sample and args.temperature <= 0:
+        raise ValueError("temperature must be positive when sampling")
 
     tokenizer_source = args.tokenizer or args.checkpoint
     tokenizer_kwargs = (
@@ -67,14 +90,11 @@ def main() -> int:
     model = AutoModelForCausalLM.from_pretrained(
         args.checkpoint,
         torch_dtype=torch.bfloat16,
-        attn_implementation="flash_attention_2",
+        attn_implementation=args.attn_implementation,
         **checkpoint_kwargs,
     ).to("cuda")
     model.eval()
     model.config.use_cache = True
-    eot_token_id = tokenizer.convert_tokens_to_ids("<|im_end|>")
-    if not isinstance(eot_token_id, int) or eot_token_id < 0:
-        raise ValueError("tokenizer does not define a valid <|im_end|> token")
 
     records = []
     for prompt in _load_prompts(args.prompts):
@@ -85,36 +105,55 @@ def main() -> int:
                 add_generation_prompt=True,
                 return_tensors="pt",
             ).to("cuda")
+            generation_kwargs = {
+                "do_sample": args.do_sample,
+                "max_new_tokens": args.max_new_tokens,
+                "eos_token_id": stop_token_ids,
+                "pad_token_id": tokenizer.pad_token_id,
+                "num_return_sequences": args.num_return_sequences,
+            }
+            if args.do_sample:
+                generation_kwargs["temperature"] = args.temperature
+                generation_kwargs["top_p"] = args.top_p
+            torch.manual_seed(args.seed)
             with torch.inference_mode():
-                output_ids = model.generate(
-                    input_ids=input_ids,
-                    do_sample=False,
-                    max_new_tokens=args.max_new_tokens,
-                    eos_token_id=eot_token_id,
-                    pad_token_id=tokenizer.pad_token_id,
+                output_ids = model.generate(input_ids=input_ids, **generation_kwargs)
+            prompt_length = input_ids.shape[1]
+            for sample_index in range(args.num_return_sequences):
+                completion_ids = output_ids[sample_index, prompt_length:].tolist()
+                matched = [
+                    token_id for token_id in stop_token_ids if token_id in completion_ids
+                ]
+                records.append(
+                    {
+                        **prompt,
+                        "sample_index": sample_index,
+                        "completion_ids": completion_ids,
+                        "generated_eos": bool(matched),
+                        "stop_token_id": matched[0] if matched else None,
+                        "generated_tokens": len(completion_ids),
+                        "output": tokenizer.decode(
+                            completion_ids,
+                            skip_special_tokens=False,
+                        ),
+                        "stop_reason": "eos" if matched else "length",
+                        "error": None,
+                    }
                 )
-            completion_ids = output_ids[0, input_ids.shape[1] :].tolist()
-            generated_eos = eot_token_id in completion_ids
-            record = {
-                **prompt,
-                "completion_ids": completion_ids,
-                "generated_eos": generated_eos,
-                "generated_tokens": len(completion_ids),
-                "output": tokenizer.decode(completion_ids, skip_special_tokens=False),
-                "stop_reason": "eos" if generated_eos else "length",
-                "error": None,
-            }
         except Exception as error:  # Evidence must retain every failed prompt.
-            record = {
-                **prompt,
-                "completion_ids": [],
-                "generated_eos": False,
-                "generated_tokens": 0,
-                "output": None,
-                "stop_reason": "runtime_error",
-                "error": f"{type(error).__name__}: {error}",
-            }
-        records.append(record)
+            records.append(
+                {
+                    **prompt,
+                    "sample_index": None,
+                    "completion_ids": [],
+                    "generated_eos": False,
+                    "stop_token_id": None,
+                    "generated_tokens": 0,
+                    "output": None,
+                    "stop_reason": "runtime_error",
+                    "error": f"{type(error).__name__}: {error}",
+                }
+            )
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
     records_path = args.output_dir / "generations.jsonl"
@@ -132,6 +171,16 @@ def main() -> int:
         "checkpoint_revision": args.checkpoint_revision,
         "tokenizer": _source_identity(tokenizer_source),
         "tokenizer_revision": args.tokenizer_revision,
+        "decoding": {
+            "attn_implementation": args.attn_implementation,
+            "do_sample": args.do_sample,
+            "temperature": args.temperature if args.do_sample else None,
+            "top_p": args.top_p if args.do_sample else None,
+            "seed": args.seed,
+            "num_return_sequences": args.num_return_sequences,
+            "max_new_tokens": args.max_new_tokens,
+            "stop_token_ids": stop_token_ids,
+        },
     }
     atomic_write_json(args.output_dir / "summary.json", summary)
     print(json.dumps(summary, indent=2, sort_keys=True))

@@ -1,0 +1,99 @@
+{
+  "artifact": "gate0b-16k-generation-gate-diagnosis",
+  "created_at": "2026-09-11T05:35:00+00:00",
+  "purpose": "判定 20-step smoke 的生成门失败属于实现缺陷、模板缺陷还是欠训练，并据此校正阶段 E 验收门",
+  "gate_under_test": {
+    "stage": "阶段 E：20-step smoke",
+    "original_requirement": "checkpoint 在新进程可加载、继续训练并正常生成 <|im_end|>",
+    "metric": "eos_rate == minimum_eos_rate == 1.0",
+    "verdict": "该门不可达，且严于并冲突于 EXPERIMENT_CONTRACT §9 H2"
+  },
+  "control_design": {
+    "script": "scripts/verify_checkpoint_generation.py",
+    "prompts": {
+      "path": "configs/gate0b/smoke_prompts.jsonl",
+      "sha256": "0ff011f3d0d84fa059282773eb625c1b6b5ec165d902f01684962b3571bf9c6f",
+      "count": 4
+    },
+    "generation": {
+      "do_sample": false,
+      "max_new_tokens": 2048,
+      "eos_token_id": 151645,
+      "note": "停止条件只包含 <|im_end|>(151645)，未包含 tokenizer eos_token <|endoftext|>(151643)"
+    },
+    "arms": [
+      {
+        "arm": "B0",
+        "model": "Qwen/Qwen3-0.6B-Base@311c62e88814bff7206909ccd330bab0a784743b"
+      },
+      {
+        "arm": "SFT-step20",
+        "model": "runs/gate0b-16k-pilot20-sdpa/qwen3-0.6b-sft-pilot20-16k-sdpa/checkpoints/step-00000020"
+      }
+    ],
+    "same_script_same_prompts_same_length": true
+  },
+  "results": {
+    "B0": {
+      "summary_path": "runs/gate0b-16k/b0/generation-readiness-2048/summary.json",
+      "summary_sha256": "3f230425c2174180c30985b9d47f7f839b43c131ddbf2df0f41fab9989cf2943",
+      "generations_path": "runs/gate0b-16k/b0/generation-readiness-2048/generations.jsonl",
+      "generations_sha256": "3f66be0f0995159efbd39b9a2197e14591b611f42c550bd32db863d5b2f3496a",
+      "samples": 4,
+      "eos_count": 0,
+      "eos_rate": 0.0,
+      "runtime_errors": 0,
+      "empty_generations": 0,
+      "passed": false,
+      "observed_behavior": "4/4 在 2048 token 上限截断；输出复读 prompt 并陷入多语种乱码重复（larınızı / овал / alleng），无推理内容"
+    },
+    "SFT-step20": {
+      "summary_path": "runs/gate0b-16k-pilot20-sdpa/generation-readiness-2048/summary.json",
+      "summary_sha256": "c884939c66761df96a85d86516a9df79f6d59e5639a29f907123c0c93b479055",
+      "generations_path": "runs/gate0b-16k-pilot20-sdpa/generation-readiness-2048/generations.jsonl",
+      "generations_sha256": "77ce091e771d659da394a7407304b6f434001ce583d346b4154718074e47721d",
+      "samples": 4,
+      "eos_count": 0,
+      "eos_rate": 0.0,
+      "runtime_errors": 0,
+      "empty_generations": 0,
+      "passed": false,
+      "observed_behavior": "4/4 在 2048 token 上限截断；输出为连贯英文 CoT，四条均给出正确答案（42、5/6、16、x=5）；未终止，geometry 一条出现逐字重复循环"
+    }
+  },
+  "termination_signal_density": {
+    "optimizer_steps": 20,
+    "samples_per_optimizer_step": 128,
+    "samples_seen": 2560,
+    "train_artifact_size": 61224,
+    "epoch_fraction": 0.0418,
+    "steps_per_full_epoch": 478,
+    "supervised_tokens_seen": 14684918,
+    "im_end_tokens_seen": 2560,
+    "im_end_token_share": 0.000174,
+    "avg_supervised_tokens_per_sample": 5736
+  },
+  "code_and_data_checks": [
+    "src/post_training_core/data.py: assistant mask 为 range(assistant_start, assistant_end + 1)，包含结尾 <|im_end|>",
+    "artifacts/gate0b-16k-derived-a/train.jsonl: input_ids 为正确 chat 格式（151644 ... 151645 198 151644 77091 151667）",
+    "结论：排除模板与 label 缺陷"
+  ],
+  "conclusion": [
+    "不是模板/label 缺陷：监督范围与 chat 格式均已验证正确",
+    "不是 SFT 引入的退化：B0 输出完全退化，SFT 20 步显著改善输出质量",
+    "根因是欠训练叠加极低的终止信号密度（0.017%）",
+    "阶段 E 原验收门不可达，且严于并冲突于合同 §9 H2"
+  ],
+  "decision": {
+    "action": "阶段 E 生成停止行为改为只记录不判定；EOS 率硬性对照移至阶段 F/G，按合同 §9 H2 相对 B0 判定",
+    "updated_documents": [
+      "REAL_SFT_EXECUTION_PLAN.md 阶段 E / 阶段 F",
+      "EXPERIMENT_CONTRACT.md §7.2 / §11"
+    ]
+  },
+  "open_items": [
+    "verify_checkpoint_generation.py 的 eos_token_id 未包含 151643，存在把 <|endoftext|> 停止误判为 length 的风险",
+    "verify_checkpoint_generation.py 硬编码 attn_implementation='flash_attention_2'，而本次 smoke 训练使用 sdpa，训练与生成证据的注意力实现不一致",
+    "SFT-step20 出现逐字重复循环，需在阶段 F 单独观察，不修改已冻结的生成合同"
+  ]
+}

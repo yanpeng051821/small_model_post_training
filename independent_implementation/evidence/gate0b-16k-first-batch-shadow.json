@@ -1,0 +1,52 @@
+{
+  "artifact": "gate0b-16k-first-batch-shadow",
+  "created_at": "2026-09-11T05:36:29+00:00",
+  "stage": "阶段 D：首 batch shadow 对照",
+  "purpose": "用同一批已物化的 input_ids/attention_mask/labels 比较自研 PyTorch loss/梯度路径与 TRL 0.18 -> Transformers 4.52.3 参考路径",
+  "config": "configs/gate0b/sft_pilot20_16k_sdpa.yaml",
+  "batch": {
+    "per_device_train_batch_size": 1,
+    "valid_tokens": 8559,
+    "seed": 42,
+    "sampler": "StatefulRandomSampler",
+    "note": "与 20 步 smoke 第一步相同的 batch 抽取方式；不执行 optimizer.step()"
+  },
+  "result": {
+    "passed": true,
+    "local_loss": 0.9387217164039612,
+    "reference_loss": 0.9387217164039612,
+    "absolute_loss_difference": 0.0,
+    "maximum_probe_absolute_difference": 2.2351741790771484e-08,
+    "local_grad_norm": 6.225728124612703,
+    "reference_grad_norm": 6.225728352073091
+  },
+  "tolerances": {
+    "loss_atol": 1e-06,
+    "loss_rtol": 1e-05,
+    "gradient_atol": 1e-06,
+    "gradient_rtol": 0.0001
+  },
+  "software": {
+    "torch": "2.6.0+cu124",
+    "transformers": "4.52.3",
+    "trl": "0.18.0"
+  },
+  "precision": "FP32 主参数（parameter_dtype=float32），无 autocast；与合同 §9 H1 的 FP32 容差口径一致",
+  "valid_tokens_equality_check": "脚本内部断言 local 与 reference 的 causal-shift 有效 token 数相等，通过",
+  "no_optimizer_step": true,
+  "full_report": {
+    "path": "evidence/server/gate0b-16k-first-batch-shadow.json",
+    "sha256": "148684a5afadcf615b7744017d7de1abbe0953bbba1aa8cbe8f6b3c932df5f14",
+    "bytes": 74828
+  },
+  "incident": {
+    "description": "首次启动时进程卡在 huggingface.co 网络请求（4 个 :443 连接，其中 1 个 CLOSE-WAIT）约 6 分钟无进展，GPU 未占用",
+    "cause": "from_pretrained 使用 HF repo id + revision，需要 repo_info 网络调用；该机器到 huggingface.co 的网络不可靠（同日 audit_openr1_math.py 亦因 ReadTimeout 失败）",
+    "resolution": "以 HF_HOME=/workspace/hf-cache、HF_HUB_OFFLINE=1、TRANSFORMERS_OFFLINE=1 离线重跑，约 2 分钟完成"
+  },
+  "open_items": [
+    "服务器 runbook 应固定 HF_HUB_OFFLINE=1 与 HF_HOME，否则 from_pretrained 会因网络不稳定长时间挂起",
+    "IndexedTokenizedSFTDataset 对 3.6 GB artifact 逐行 json.loads 建索引，纯 Python 开销约 3-4 分钟，每次训练启动都要付这个成本",
+    "服务器上 9 个实际使用的配置文件此前未入库，本次已补回 configs/gate0b/"
+  ]
+}

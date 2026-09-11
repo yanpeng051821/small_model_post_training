@@ -1,0 +1,50 @@
+{
+  "artifact": "gate0b-16k-b0-gsm8k",
+  "created_at": "2026-09-11T07:45:41+00:00",
+  "stage": "阶段 C：B0 训练前基线（GSM8K 补充任务）",
+  "contract": {
+    "path": "configs/gate0b/evaluation.yaml",
+    "sha256": "1c5f027244143c1af0f49e19068b7031b15c606ec1575f2e0134c72d398295fc",
+    "version": "gate0b-eval-v1",
+    "suite": "gsm8k",
+    "task": "leaderboard|gsm8k|4|0",
+    "use_chat_template": false,
+    "model_args": {
+      "dtype": "bfloat16",
+      "max_model_length": 4096,
+      "gpu_memory_utilization": 0.8,
+      "seed": 1234,
+      "generation_parameters": {
+        "max_new_tokens": 256,
+        "temperature": 0.0,
+        "seed": 1234
+      }
+    },
+    "few_shot": 4
+  },
+  "model": {
+    "name": "Qwen/Qwen3-0.6B-Base",
+    "path": "/workspace/hf-cache/hub/models--Qwen--Qwen3-0.6B-Base/snapshots/311c62e88814bff7206909ccd330bab0a784743b",
+    "revision": "311c62e88814bff7206909ccd330bab0a784743b"
+  },
+  "results": {
+    "qem": 0.4761182714177407,
+    "qem_stderr": 0.013756765835465756,
+    "num_docs": 1319
+  },
+  "dataset_revision_used": {
+    "openai/gsm8k": "740312add88f781978c0658806c59bc2815b9866"
+  },
+  "runtime": {
+    "created_at": "2026-09-11T07:42:09+00:00",
+    "completed_at": "2026-09-11T07:45:41+00:00",
+    "wall_time_minutes": 3.5,
+    "generation_seconds": 31,
+    "aggregate_output_tokens_per_second": 5019.62
+  },
+  "artifacts": {
+    "output_dir": "runs/gate0b-16k/b0/evals/gsm8k/",
+    "invocation_manifest": "runs/gate0b-16k/b0/evals/gsm8k/invocation_manifest.json",
+    "results_json": "runs/gate0b-16k/b0/evals/gsm8k/results/Qwen/Qwen3-0.6B-Base/"
+  }
+}

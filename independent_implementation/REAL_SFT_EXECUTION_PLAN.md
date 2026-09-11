@@ -201,6 +201,23 @@ uv run python scripts/review_audit_samples.py `
 
 **验收门**：所有任务保存完整命令、版本、配置、逐样本输出和汇总指标；历史记忆中的约 `10%` 或 Open-R1 旧报告不能替代 B0。
 
+#### 阶段 C 当前证据
+
+2026-09-11 在 A100-80GB 上按合同 `gate0b-eval-v1` 完成三套评测（均使用本地快照路径与 §11 的环境配方）：
+
+| suite | 结果 | 耗时 |
+| --- | --- | --- |
+| `math500`（500 题 × 4 采样） | `math_pass@1:1 = 0.432`（±2.22%）、`math_pass@1:4 = 0.449`（±1.80%） | 1h49m |
+| `gsm8k`（1319 题，4-shot greedy） | `qem = 0.4761`（±1.38%） | 3.5 min |
+| `regression`（59 任务：57 个 MMLU 5-shot + ARC 25-shot + HellaSwag 10-shot） | MMLU 平均 `0.5452`、ARC `acc_norm 0.4539`、HellaSwag `acc_norm 0.5335` | 50 min |
+
+- 三套结果的量级均与 Qwen3-0.6B-Base 的公开水平一致，支持评测栈配置正确。
+- MATH-500 生成健康度：2000 次生成中 `1880`（94%）以 `<|endoftext|>` 正常停止，`p50 = 526` token；约 6% 跑到长度上限附近并被截断，这部分约占整体 GPU 时间的一半。
+- **历史值被推翻**：仓库内记录的 `MATH-500 ≈ 26-28%` 在冻结合同下不可复现，实测为 `43.2%`。这直接验证了合同 §2.2 与 §8 中"不得用历史值代替 B0"的要求。
+- 证据：`evidence/gate0b-16k-b0-math500.json`、`evidence/gate0b-16k-b0-gsm8k.json`、`evidence/gate0b-16k-b0-regression.json`。
+- 全量 validation NLL（1,968 条）已完成：base `mean_nll = 0.7805`、`valid_tokens = 11,367,594`，证据 `evidence/gate0b-16k-b0-validation-nll.json`。S1 与 S1-ind 必须使用同一 config（`configs/gate0b/sft_train_16k.yaml`，未设 sample limit）与同一 validation artifact hash 复跑，并用 `scripts/compare_validation_nll.py` 做逐样本配对。
+- 阶段 C 验收门已满足：三套评测与 NLL 均保存了完整命令、版本、配置、逐样本输出与汇总指标。
+
 ### 阶段 D：首 batch shadow 对照
 
 **运行位置**：GPU 服务器，不执行 `optimizer.step()`。
@@ -215,6 +232,17 @@ uv run python scripts/review_audit_samples.py `
 优先比较有效 token 数、FP32 mean loss、选定参数梯度和 grad norm。BF16 不要求逐 bit 相等，但差异必须落入冻结容差并能解释。
 
 **验收门**：数据和 labels 完全一致；loss/梯度对齐通过；没有 step，因此 base checkpoint 不被修改。
+
+#### 阶段 D 当前证据
+
+2026-09-11 在 A100-80GB 上用 `configs/gate0b/sft_pilot20_16k_sdpa.yaml` 完成首 batch 对照（`evidence/gate0b-16k-first-batch-shadow.json`）：
+
+- batch 抽取方式与 20 步 smoke 的第一步相同（`StatefulRandomSampler(seed=42)`，micro-batch 1），有效 token `8,559`。
+- 自研路径与参考路径的有效 token 数相等（脚本内部断言）；FP32 mean loss 完全相同：`0.9387217164039612` vs `0.9387217164039612`，绝对差 `0.0`。
+- 梯度探针最大绝对差 `2.24e-08`（容差 `atol=1e-6`）；grad norm `6.2257281246` vs `6.2257283520`（容差 `rtol=1e-4`）。
+- 未执行 `optimizer.step()`，base checkpoint 未被修改。
+
+运行环境注意：`from_pretrained` 走 HF repo id + revision 时需要 `repo_info` 网络调用，本机到 `huggingface.co` 不稳定（同日 `audit_openr1_math.py` 因 ReadTimeout 失败），因此该 run 以 `HF_HUB_OFFLINE=1` + `HF_HOME=/workspace/hf-cache` 离线执行。
 
 ### 阶段 E：20-step smoke
 
@@ -237,9 +265,23 @@ load checkpoint
 -> validation loss + generate
 ```
 
-**验收门**：无 NaN/Inf；参数确实变化；loss、有效 token、grad norm、learning rate 和显存可追踪；checkpoint 在新进程可加载、继续训练并正常生成 `<|im_end|>`。
+**验收门**：无 NaN/Inf；参数确实变化；loss、有效 token、grad norm、learning rate 和显存可追踪；checkpoint 在新进程可加载并能继续训练；生成记录无 runtime error、无空输出，且输出相对 B0 不退化（不再复读 prompt 或输出乱码循环）。
+
+**生成停止行为在本阶段只记录、不判定**：20 步 smoke 不要求模型学会输出停止 token。实测依据（`evidence/gate0b-16k-generation-gate-diagnosis.json`、`evidence/gate0b-16k-generation-gate-sampled-comparison.json`）：B0 与 20 步 SFT 在合同采样配置（`temperature=0.6, top_p=0.95, max_new_tokens=2048, stop∈{151643,151645}`）下 EOS 率分别为 `0/8` 与 `1/8`；B0 输出完全退化（复读 prompt + 多语种乱码），SFT 已把 7/8 的输出提升为连贯推理但尚未学会停止。终止信号在监督 token 中只占 `0.017%`（20 步 × 128 条 = 2,560 条样本，仅覆盖一个 epoch 的 `4.2%`）。因此 EOS 率按合同 §9 H2 的"相对 B0 不下降超过 2 个百分点"在阶段 F/G 判定，不设绝对门。
+
+生成门脚本的两处缺陷已修正（`scripts/verify_checkpoint_generation.py`）：`--stop-tokens` 可配置（此前硬编码 `151645`，会覆盖 checkpoint 自带的 `151643`，把停在 `<|endoftext|>` 的正常生成误判为失败）、`--attn-implementation` 可配置（此前硬编码 `flash_attention_2`，与 smoke 训练的 `sdpa` 不一致）、并新增采样参数与逐样本 `stop_token_id` 记录。
 
 服务器首次启动仍属于兼容性验证，不属于正式训练。它只处理本机无法覆盖的真实权重、Linux/CUDA、BF16、最长 22,295-token 样本的训练显存和实际吞吐问题。本轮 runner 明确为单设备实现，不把未经实现级验证的 NCCL/多卡路径算作可用能力；发现普通 Python 逻辑或测试可提前覆盖的问题时，立即停止实例，回到本机修复并重新通过 Local Readiness Gate。
+
+#### 阶段 E 当前证据
+
+2026-09-11 完成 1-step、5-step 与 20-step smoke（`runs/gate0b-16k-smoke`、`runs/gate0b-16k-pilot-sdpa-noeval`、`runs/gate0b-16k-pilot20-sdpa`）：
+
+- 20 步训练：loss `0.782` → `0.646`，grad norm `4.58` → `0.70`，峰值显存 `39.8 GB`，吞吐约 `10.6k token/s`，无 NaN/Inf。
+- 128 条 validation NLL：base `0.8050` → step20 `0.6754`，相对下降 `16.1%`。
+- checkpoint 在新进程可加载并继续训练；生成记录无 runtime error、无空输出。
+- 生成停止行为未学会（EOS `0/4`），但 B0 同样为 `0/4` 且输出完全退化，故本阶段只记录不判定，依据见 `evidence/gate0b-16k-generation-gate-diagnosis.json`。
+- 已知欠账：本次 smoke 在阶段 C（仅完成 MATH-500 smoke）与阶段 D 未关闭前启动，属执行顺序偏差；阶段 D 已于同日补做。
 
 ### 阶段 F：100-step pilot 与恢复测试
 
@@ -250,7 +292,7 @@ load checkpoint
 - 运行固定 validation NLL 和小型 generation panel。
 - 使用固定 TRL 配置完成 100-step 参考运行，只比较实现语义和趋势，不追求最终最好分数。
 
-**验收门**：恢复后的 global step、样本顺序、optimizer、scheduler 和 RNG 连续；validation NLL 有合理变化；硬停止条件未触发。失败时保留现场，禁止原地改配置后覆盖 run。
+**验收门**：恢复后的 global step、样本顺序、optimizer、scheduler 和 RNG 连续；validation NLL 有合理变化；硬停止条件未触发；生成停止行为相对 B0 记录并对照（按合同 §9 H2，EOS 率不下降超过 2 个百分点，不要求达到 `1.0`）。失败时保留现场，禁止原地改配置后覆盖 run。
 
 ### 阶段 G：正式 S1
 
@@ -382,7 +424,7 @@ server preflight
 -> 实验结论
 ```
 
-当前 [`EXPERIMENT_CONTRACT.md`](EXPERIMENT_CONTRACT.md) 仍把自研 runner 的完整 1 epoch 定义为 S1，并把 TRL 定义为 100-step 参考组。这与本节的最新路线决策冲突。服务器正式训练前必须单独审查并修订实验组、H1/H2/H3 归属和成本预算；在合同修订并重新冻结前，不得用本节直接启动正式 S1。
+2026-09-11 该冲突已解决：合同 §6 已按本节决策修订——**S1 改为固定版本 Open-R1/TRL 训练栈**，新增 **S1-ind** 作为自研 runner 的同条件对照，§6.1 明确两者共用同一优化合同，§9 明确 H1 由 tiny 测试与首 batch shadow（R1a）判定、H2/H3 在 S1 上判定。正式 S1 仍须在 B0、100-step 双实现对照与服务器 smoke 全部通过后启动。
 
 #### 学习进度
 

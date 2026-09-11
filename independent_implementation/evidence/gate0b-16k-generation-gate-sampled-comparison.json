@@ -1,0 +1,61 @@
+{
+  "artifact": "gate0b-16k-generation-gate-sampled-comparison",
+  "created_at": "2026-09-11T06:07:17+00:00",
+  "stage": "阶段 E 生成门复核",
+  "purpose": "按合同采样配置重测生成停止行为，判定阶段 E 生成门失败是否为实现缺陷",
+  "decoding": {
+    "prompts": "configs/gate0b/smoke_prompts.jsonl",
+    "max_new_tokens": 2048,
+    "do_sample": true,
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "seed": 1234,
+    "num_return_sequences": 2,
+    "stop_token_ids": [151643, 151645],
+    "attn_implementation": "flash_attention_2",
+    "script": "scripts/verify_checkpoint_generation.py（本次扩展后）"
+  },
+  "results": {
+    "sft_step20": {
+      "checkpoint": "runs/gate0b-16k-pilot20-sdpa/qwen3-0.6b-sft-pilot20-16k-sdpa/checkpoints/step-00000020",
+      "eos_count": 1,
+      "eos_rate": 0.125,
+      "samples": 8,
+      "runtime_errors": 0,
+      "empty_generations": 0,
+      "summary_sha256": "876ee7efb3052781f45c55c7dfe26de395f6b587da1b32a5a13c7b07c227c21a",
+      "generations_sha256": "549959dd834c3f1a5f45b8e6324a1dc2ebb50f82a2150655333acf7b23334474"
+    },
+    "b0": {
+      "checkpoint": "/workspace/hf-cache/hub/models--Qwen--Qwen3-0.6B-Base/snapshots/311c62e88814bff7206909ccd330bab0a784743b",
+      "eos_count": 0,
+      "eos_rate": 0.0,
+      "samples": 8,
+      "runtime_errors": 0,
+      "empty_generations": 0,
+      "summary_sha256": "1a8144a2dd79c0c824dd52a736f58b46649bc18a3a42a40a6a269733e887c6e5",
+      "generations_sha256": "89bba8a40abc7074802cb375305b6960625a2fa655f6b4da65131fc9ff7be513"
+    }
+  },
+  "qualitative": {
+    "b0": "8/8 在 2048 token 上限截断；输出完全退化，复读 prompt 并混入多语种乱码（alleng / овал / navigationItem / getConfig / agedList），并幻觉出未给出的题目",
+    "sft_step20": "7/8 为连贯英文推理但未停止；1/8 以 151643 停止，但停止方式是连续重复 <|endoftext|>，属退化停止；部分输出起始存在少量乱码 token（nakne / приятн / salopes）"
+  },
+  "conclusions": [
+    "生成门失败不是 SFT 引入的缺陷：base 为 0/8，比 SFT 的 1/8 更差",
+    "minimum_eos_rate=1.0 对 base 与 SFT 都不可达，确认该判据不能作为阶段 E 的绝对门",
+    "greedy 解码是输出退化的主因之一：同一 checkpoint 在采样下产出连贯推理，greedy 下为复读乱码",
+    "但停止行为确实未学会（1/8），欠训练仍是停止行为的主因",
+    "按合同 §9 H2 的相对判据（相对 B0 不下降超过 2 个百分点），SFT 的 EOS 率实际提升 12.5 个百分点，该指标通过"
+  ],
+  "script_changes": [
+    "新增 --stop-tokens（默认 151645，向后兼容）、--attn-implementation、--do-sample、--temperature、--top-p、--seed、--num-return-sequences",
+    "逐样本记录 sample_index 与 stop_token_id；summary 增加 decoding 段",
+    "修正：此前 eos_token_id 硬编码为 151645，会覆盖 checkpoint 自带的 151643，导致停在 <|endoftext|> 的正常生成被判为失败"
+  ],
+  "related_artifacts": [
+    "evidence/gate0b-16k-generation-gate-diagnosis.json（greedy 解码下的 4-prompt 对照）",
+    "runs/gate0b-16k-pilot20-sdpa/generation-readiness-sampled/",
+    "runs/gate0b-16k/b0/generation-readiness-sampled/"
+  ]
+}
