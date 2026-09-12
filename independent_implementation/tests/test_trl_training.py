@@ -4,6 +4,7 @@ import subprocess
 import sys
 from dataclasses import replace
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 import torch
@@ -22,10 +23,60 @@ from post_training_core.engine import (
 )
 from post_training_core.trl_reference import OrderedCompletionMaskDataset
 from post_training_core.trl_training import (
+    CudaMemoryTelemetryCallback,
     FrozenOrderSFTTrainer,
     SaveAndStopCallback,
     build_trl_sft_args,
 )
+
+
+def test_cuda_memory_telemetry_records_named_optimizer_phases(tmp_path, monkeypatch):
+    current = [
+        2 * 1024**3,
+        3 * 1024**3,
+        6 * 1024**3,
+        7 * 1024**3,
+    ]
+    monkeypatch.setattr(torch.cuda, "is_available", lambda: True)
+    monkeypatch.setattr(torch.cuda, "current_device", lambda: 0)
+    monkeypatch.setattr(torch.cuda, "mem_get_info", lambda: (8 * 1024**3, 80 * 1024**3))
+    monkeypatch.setattr(torch.cuda, "memory_allocated", lambda: current[0])
+    monkeypatch.setattr(torch.cuda, "memory_reserved", lambda: current[1])
+    monkeypatch.setattr(torch.cuda, "max_memory_allocated", lambda: current[2])
+    monkeypatch.setattr(torch.cuda, "max_memory_reserved", lambda: current[3])
+
+    callback = CudaMemoryTelemetryCallback(tmp_path / "cuda_memory.jsonl", "memory")
+    args = SimpleNamespace(process_index=0, logging_steps=1)
+    state = SimpleNamespace(global_step=1)
+    callback.on_pre_optimizer_step(args, state, None)
+    callback.on_optimizer_step(args, state, None)
+    callback.on_step_end(args, state, None)
+
+    records = [
+        json.loads(line)
+        for line in (tmp_path / "cuda_memory.jsonl").read_text().splitlines()
+    ]
+    assert [record["phase"] for record in records] == [
+        "before_optimizer_step",
+        "after_optimizer_step",
+        "after_zero_grad",
+        "optimizer_step_interval",
+    ]
+    assert all(record["run_id"] == "memory" for record in records)
+    assert callback.summary()["peak_allocated_gib"] == 6
+    assert callback.summary()["peak_phase"] == "before_optimizer_step"
+
+
+def test_cuda_memory_telemetry_is_noop_without_cuda(tmp_path, monkeypatch):
+    monkeypatch.setattr(torch.cuda, "is_available", lambda: False)
+    callback = CudaMemoryTelemetryCallback(tmp_path / "cuda_memory.jsonl")
+    callback.on_step_end(
+        SimpleNamespace(process_index=0, logging_steps=1),
+        SimpleNamespace(global_step=1),
+        None,
+    )
+    assert callback.summary() == {"enabled": False, "records": 0}
+    assert not callback.output_path.exists()
 
 
 def _config(tmp_path):
@@ -51,11 +102,11 @@ def test_formal_plan_keeps_tail_and_rounds_warmup(tmp_path):
     config = replace(
         _config(tmp_path), gradient_accumulation_steps=128, warmup_ratio=0.03
     )
-    args = build_trl_sft_args(config, tmp_path, 62212)
-    assert args.max_steps == 487
+    args = build_trl_sft_args(config, tmp_path, 61224)
+    assert args.max_steps == 479
     assert args.warmup_steps == 15
     with pytest.raises(ValueError, match="repeat"):
-        build_trl_sft_args(replace(config, max_steps=488), tmp_path, 62212)
+        build_trl_sft_args(replace(config, max_steps=480), tmp_path, 61224)
 
 
 @pytest.mark.parametrize("num_workers", [0, 2])

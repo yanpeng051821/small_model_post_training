@@ -1,0 +1,168 @@
+{
+  "artifact": "gate0b-16k-derived-a",
+  "artifacts": {
+    "length_filtered_train.jsonl": {
+      "count": 984,
+      "sha256": "a022a5ecd2eb411463f9c10602de5362f84af129b2fc344488d8b62a2949b5c8"
+    },
+    "length_filtered_validation.jsonl": {
+      "count": 32,
+      "sha256": "6f2bab92ec5e7369a9b92d929b2019a2b5eda1f7d524e5be9b089ea277428df5"
+    },
+    "rejected.jsonl": {
+      "count": null,
+      "sha256": "3cc2836105a3686bca89ff98edeedde490fbb354433741ddc2fd076d0d7117f5"
+    },
+    "review_samples.jsonl": {
+      "count": null,
+      "sha256": "a4042aa2272574318bf814208377c413af5016c9b2adc65276e3ef48fd50f144"
+    },
+    "train.jsonl": {
+      "count": 61224,
+      "sha256": "34f919f75ef49dcb45d2fa6bead80fa93667d04f709de48653a31f0fe2de3439"
+    },
+    "validation.jsonl": {
+      "count": 1968,
+      "sha256": "60bbe71d35d86504527ee30860ad54ff83745de1549196c27ba86ea3678f3ff9"
+    }
+  },
+  "counts": {
+    "train": {
+      "filtered_count": 984,
+      "kept_count": 61224,
+      "parent_count": 62208
+    },
+    "validation": {
+      "filtered_count": 32,
+      "kept_count": 1968,
+      "parent_count": 2000
+    }
+  },
+  "created_at": "2026-09-11T01:59:39.027272+00:00",
+  "length_filter": {
+    "max_length": 16384,
+    "method": "deterministic_filter_from_frozen_gate0b_artifacts",
+    "parent_manifest_path": "/workspace/small_model_post_training/independent_implementation/artifacts/gate0b/data_manifest.json",
+    "parent_manifest_sha256": "e198287a46b3e9f9cb7ee08a189aeba967e3aad9f0806bb22ec997862db09fa8",
+    "quality_reaudit": false,
+    "reason": "A100-80GB longest-sample training probe failed at 22295 tokens; 16384-token probe passed",
+    "truncation": false
+  },
+  "parent_artifacts": {
+    "rejected.jsonl": "3cc2836105a3686bca89ff98edeedde490fbb354433741ddc2fd076d0d7117f5",
+    "review_samples.jsonl": "a4042aa2272574318bf814208377c413af5016c9b2adc65276e3ef48fd50f144",
+    "train.jsonl": "9a6852f5b5399a178cf403372789bbcb06c2ab9a4e474b5839eb56616b43df66",
+    "validation.jsonl": "18b56115fd332838edecd9606cd67fd67cdcf5a50280a2a07339d796424cb8c6"
+  },
+  "rejected": {
+    "count": 29525,
+    "sha256": "3cc2836105a3686bca89ff98edeedde490fbb354433741ddc2fd076d0d7117f5"
+  },
+  "review": {
+    "count": 50,
+    "sha256": "a4042aa2272574318bf814208377c413af5016c9b2adc65276e3ef48fd50f144"
+  },
+  "settings": {
+    "accepted_review_size": 20,
+    "max_length": 16384,
+    "ngram_size": 8,
+    "rejected_review_size_per_reason": 3,
+    "split_salt": "independent-sft-v1",
+    "validation_size": 2000
+  },
+  "source": {
+    "dataset": "open-r1/OpenR1-Math-220k",
+    "derived_from_manifest_sha256": "e198287a46b3e9f9cb7ee08a189aeba967e3aad9f0806bb22ec997862db09fa8",
+    "environment": {
+      "datasets": "3.6.0",
+      "python": "3.11.9",
+      "transformers": "4.52.3"
+    },
+    "evaluation_sources": {
+      "arc_challenge": {
+        "field": "question",
+        "fingerprint": "a4361c3f3e560fcd",
+        "name": "ARC-Challenge",
+        "path": "allenai/ai2_arc",
+        "revision": "210d026faf9955653af8916fad021475a3f00453",
+        "rows": 1172,
+        "split": "test"
+      },
+      "gsm8k": {
+        "field": "question",
+        "fingerprint": "59ec1b7f9357c7a2",
+        "name": "main",
+        "path": "openai/gsm8k",
+        "revision": "740312add88f781978c0658806c59bc2815b9866",
+        "rows": 1319,
+        "split": "test"
+      },
+      "hellaswag": {
+        "field": "ctx",
+        "fingerprint": "71a62ba9d49be089",
+        "name": null,
+        "path": "Rowan/hellaswag",
+        "revision": "218ec52e09a7e7462a5400043bb9a69a41d06b76",
+        "rows": 10042,
+        "split": "validation"
+      },
+      "math500": {
+        "field": "problem",
+        "fingerprint": "f3124375297911ba",
+        "name": null,
+        "path": "HuggingFaceH4/MATH-500",
+        "revision": "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be",
+        "rows": 500,
+        "split": "test"
+      },
+      "mmlu": {
+        "field": "question",
+        "fingerprint": "436299c1c09696bb",
+        "name": "all",
+        "path": "cais/mmlu",
+        "revision": "c30699e8356da336a370243923dbaf21066bb9fe",
+        "rows": 14042,
+        "split": "test"
+      }
+    },
+    "fingerprint": "ef5cefa19fe8a27b",
+    "frozen_candidate": true,
+    "limited_rows": null,
+    "manual_exclusions": {
+      "count": 4,
+      "sha256": "342900c10c63270a2bfc95c6316b4fa2e102137b5c26368cf31a23f53c516cde"
+    },
+    "revision": "e4e141ec9dea9f8326f4d347be56105859b2bd68",
+    "rows": 93733,
+    "tokenizer": "Qwen/Qwen3-0.6B-Base",
+    "tokenizer_chat_template_sha256": "87a2728cb8dc9fe424d624542f6060ec05a1d285ebbec578bb078900e33396b5",
+    "tokenizer_revision": "311c62e88814bff7206909ccd330bab0a784743b",
+    "tokenizer_special_tokens": {
+      "additional_special_tokens": [
+        "<|im_start|>",
+        "<|im_end|>",
+        "<|object_ref_start|>",
+        "<|object_ref_end|>",
+        "<|box_start|>",
+        "<|box_end|>",
+        "<|quad_start|>",
+        "<|quad_end|>",
+        "<|vision_start|>",
+        "<|vision_end|>",
+        "<|vision_pad|>",
+        "<|image_pad|>",
+        "<|video_pad|>"
+      ],
+      "eos_token": "<|endoftext|>",
+      "pad_token": "<|endoftext|>"
+    }
+  },
+  "train": {
+    "count": 61224,
+    "sha256": "34f919f75ef49dcb45d2fa6bead80fa93667d04f709de48653a31f0fe2de3439"
+  },
+  "validation": {
+    "count": 1968,
+    "sha256": "60bbe71d35d86504527ee30860ad54ff83745de1549196c27ba86ea3678f3ff9"
+  }
+}

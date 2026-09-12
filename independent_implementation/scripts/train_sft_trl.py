@@ -26,6 +26,7 @@ from post_training_core.trl_reference import (
     frozen_epoch_indices,
 )
 from post_training_core.trl_training import (
+    CudaMemoryTelemetryCallback,
     FrozenOrderSFTTrainer,
     SaveAndStopCallback,
     build_trl_sft_args,
@@ -103,8 +104,13 @@ def main() -> int:
     if args.dry_run:
         print(json.dumps(manifest, indent=2))
         return 0
+    memory_callback = None
     try:
         set_reproducible_seed(config.seed)
+        memory_callback = CudaMemoryTelemetryCallback(
+            args.output_dir / "cuda_memory.jsonl", run_id=args.output_dir.name
+        )
+        memory_callback.reset_peaks()
         tokenizer = AutoTokenizer.from_pretrained(
             config.model_name_or_path, revision=config.model_revision
         )
@@ -129,8 +135,12 @@ def main() -> int:
             data_collator=DataCollatorForLanguageModeling(
                 config.pad_token_id, completion_only_loss=True
             ),
-            callbacks=[SaveAndStopCallback(args.stop_after_steps)],
+            callbacks=[
+                SaveAndStopCallback(args.stop_after_steps),
+                memory_callback,
+            ],
         )
+        memory_callback.record("after_model_placement", training_args, trainer.state)
         result = trainer.train(
             resume_from_checkpoint=str(args.resume_from_checkpoint)
             if args.resume_from_checkpoint
@@ -138,20 +148,43 @@ def main() -> int:
         )
         completed = trainer.state.global_step == training_args.max_steps
         if completed:
+            memory_callback.record("before_final_model_save", training_args, trainer.state)
             model.config.use_cache = True
             trainer.save_model(args.output_dir / "final_model")
             tokenizer.save_pretrained(args.output_dir / "final_model")
+            memory_callback.record("after_final_model_save", training_args, trainer.state)
+        memory_callback.record("before_trainer_state_save", training_args, trainer.state)
         trainer.save_state()
+        memory_callback.record("after_trainer_state_save", training_args, trainer.state)
+        memory_summary = memory_callback.summary()
+        atomic_write_json(args.output_dir / "cuda_memory_summary.json", memory_summary)
+        metrics = dict(result.metrics)
+        if memory_summary["records"]:
+            metrics.update(
+                {
+                    "cuda_peak_allocated_gib": memory_summary.get(
+                        "peak_allocated_gib"
+                    ),
+                    "cuda_peak_reserved_gib": memory_summary.get(
+                        "peak_reserved_gib"
+                    ),
+                }
+            )
         manifest.update(
             status="completed" if completed else "paused",
             global_step=trainer.state.global_step,
-            metrics=result.metrics,
+            metrics=metrics,
+            cuda_memory=memory_summary,
             environment=collect_environment(root),
         )
     except BaseException:
         manifest.update(status="failed", traceback=traceback.format_exc())
         raise
     finally:
+        if memory_callback is not None and "cuda_memory" not in manifest:
+            memory_summary = memory_callback.summary()
+            manifest["cuda_memory"] = memory_summary
+            atomic_write_json(args.output_dir / "cuda_memory_summary.json", memory_summary)
         manifest["finished_at"] = utc_now()
         atomic_write_json(manifest_path, manifest)
         atomic_write_json(attempt_path, manifest)

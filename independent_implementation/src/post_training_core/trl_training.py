@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import math
+from datetime import UTC, datetime
 from pathlib import Path
 
 import torch
@@ -28,8 +29,19 @@ class RemainingIndices(Sampler):
 class FrozenOrderSFTTrainer(SFTTrainer):
     _resume_offset = 0
 
+    def _memory_telemetry(self):
+        return next(
+            (
+                callback
+                for callback in self.callback_handler.callbacks
+                if isinstance(callback, CudaMemoryTelemetryCallback)
+            ),
+            None,
+        )
+
     def train(self, resume_from_checkpoint=None, **kwargs):
         self._resume_offset = 0
+        self._telemetry_micro_step = 0
         if resume_from_checkpoint:
             state = json.loads(
                 (Path(resume_from_checkpoint) / "trainer_state.json").read_text()
@@ -45,6 +57,44 @@ class FrozenOrderSFTTrainer(SFTTrainer):
             if self._resume_offset >= len(self.train_dataset):
                 raise ValueError("resume position is outside the frozen epoch")
         return super().train(resume_from_checkpoint=resume_from_checkpoint, **kwargs)
+
+    def create_optimizer(self):
+        optimizer = super().create_optimizer()
+        telemetry = self._memory_telemetry()
+        if telemetry is not None:
+            telemetry.record("after_optimizer_construction", self.args, self.state)
+        return optimizer
+
+    def training_step(self, model, inputs, num_items_in_batch=None):
+        telemetry = self._memory_telemetry()
+        micro_step = self._telemetry_micro_step
+        trace_window = micro_step < self.args.gradient_accumulation_steps
+        if telemetry is not None and trace_window:
+            telemetry.record("before_forward_backward", self.args, self.state, micro_step)
+        try:
+            return super().training_step(model, inputs, num_items_in_batch)
+        finally:
+            if telemetry is not None and trace_window:
+                telemetry.record("after_forward_backward", self.args, self.state, micro_step)
+            self._telemetry_micro_step += 1
+
+    def evaluate(self, *args, **kwargs):
+        telemetry = self._memory_telemetry()
+        if telemetry is not None:
+            telemetry.record("before_evaluation", self.args, self.state)
+        result = super().evaluate(*args, **kwargs)
+        if telemetry is not None:
+            telemetry.record("after_evaluation", self.args, self.state)
+        return result
+
+    def _save_checkpoint(self, model, trial):
+        telemetry = self._memory_telemetry()
+        if telemetry is not None:
+            telemetry.record("before_checkpoint_save", self.args, self.state)
+        result = super()._save_checkpoint(model, trial)
+        if telemetry is not None:
+            telemetry.record("after_checkpoint_save", self.args, self.state)
+        return result
 
     def _get_train_sampler(self, train_dataset=None):
         source = self.train_dataset if train_dataset is None else train_dataset
@@ -102,6 +152,94 @@ class SaveAndStopCallback(TrainerCallback):
         if state.global_step >= state.max_steps:
             control.should_save = True
         return control
+
+
+class CudaMemoryTelemetryCallback(TrainerCallback):
+    """Persist allocator memory at named phases without changing training semantics."""
+
+    _GIB = 1024**3
+
+    def __init__(self, output_path: Path, run_id: str = "unknown"):
+        self.output_path = Path(output_path)
+        self.run_id = run_id
+        self.records = []
+        if self.output_path.is_file():
+            self.records = [
+                json.loads(line)
+                for line in self.output_path.read_text(encoding="utf-8").splitlines()
+                if line.strip()
+            ]
+
+    def reset_peaks(self):
+        if torch.cuda.is_available():
+            torch.cuda.reset_peak_memory_stats()
+
+    def record(self, phase, args=None, state=None, micro_step=None):
+        if not torch.cuda.is_available():
+            return
+        device_index = torch.cuda.current_device()
+        allocated = torch.cuda.memory_allocated()
+        reserved = torch.cuda.memory_reserved()
+        peak_allocated = torch.cuda.max_memory_allocated()
+        peak_reserved = torch.cuda.max_memory_reserved()
+        free_bytes, total_bytes = torch.cuda.mem_get_info()
+        record = {
+            "timestamp": datetime.now(UTC).isoformat(),
+            "run_id": self.run_id,
+            "rank": getattr(args, "process_index", 0),
+            "device": f"cuda:{device_index}",
+            "phase": phase,
+            "optimizer_step": getattr(state, "global_step", None),
+            "micro_step": micro_step,
+            "allocated_bytes": allocated,
+            "reserved_bytes": reserved,
+            "peak_allocated_bytes": peak_allocated,
+            "peak_reserved_bytes": peak_reserved,
+            "free_bytes": free_bytes,
+            "total_bytes": total_bytes,
+            "allocated_gib": allocated / self._GIB,
+            "reserved_gib": reserved / self._GIB,
+            "peak_allocated_gib": peak_allocated / self._GIB,
+            "peak_reserved_gib": peak_reserved / self._GIB,
+            "free_gib": free_bytes / self._GIB,
+            "total_gib": total_bytes / self._GIB,
+        }
+        self.records.append(record)
+        self.output_path.parent.mkdir(parents=True, exist_ok=True)
+        with self.output_path.open("a", encoding="utf-8", newline="\n") as handle:
+            handle.write(json.dumps(record, sort_keys=True) + "\n")
+
+    def on_pre_optimizer_step(self, args, state, control, **kwargs):
+        self.record("before_optimizer_step", args, state)
+
+    def on_optimizer_step(self, args, state, control, **kwargs):
+        self.record("after_optimizer_step", args, state)
+
+    def on_step_end(self, args, state, control, **kwargs):
+        self.record("after_zero_grad", args, state)
+        if state.global_step % max(1, args.logging_steps) == 0:
+            self.record("optimizer_step_interval", args, state)
+        return control
+
+    def summary(self):
+        if not self.records:
+            return {"enabled": torch.cuda.is_available(), "records": 0}
+        last = self.records[-1]
+        peak_record = max(
+            self.records, key=lambda record: record["peak_allocated_gib"]
+        )
+        return {
+            "enabled": True,
+            "records": len(self.records),
+            "last_global_step": last["optimizer_step"],
+            "final_allocated_gib": last["allocated_gib"],
+            "final_reserved_gib": last["reserved_gib"],
+            "peak_allocated_gib": peak_record["peak_allocated_gib"],
+            "peak_reserved_gib": max(
+                record["peak_reserved_gib"] for record in self.records
+            ),
+            "peak_phase": peak_record["phase"],
+        }
 
 
 def build_trl_sft_args(

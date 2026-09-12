@@ -1,6 +1,6 @@
 # Gate 0：独立 SFT 受控实验合同
 
-> 状态：Gate 0A、Gate 0B Local Readiness 与全量自动数据审计已完成；人工数据复核、B0、服务器 smoke、正式训练与评测仍为 Draft
+> 状态（2026-09-12）：Gate 0A、数据人工复核、B0、首 batch shadow、20-step smoke 与 TRL 100-step 恢复 pilot 已完成；正式 S1 与训练后配对评测仍为 `NO-GO`。S1 启动前的剩余硬门见 [`S1_PRELAUNCH_PLAN.md`](S1_PRELAUNCH_PLAN.md)。
 >
 > 规则：先写目标、假设和验收标准，再看正式训练结果。`TBD` 未关闭前，不启动真实模型正式训练。
 >
@@ -14,7 +14,7 @@
 | 创建日期 | 2026-08-23 |
 | 负责人 | 学习者本人 |
 | 代码版本 | `TBD` |
-| 合同状态 | Gate 0A、Gate 0B local readiness、全量自动数据审计 complete；人工复核和服务器阶段 Draft |
+| 合同状态 | 数据、B0 与工程 pilot 证据已完成；正式 S1 与训练后配对评测尚未批准 |
 
 ## 2. 第一组问题：目标与假设
 
@@ -251,7 +251,7 @@ MATH-500 和 GSM8K 必须分开启动，因为两者 generation config 不同。
 | optimizer | AdamW：`betas=(0.9, 0.999)`、`eps=1e-8`、`weight_decay=0.0`；首次实验不引入参数分组差异 |
 | learning rate | `4e-5` |
 | scheduler | cosine with minimum learning-rate ratio `0.1` |
-| warmup | 总 optimizer steps 的 `3%`，按 Transformers `TrainingArguments.get_warmup_steps` 向上取整；S1 共 487 steps，因此是 15 steps |
+| warmup | 总 optimizer steps 的 `3%`，按 Transformers `TrainingArguments.get_warmup_steps` 向上取整；16K 冻结 artifact 有 61,224 条训练记录，S1 共 479 steps，因此是 15 steps |
 | max grad norm | `0.2` |
 | epochs | 1 个完整 train split epoch |
 | effective batch | 每个完整 optimizer window 为 128 条 sequence；S1 单轮最后一个 window 是剩余 4 条，不跨 epoch 填充；不同长度的有效 token 数另外记录 |

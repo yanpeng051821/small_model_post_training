@@ -1,12 +1,12 @@
 # Gate 0B：真实 SFT 工程实验执行计划
 
-> 状态：In progress；阶段 A 与阶段 B 自动审计已完成，阶段 B 人工复核和阶段 C-H 尚未完成
+> 状态（2026-09-12）：阶段 A-E、完整 B0 与 TRL 100-step 恢复 pilot 已完成；正式 S1 与阶段 H 的同条件配对评测尚未执行，保持 `NO-GO`。当前唯一准入路径见 [`S1_PRELAUNCH_PLAN.md`](S1_PRELAUNCH_PLAN.md)。
 >
 > 本文只回答“如何实施”。模型、数据、指标、控制变量和结果判定以 [`EXPERIMENT_CONTRACT.md`](EXPERIMENT_CONTRACT.md) 为准；执行过程中不得用本文覆盖实验合同。
 
 ## 1. 本阶段目标
 
-使用冻结版本的 `Qwen3-0.6B-Base` 和经过审计的 OpenR1-Math 样本，亲手搭建一条不依赖 `Trainer` 的真实 SFT 训练链路，并以 Open-R1/TRL 为参考实现完成数值对照、训练前后同条件评测、断点恢复和证据归档。
+使用冻结版本的 `Qwen3-0.6B-Base` 和经过审计的 OpenR1-Math 样本，完成独立计算链路的数值验证，并以锁定 Open-R1/TRL 训练栈执行正式 S1；训练前后使用同条件评测、断点恢复和证据归档完成闭环。
 
 完成后应当能够回答：
 
