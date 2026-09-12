@@ -1,0 +1,17 @@
+{
+  "config": "/workspace/s1-preflight-20260912/independent_implementation/configs/gate0b/sft_train_16k.yaml",
+  "config_hash": "e7e62bcd06747c0b02478b9b7b2f5921aa402955759d0325968eecf81372aaa0",
+  "created_at": "2026-09-12T20:32:56.538409+00:00",
+  "mean_nll": 0.5466139801139256,
+  "model": "runs/gate0b-16k-s1/final_model",
+  "model_revision": null,
+  "record_count": 1968,
+  "records": "/workspace/s1-preflight-20260912/independent_implementation/runs/gate0b-16k-s1/evaluation/validation-nll/records.jsonl",
+  "records_sha256": "d94b4007f11ff3eef620687aca6ebc0ea24bb21fdacd138ee727f7b56e8b5805",
+  "tokenizer_eos_token_id": 151643,
+  "tokenizer_pad_token_id": 151643,
+  "total_loss_sum": 6213685.80065918,
+  "valid_tokens": 11367594,
+  "validation_artifact": "/workspace/small_model_post_training/independent_implementation/artifacts/gate0b-16k-derived-a/validation.jsonl",
+  "validation_artifact_sha256": "60bbe71d35d86504527ee30860ad54ff83745de1549196c27ba86ea3678f3ff9"
+}

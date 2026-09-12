@@ -1,0 +1,38 @@
+{
+  "command": [
+    "lighteval",
+    "vllm",
+    "model_name=runs/gate0b-16k-s1/final_model,dtype=bfloat16,max_model_length=4096,gpu_memory_utilization=0.8,seed=1234,generation_parameters={max_new_tokens:256,temperature:0.0,seed:1234}",
+    "leaderboard|gsm8k|4|0",
+    "--output-dir",
+    "/workspace/s1-preflight-20260912/independent_implementation/runs/gate0b-16k-s1/evaluation/evals/gsm8k",
+    "--save-details"
+  ],
+  "completed_at": "2026-09-12T20:39:00.214810+00:00",
+  "contract_path": "/workspace/s1-preflight-20260912/independent_implementation/configs/gate0b/evaluation.yaml",
+  "contract_sha256": "1c5f027244143c1af0f49e19068b7031b15c606ec1575f2e0134c72d398295fc",
+  "contract_version": "gate0b-eval-v1",
+  "created_at": "2026-09-12T20:36:02.649567+00:00",
+  "lighteval_commit": "d3da6b9bbf38104c8b5e1acc86f83541f9a502d1",
+  "math_verify": "0.5.2",
+  "model": "runs/gate0b-16k-s1/final_model",
+  "model_args": {
+    "dtype": "bfloat16",
+    "generation_parameters": {
+      "max_new_tokens": 256,
+      "seed": 1234,
+      "temperature": 0.0
+    },
+    "gpu_memory_utilization": 0.8,
+    "max_model_length": 4096,
+    "seed": 1234
+  },
+  "model_revision": null,
+  "returncode": 0,
+  "status": "completed",
+  "suite": "gsm8k",
+  "tasks": [
+    "leaderboard|gsm8k|4|0"
+  ],
+  "use_chat_template": false
+}
