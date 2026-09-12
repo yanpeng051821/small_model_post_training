@@ -9,7 +9,7 @@
 
 The main engineering problems encountered during the pilot are recorded in their original evidence files and are consolidated below. The first 20-step pilot completed the training-pipeline gate, but its generation gate failed because the checkpoint did not emit EOS within the smoke-test budgets. The later 50-step run exposed worker/file-descriptor problems and was then relaunched with the corrected source path and `dataloader_num_workers=0`. A partial run reached real forward/backward/optimizer steps without NaNs, but it was intentionally interrupted while estimating cost and throughput.
 
-This log is an engineering record, not a claim that the final 50-step run completed. Its final state remains **pending remote log verification** because the replacement server credentials were not accepted during the local follow-up check.
+This log is an engineering record, not a claim that the final 50-step run completed. The final run was verified as still running on 2026-09-12: it had logged about 16 optimizer steps, used 79,001 MiB of 81,920 MiB, and had not produced an exit marker. Completion remains pending.
 
 ## Incident Table
 
@@ -21,7 +21,8 @@ This log is an engineering record, not a claim that the final 50-step run comple
 | D4 | FlashAttention emitted a warning during model setup. | The model initially loaded in FP32 while the training path used AMP/BF16; the warning was about the attention kernel path, not a loss or gradient exception. | First environment-sync logs and the `gate0b-16k-pilot20-summary.json` note. | Pin/install the server dependencies, including `flash-attn`; verify the actual attention backend in the final run. | Treat as a performance/backend warning unless a later run shows numerical or correctness impact. |
 | D5 | GPU memory was close to the 80 GB limit and each optimizer step was slow. | A 16K sequence length with Qwen3-0.6B, optimizer state, activations, and evaluation/checkpoint overhead is a tight fit on an 80 GB card. | Partial corrected run: about 79,001 MiB of 81,920 MiB used, GPU utilization about 95–100%, roughly 65–70 seconds per optimizer step. | Keep the pilot at 16K only for the intended end-to-end test; do not claim that 80 GB is comfortable for a longer production run. | This is capacity/throughput evidence, not evidence of a bad training algorithm. |
 | D6 | The corrected partial run ended with `KeyboardInterrupt`. | It was intentionally stopped after roughly 14 optimizer steps to estimate cost and avoid spending the rental budget before deciding whether to continue. | `/workspace/pilot100-step50-v2.log`; `/workspace/pilot100-step50-v2.exit`; run directory `gate0b-16k-pilot100-interrupted`. | Keep the run marked interrupted/failed in its manifest; do not reinterpret it as a completed 50-step result. | Metrics before the interrupt demonstrate that forward/backward/optimizer steps were executing, but do not support a final training claim. |
-| D7 | Final background 50-step attempt has no locally confirmed terminal status yet. | The command was launched with `nohup`, correct `PYTHONPATH`, `dataloader_num_workers=0`, offline model cache, and unbuffered logging. Follow-up SSH authentication failed after the instance credential changed or became unavailable. | `/workspace/pilot100-step50-final.log`; `/workspace/pilot100-step50-final.exit`; output directory `/workspace/repo-inspection/remote-repo/independent_implementation/runs/gate0b-16k-pilot100`. | Reconnect to the active instance and inspect the exit marker, tail log, `run_manifest.json`, checkpoint directory, and validation/evaluation artifacts. | Until D7 is checked, the final pilot status must remain unknown. |
+| D7 | Final background 50-step attempt was initially unreachable from the audit session. | One character at the end of the server password was misread from the connection screenshot. The server and SSH port were healthy. | Successful SSH connection to `180.127.11.169:33328`; running process PID 2703; `/workspace/pilot100-step50-final.log`; run manifest status `running`. | Correct the credential transcription and verify the process, GPU, log, and manifest directly. | This was an access/observation problem and had no effect on the detached training process. |
+| D8 | `nvidia-smi` reported about 79 GB used, but the run did not record allocator-level memory telemetry. | `nvidia-smi` cannot distinguish live tensor allocations from PyTorch's reserved caching pool. It also cannot show the exact phase that established the peak. | A100 observation after about 16 optimizer steps: 79,001 MiB used, 84% utilization, no OOM; log contained valid loss and gradient metrics. | Add structured CUDA memory telemetry before the next pilot, as specified below. | Current evidence shows the run fits and has passed AdamW's first-step state allocation, but it is insufficient for leak diagnosis or capacity planning. |
 
 ## Existing Experiment Evidence
 
@@ -69,6 +70,42 @@ The last two items are evidence-collection gaps, not reasons to hide or reinterp
 4. Run validation NLL on the same fixed validation artifact used by the base run.
 5. Run generation readiness and record EOS, empty-output, and runtime-error counts.
 6. Copy the final log/manifest/summary or at least their SHA256 checksums into `evidence/server/` before deleting the server instance.
+
+## Open TODO: Structured CUDA Memory Telemetry
+
+**Priority:** required before the next training configuration or model-size change; do not modify the currently running pilot.
+
+The next runner revision must record GPU memory as structured metrics rather than relying only on terminal output or `nvidia-smi`. At minimum, each record must contain:
+
+- timestamp, run ID, rank/device, optimizer step, micro-step, and phase;
+- `torch.cuda.memory_allocated()`;
+- `torch.cuda.memory_reserved()`;
+- `torch.cuda.max_memory_allocated()`;
+- `torch.cuda.max_memory_reserved()`;
+- free and total device memory from `torch.cuda.mem_get_info()`.
+
+Required observation points:
+
+1. after model placement;
+2. after optimizer construction but before its first step;
+3. before and after the first forward/backward micro-batch;
+4. immediately before and after the first `optimizer.step()`;
+5. after `zero_grad()`;
+6. once per optimizer-step logging interval;
+7. before and after evaluation and checkpoint saving.
+
+The detailed micro-batch trace should be configurable and limited to the first accumulation window or an explicit diagnostic window. Logging every micro-batch for the full run would produce noisy evidence and may add synchronization overhead.
+
+Acceptance criteria:
+
+- metrics are written to JSONL or the existing trainer metrics sink and survive process exit;
+- the first optimizer step can be compared before/after to expose lazy AdamW state allocation;
+- a leak probe can distinguish monotonically growing allocated memory from a stable reserved cache;
+- peak memory is tied to a named phase rather than inferred from a single `nvidia-smi` snapshot;
+- single-GPU tests cover field names, units, disabled mode, and CPU/no-CUDA behavior;
+- distributed runs keep rank-specific records or explicitly aggregate them without hiding the maximum rank.
+
+For the current pilot, the 79 GB observation occurred after multiple optimizer steps. Therefore AdamW's lazy `m`/`v` state creation has already happened; it is not an unresolved first-step OOM risk for this run. The remaining concern is the small capacity margin and the lack of allocator-level evidence explaining how much of the 79 GB is allocated versus reserved.
 
 ## Logging Rule Going Forward
 

@@ -148,6 +148,8 @@ Any NaN/Inf, hash mismatch, missing EOS, failed reload, or nonzero exit is a har
 
 ## 9. 100-Step Pilot
 
+> **Open engineering gate:** before changing model size, sequence-length policy, optimizer, accumulation, or attention backend, add structured CUDA memory telemetry to the runner. Record allocated, reserved, peak allocated, peak reserved, and free/total memory at model placement, the first forward/backward, immediately before/after the first optimizer step, after zeroing gradients, and around evaluation/checkpointing. Keep a detailed micro-batch trace only for a configured diagnostic window. The acceptance criteria and the current A100 observation are recorded in `evidence/server/gate0b-trl-pilot-engineering-incidents-2026-09-12.md`.
+
 ```bash
 uv run sft-train \
   --config configs/gate0b/sft_pilot.yaml \
