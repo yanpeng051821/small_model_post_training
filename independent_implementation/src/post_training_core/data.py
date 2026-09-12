@@ -213,6 +213,7 @@ class IndexedTokenizedSFTDataset(Dataset):
         if limit is not None and limit <= 0:
             raise ValueError("dataset limit must be positive when provided")
         self._offsets: list[int] = []
+        self._sample_ids: list[str] = []
         self._stream = None
         sample_ids: set[str] = set()
         with self.path.open("rb") as stream:
@@ -241,6 +242,7 @@ class IndexedTokenizedSFTDataset(Dataset):
                     raise ValueError(f"duplicate sample_id: {sample_id}")
                 sample_ids.add(sample_id)
                 self._offsets.append(offset)
+                self._sample_ids.append(sample_id)
                 if limit is not None and len(self._offsets) >= limit:
                     break
         if not self._offsets:
@@ -254,6 +256,10 @@ class IndexedTokenizedSFTDataset(Dataset):
             self._stream = self.path.open("rb")
         self._stream.seek(self._offsets[index])
         return json.loads(self._stream.readline())
+
+    def sample_id_at(self, index: int) -> str:
+        """Return the indexed ID without reopening and decoding the JSONL record."""
+        return self._sample_ids[index]
 
     def __getstate__(self):
         state = self.__dict__.copy()

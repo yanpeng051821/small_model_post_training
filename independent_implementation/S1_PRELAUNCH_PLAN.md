@@ -46,6 +46,10 @@ formal S1 claim and not a substitute for paired MATH-500 evaluation.
 - [ ] Record the source commit, runtime-tree hash, contract hash, `uv.lock`
   hash, train hash, validation hash, tokenizer revision, and sample-order hash
   in the S1 dry-run manifest.
+- [ ] Run the CPU-compatible `train_sft_trl.py --dry-run` against the exact S1
+  config. It must complete without loading model weights or constructing the
+  GPU-only TRL `SFTConfig`, and must emit the expected `479` updates and `15`
+  warmup steps.
 
 ### 2. Integrate and verify allocator memory telemetry
 

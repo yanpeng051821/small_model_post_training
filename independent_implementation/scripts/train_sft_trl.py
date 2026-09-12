@@ -30,6 +30,7 @@ from post_training_core.trl_training import (
     FrozenOrderSFTTrainer,
     SaveAndStopCallback,
     build_trl_sft_args,
+    compute_trl_sft_schedule,
 )
 
 
@@ -51,14 +52,9 @@ def main() -> int:
         config.train_artifact, limit=config.train_sample_limit
     )
     indices = frozen_epoch_indices(source, seed=config.seed, limit=len(source))
-    dataset = OrderedCompletionMaskDataset(source, indices)
-    training_args = build_trl_sft_args(config, args.output_dir / "trainer", len(source))
-    if training_args.world_size != 1 or training_args.n_gpu > 1:
-        raise ValueError(
-            "S1 is single GPU; set CUDA_VISIBLE_DEVICES to exactly one GPU"
-        )
+    total_steps, warmup_steps = compute_trl_sft_schedule(config, len(source))
     order = [
-        {"position": i, "sample_id": source[index]["sample_id"]}
+        {"position": i, "sample_id": source.sample_id_at(index)}
         for i, index in enumerate(indices)
     ]
     order_text = "".join(json.dumps(row, sort_keys=True) + "\n" for row in order)
@@ -70,8 +66,8 @@ def main() -> int:
         "validation_sha256": sha256_file(config.validation_artifact),
         "sample_order_sha256": hashlib.sha256(order_text.encode()).hexdigest(),
         "record_count": len(source),
-        "max_steps": training_args.max_steps,
-        "warmup_steps": training_args.warmup_steps,
+        "max_steps": total_steps,
+        "warmup_steps": warmup_steps,
     }
     manifest_path = args.output_dir / "run_manifest.json"
     if args.resume_from_checkpoint:
@@ -104,6 +100,12 @@ def main() -> int:
     if args.dry_run:
         print(json.dumps(manifest, indent=2))
         return 0
+    training_args = build_trl_sft_args(config, args.output_dir / "trainer", len(source))
+    if training_args.world_size != 1 or training_args.n_gpu > 1:
+        raise ValueError(
+            "S1 is single GPU; set CUDA_VISIBLE_DEVICES to exactly one GPU"
+        )
+    dataset = OrderedCompletionMaskDataset(source, indices)
     memory_callback = None
     try:
         set_reproducible_seed(config.seed)

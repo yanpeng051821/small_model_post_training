@@ -27,6 +27,7 @@ from post_training_core.trl_training import (
     FrozenOrderSFTTrainer,
     SaveAndStopCallback,
     build_trl_sft_args,
+    compute_trl_sft_schedule,
 )
 
 
@@ -77,6 +78,17 @@ def test_cuda_memory_telemetry_is_noop_without_cuda(tmp_path, monkeypatch):
     )
     assert callback.summary() == {"enabled": False, "records": 0}
     assert not callback.output_path.exists()
+
+
+def test_schedule_for_full_16k_s1_uses_479_updates_and_15_warmup_steps(tmp_path):
+    config = _config(tmp_path)
+    config = replace(
+        config,
+        per_device_train_batch_size=1,
+        gradient_accumulation_steps=128,
+        warmup_ratio=0.03,
+    )
+    assert compute_trl_sft_schedule(config, 61_224) == (479, 15)
 
 
 def _config(tmp_path):
@@ -249,6 +261,31 @@ def test_formal_cli_runs_pauses_and_resumes_offline(tmp_path):
         "--output-dir",
         str(run_dir),
     ]
+    gpu_only_dry_config = dict(config)
+    gpu_only_dry_config.update(device="cuda", dtype="bfloat16")
+    dry_config_path = tmp_path / "dry-config.yaml"
+    dry_config_path.write_text(yaml.safe_dump(gpu_only_dry_config), encoding="utf-8")
+    dry_run = subprocess.run(
+        [
+            command[0],
+            command[1],
+            "--config",
+            str(dry_config_path),
+            "--output-dir",
+            str(tmp_path / "dry-run"),
+            "--dry-run",
+        ],
+        cwd=root,
+        capture_output=True,
+        text=True,
+        timeout=90,
+    )
+    assert dry_run.returncode == 0, dry_run.stdout + dry_run.stderr
+    dry_manifest = json.loads(
+        (tmp_path / "dry-run" / "run_manifest.json").read_text()
+    )
+    assert dry_manifest["status"] == "dry_run"
+    assert dry_manifest["identity"]["max_steps"] == 2
     paused = subprocess.run(
         command + ["--stop-after-steps", "1"],
         cwd=root,

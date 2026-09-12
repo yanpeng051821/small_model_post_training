@@ -27,8 +27,15 @@ review_samples.jsonl
 
 ## 2. Environment
 
+> The server image must provide `uv`; do not reuse a `.venv` copied from a
+> different checkout. Confirm `command -v uv` first. If it is absent, install
+> uv, then run the following commands from the exact Git commit recorded in
+> the S1 preflight manifest. This keeps the editable `post_training_core`
+> import bound to the current checkout rather than a previous data-disk copy.
+
 ```bash
 set -euo pipefail
+command -v uv
 uv sync --frozen --all-groups
 uv pip install -r requirements-server.txt
 uv pip install setuptools

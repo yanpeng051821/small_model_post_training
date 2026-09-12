@@ -242,9 +242,10 @@ class CudaMemoryTelemetryCallback(TrainerCallback):
         }
 
 
-def build_trl_sft_args(
-    config: ExperimentConfig, output_dir: Path, record_count: int
-) -> SFTConfig:
+def compute_trl_sft_schedule(
+    config: ExperimentConfig, record_count: int
+) -> tuple[int, int]:
+    """Return frozen optimizer and warmup steps without constructing GPU arguments."""
     if config.num_train_epochs != 1:
         raise ValueError("frozen TRL runner supports exactly one epoch")
     if config.parameter_dtype != "float32":
@@ -256,6 +257,13 @@ def build_trl_sft_args(
     if config.max_steps is not None and config.max_steps > complete_steps:
         raise ValueError("max_steps would repeat the frozen epoch")
     total_steps = config.max_steps or complete_steps
+    return total_steps, math.ceil(total_steps * config.warmup_ratio)
+
+
+def build_trl_sft_args(
+    config: ExperimentConfig, output_dir: Path, record_count: int
+) -> SFTConfig:
+    total_steps, warmup_steps = compute_trl_sft_schedule(config, record_count)
     # Freeze the complete update count, including the short final window.
     return SFTConfig(
         output_dir=str(output_dir),
@@ -271,7 +279,7 @@ def build_trl_sft_args(
         weight_decay=config.weight_decay,
         lr_scheduler_type=config.scheduler_type,
         lr_scheduler_kwargs={"min_lr_rate": config.min_lr_ratio},
-        warmup_steps=math.ceil(total_steps * config.warmup_ratio),
+        warmup_steps=warmup_steps,
         max_grad_norm=config.max_grad_norm,
         bf16=config.dtype == "bfloat16",
         fp16=False,
