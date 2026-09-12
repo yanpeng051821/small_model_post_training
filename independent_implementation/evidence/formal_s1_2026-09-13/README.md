@@ -98,13 +98,15 @@ analysis are now mandatory before accepting or rejecting S1.
 ## 6. Generation health
 
 The final model reloaded in a fresh process and produced non-empty outputs for all
-four smoke prompts with no runtime error. All four generations reached the 256-token
-limit without emitting the configured stop token, so `eos_rate=0.0`.
+four smoke prompts with no runtime error. In the initial 256-token probe, all four
+generations reached the length limit without emitting the configured stop token.
+A follow-up probe increased only `max_new_tokens` to 2,048; all four generations
+then emitted the stop token, giving `eos_rate=1.0` with no runtime error.
 
-The command passed only because the frozen technical gate had
-`minimum_eos_rate=0.0`. Therefore this result proves loadability and generation,
-not satisfactory response termination. A longer and format-aware generation check
-is still required.
+This shows that the initial zero EOS rate was caused by an insufficient diagnostic
+token budget rather than an inability to terminate. It also shows that these simple
+answers are verbose enough to exceed 256 tokens, which remains a behavior-quality
+issue to inspect even though checkpoint loading and EOS behavior are functional.
 
 ## 7. Artifact locations
 
@@ -132,8 +134,8 @@ fc5ae98df2e062b3ea99029b93b4b13ac9e4c6e498f7956d119ef7874d07a02d
 2. Run the frozen 59-task regression panel for S1.
 3. Run `compare_lighteval_results.py` against the corresponding full B0 artifacts.
 4. Inspect the MATH smoke regressions and GSM8K improved/regressed subsets.
-5. Repeat generation health with a justified token budget and explicit response
-   completion checks.
+5. Inspect verbosity and answer-format behavior in the 2,048-token generation
+   records; EOS functionality itself has now passed at 4/4 prompts.
 6. Make the final accept/reject/iterate decision only after these results exist.
 
 ## 9. Evidence index
@@ -147,4 +149,6 @@ fc5ae98df2e062b3ea99029b93b4b13ac9e4c6e498f7956d119ef7874d07a02d
 - `b0_vs_s1_gsm8k.json`: full paired GSM8K comparison.
 - `b0_vs_s1_math500_smoke.json`: paired 20-question warning signal.
 - `generation_health_summary.json`: fresh-process generation gate result.
+- `generation_health_2048_summary.json`: follow-up showing 4/4 stop-token completion.
+- `generation_health_2048_records.jsonl`: outputs from the longer generation probe.
 - `training.log` and `training.exit`: formal launch output and exit status.
