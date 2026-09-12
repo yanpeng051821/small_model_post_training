@@ -286,6 +286,9 @@ def test_formal_cli_runs_pauses_and_resumes_offline(tmp_path):
     )
     assert dry_manifest["status"] == "dry_run"
     assert dry_manifest["identity"]["max_steps"] == 2
+    assert dry_manifest["identity"]["source_git_commit"]
+    assert dry_manifest["identity"]["uv_lock_sha256"]
+    assert dry_manifest["identity"]["tokenizer_revision"] == "test"
     paused = subprocess.run(
         command + ["--stop-after-steps", "1"],
         cwd=root,

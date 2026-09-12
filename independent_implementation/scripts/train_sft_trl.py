@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import subprocess
 import traceback
 from pathlib import Path
 
@@ -34,6 +35,19 @@ from post_training_core.trl_training import (
 )
 
 
+def current_git_commit(root: Path) -> str | None:
+    """Return the checked-out commit when this runner is launched from Git."""
+    completed = subprocess.run(
+        ["git", "-C", str(root), "rev-parse", "HEAD"],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if completed.returncode != 0:
+        return None
+    return completed.stdout.strip() or None
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, required=True)
@@ -59,9 +73,15 @@ def main() -> int:
     ]
     order_text = "".join(json.dumps(row, sort_keys=True) + "\n" for row in order)
     identity = {
+        "source_git_commit": current_git_commit(root),
         "config_hash": config.semantic_hash(),
         "runtime_tree_sha256": runtime_tree_hash(runtime_file_hashes(root)),
         "experiment_contract_sha256": sha256_file(root / "EXPERIMENT_CONTRACT.md"),
+        "uv_lock_sha256": sha256_file(root / "uv.lock"),
+        "model_name_or_path": config.model_name_or_path,
+        "model_revision": config.model_revision,
+        "tokenizer_name_or_path": config.model_name_or_path,
+        "tokenizer_revision": config.model_revision,
         "train_sha256": sha256_file(config.train_artifact),
         "validation_sha256": sha256_file(config.validation_artifact),
         "sample_order_sha256": hashlib.sha256(order_text.encode()).hexdigest(),
