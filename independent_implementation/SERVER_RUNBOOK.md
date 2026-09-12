@@ -2,6 +2,12 @@
 
 > Status: executed on 2026-09-11 on an A100-80GB host. See §11 for the launch recipe that actually worked, the required environment variables, and measured timings. Stop immediately when any earlier command returns nonzero. Commands assume a Linux CUDA host and the `independent_implementation` repository root.
 
+> **Formal S1 override:** the historical commands below that reference
+> `sft_train.yaml` or `sft-train` are not the formal S1 launch path. Follow
+> `S1_PRELAUNCH_PLAN.md` first, then use the dedicated
+> `configs/gate0b/sft_s1_16k.yaml` with `scripts/train_sft_trl.py`. The
+> pre-launch manifest fixes the exact source and data identity.
+
 After the full audit and human review pass, generate the handoff identity on the local machine from the completed full-audit manifest:
 
 ```powershell

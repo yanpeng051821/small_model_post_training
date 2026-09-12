@@ -37,19 +37,20 @@ formal S1 claim and not a substitute for paired MATH-500 evaluation.
 
 ### 1. Freeze the actual launch contract
 
-- [ ] Replace stale references to 62,208 records and 486/487 updates with the
+- [x] Replace stale references to 62,208 records and 486/487 updates with the
   verified 61,224-record, 479-update S1 contract.
-- [ ] Recompute the warmup from the actual total updates: `ceil(0.03 * 479) =
+- [x] Recompute the warmup from the actual total updates: `ceil(0.03 * 479) =
   15` updates.
-- [ ] Generate a dedicated `sft_s1_16k.yaml` with a new run ID and empty output
-  directory. It must start from the pinned B0 model, not any pilot checkpoint.
-- [ ] Record the source commit, runtime-tree hash, contract hash, `uv.lock`
+- [x] Generate a dedicated `sft_s1_16k.yaml` with a new run ID and empty output
+  directory. It starts from the pinned B0 model, not any pilot checkpoint.
+- [x] Record the source commit, runtime-tree hash, contract hash, `uv.lock`
   hash, train hash, validation hash, tokenizer revision, and sample-order hash
-  in the S1 dry-run manifest.
-- [ ] Run the CPU-compatible `train_sft_trl.py --dry-run` against the exact S1
+  in the S1 dry-run manifest: `evidence/pre_s1_readiness_2026-09-12/`
+  `s1_dry_run_manifest.json`.
+- [x] Run the CPU-compatible `train_sft_trl.py --dry-run` against the exact S1
   config. It must complete without loading model weights or constructing the
   GPU-only TRL `SFTConfig`, and must emit the expected `479` updates and `15`
-  warmup steps.
+  warmup steps. Completed on 2026-09-12; see `S1_DRY_RUN.md`.
 
 ### 2. Integrate and verify allocator memory telemetry
 

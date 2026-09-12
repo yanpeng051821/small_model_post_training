@@ -1,0 +1,23 @@
+{
+  "backend": "trl-0.18.0",
+  "created_at": "2026-09-12T08:52:17.448978+00:00",
+  "identity": {
+    "config_hash": "ded2458f55c770b124d91d2b6451050b127613f25fef50fb49528a7453801b50",
+    "experiment_contract_sha256": "ebe60d91edd1ce5e7383390c4ce55d40b1265abfe882667da4d1496aa0a54f7c",
+    "max_steps": 479,
+    "model_name_or_path": "Qwen/Qwen3-0.6B-Base",
+    "model_revision": "311c62e88814bff7206909ccd330bab0a784743b",
+    "record_count": 61224,
+    "runtime_tree_sha256": "f7c33914a856b119619adb824f8f6e9f32541e426e721bf77de89911b03af613",
+    "sample_order_sha256": "9af3e9338d993471846cc8de3bdca760eaf2f3242c5e536840df8cd5346c2910",
+    "source_git_commit": "e063e04ea5dcedaee4408cda994091d016a2a1c9",
+    "tokenizer_name_or_path": "Qwen/Qwen3-0.6B-Base",
+    "tokenizer_revision": "311c62e88814bff7206909ccd330bab0a784743b",
+    "train_sha256": "34f919f75ef49dcb45d2fa6bead80fa93667d04f709de48653a31f0fe2de3439",
+    "uv_lock_sha256": "f5544ae99bde8453e14f9a978526acbd36780c088087446f531c87bf3ae472d7",
+    "validation_sha256": "60bbe71d35d86504527ee30860ad54ff83745de1549196c27ba86ea3678f3ff9",
+    "warmup_steps": 15
+  },
+  "resume_from": null,
+  "status": "dry_run"
+}

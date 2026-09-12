@@ -10,7 +10,7 @@
 | 当前主线 | 独立 SFT 本机链路已关闭；当前执行 Gate 0B 真实 SFT 工程实验，关闭后再进入 token log-prob |
 | 当前理解路线 | 完整工程地图和真实样本数据流走读已验收；当前进入数据模块的自研实现、锁定版本 TRL/Open-R1 映射和输出对照；框架对照尚未验收 |
 | 基础模型 | Qwen3-0.6B-Base |
-| 主路线进度 | Gate 0A 与 Gate 0B 本地准入已关闭；全量数据审计、人工复核（50/50）与 16K 长度筛选 artifact 已冻结。服务器侧已完成 preflight、最长样本显存探针、1/5/20-step smoke、阶段 D 首 batch shadow、完整 B0，以及 TRL 100-step checkpoint-50→100 恢复 pilot。S1 归属固定 TRL 栈，自研 runner 为 S1-ind 同条件对照。正式 S1 仍为 `NO-GO`：先关闭 479-step 合同、allocator telemetry GPU 预飞行与 MATH-500 评测接口预飞行。 |
+| 主路线进度 | Gate 0A 与 Gate 0B 本地准入已关闭；全量数据审计、人工复核（50/50）与 16K 长度筛选 artifact 已冻结。服务器侧已完成 preflight、最长样本显存探针、1/5/20-step smoke、阶段 D 首 batch shadow、完整 B0，以及 TRL 100-step checkpoint-50→100 恢复 pilot。S1 归属固定 TRL 栈，自研 runner 为 S1-ind 同条件对照。479-step 合同和 CPU dry-run 已关闭；正式 S1 仍为 `NO-GO`，仅因 allocator telemetry GPU 预飞行与 MATH-500 评测接口预飞行尚未完成。 |
 | 运行子路线进度 | B1 训练已报告完成；配置、checkpoint、LightEval 和 B0/B1 对照证据待同步；B2 未运行 |
 | Baseline 信任状态 | B0 已按冻结合同实测并归档：MATH-500 `pass@1:1 = 43.2%`、`pass@1:4 = 44.9%`，GSM8K `qem 47.6%`，MMLU `54.5%`，ARC-Challenge `acc_norm 45.4%`，HellaSwag `acc_norm 53.3%`，全量 validation NLL `0.7805`（1,968 条）。历史 `26-28%` 的记录不可复现，已被实测值取代 |
 | 当前是否允许自定义实验 | 允许启动独立实现、tiny 合同测试和预注册受控实验；Open-R1 证据收尾不再阻塞主线，但未闭环的 B0/B1 不得写成可信对照结论 |
@@ -33,6 +33,8 @@ Open-R1 Week 1 已完成。B0 canonical eval 与 B1 训练均已由运行侧报�
 2026-09-03 Gate 0B 本地准入关闭：配置、数据物化、训练器、全局 token 归一化、可观测性、失败快照、原子 checkpoint、保留上限和跨进程恢复均已接通；与 TRL 0.18 collator 及 Transformers causal loss/update 完成对齐。两次真实 OpenR1-Math 小样本审计得到相同 train/validation/rejected hash；真实 Qwen3-0.6B-Base 在 8 GB RTX 4060 Ti 上完成 BF16 两步训练与恢复，峰值约 6.53 GB。该证据不替代全量数据冻结、B0 或服务器 smoke。
 
 2026-09-11 服务器 Gate 0B 首次会话完成：A100-80GB 上 22,295-token 最长样本训练探针失败，据此冻结 16,384-token 确定性长度筛选 artifact（train 62,208→61,224、validation 2,000→1,968，不截断，超长样本单独隔离为 `length_filtered_*.jsonl`）；服务器 preflight 12 项全部通过。完成 1-step、5-step 和 20-step smoke：20 步训练 loss 0.782→0.646、grad norm 4.58→0.70、显存峰值 39.8 GB，validation NLL 相对 base 下降 16.1%（0.6754 vs 0.8050）。生成门、flash-attn/vLLM 环境与首 batch shadow 的诊断和修复均已归档；完整 B0 五任务也已完成。
+
+2026-09-12 正式 S1 的 CPU 数据/合同预检完成：`sft_s1_16k.yaml` 对已验证的 61,224 条 16K artifact 生成了确定性 `sample_order`，并将 Git commit、源码树、合同、`uv.lock`、模型/Tokenizer revision、训练/验证文件及顺序哈希写入 `evidence/pre_s1_readiness_2026-09-12/s1_dry_run_manifest.json`。合同固定为 479 个 optimizer updates、15 个 warmup updates。GPU allocator telemetry 的真实预飞行和 paired-evaluation preflight 尚未完成，因此正式 S1 仍是 `NO-GO`。
 
 2026-09-12 TRL 100-step 恢复 pilot 已从 checkpoint-50 完成至 global step 100，exit code `0`；恢复段无 OOM、NaN 或 Inf，外部 GPU 观测峰值约 51,471 MiB。固定全量 validation NLL 从 B0 的 `0.7804832` 降至 `0.5952246`，使用同一 1,968 条 validation artifact 和 11,367,594 个有效 token。GSM8K 50-sample pilot `qem=0.52`、regression smoke 完成；这些不是正式 B0/S1 差值。MATH-500 pilot 未形成终态失败记录，评测接口需在正式 S1 前预飞行。数据盘文件 SHA-256 复核与所有剩余 S1 门禁见 [`S1_PRELAUNCH_PLAN.md`](S1_PRELAUNCH_PLAN.md)。
 
