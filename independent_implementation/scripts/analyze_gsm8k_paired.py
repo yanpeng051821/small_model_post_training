@@ -37,7 +37,10 @@ def _generation_length(value: Any) -> int:
 
 
 def _summarize_trained_details(
-    path: Path, *, generation_limit: int
+    path: Path,
+    *,
+    generation_limit: int,
+    changed_records: list[dict[str, Any]],
 ) -> dict[str, Any]:
     try:
         import pyarrow.parquet as pq
@@ -45,7 +48,8 @@ def _summarize_trained_details(
         raise RuntimeError("pyarrow is required to inspect LightEval parquet details") from exc
 
     rows = pq.read_table(
-        path, columns=["cont_tokens", "truncated", "padded", "metrics"]
+        path,
+        columns=["cont_tokens", "truncated", "padded", "metrics", "predictions"],
     ).to_pylist()
     lengths = [_generation_length(row["cont_tokens"]) for row in rows]
     truncated = sum(any(bool(value) for value in row["truncated"]) for row in rows)
@@ -55,6 +59,32 @@ def _summarize_trained_details(
         length >= generation_limit and row["metrics"]["qem"] == 0
         for row, length in zip(rows, lengths, strict=True)
     )
+    changed_by_index = {record["row_index"]: record for record in changed_records}
+    outcome_counts: dict[str, int] = {}
+    at_limit_by_outcome: dict[str, int] = {}
+    missing_final_marker_count = 0
+    cap_hit_equals_missing_final_marker = True
+    for row_index, (row, length) in enumerate(zip(rows, lengths, strict=True)):
+        trained_metric = row["metrics"]["qem"]
+        baseline_metric = (
+            changed_by_index[row_index]["baseline_metrics"]["qem"]
+            if row_index in changed_by_index
+            else trained_metric
+        )
+        pair = (baseline_metric, trained_metric)
+        outcome = {
+            (0, 1): "improved",
+            (1, 0): "regressed",
+            (0, 0): "both_wrong",
+            (1, 1): "both_correct",
+        }[pair]
+        outcome_counts[outcome] = outcome_counts.get(outcome, 0) + 1
+        at_limit_for_row = length >= generation_limit
+        if at_limit_for_row:
+            at_limit_by_outcome[outcome] = at_limit_by_outcome.get(outcome, 0) + 1
+        missing_marker = "####" not in row["predictions"][0]
+        missing_final_marker_count += int(missing_marker)
+        cap_hit_equals_missing_final_marker &= at_limit_for_row == missing_marker
     return {
         "sample_count": len(rows),
         "generation_tokens": {
@@ -65,7 +95,11 @@ def _summarize_trained_details(
             "generation_limit": generation_limit,
             "at_generation_limit": at_limit,
             "at_generation_limit_qem_wrong": at_limit_wrong,
+            "at_generation_limit_by_outcome": dict(sorted(at_limit_by_outcome.items())),
         },
+        "paired_outcome_count": dict(sorted(outcome_counts.items())),
+        "missing_final_marker_count": missing_final_marker_count,
+        "cap_hit_equals_missing_final_marker": cap_hit_equals_missing_final_marker,
         "lighteval_truncated_field_count": truncated,
         "lighteval_padded_field_count": padded,
     }
@@ -121,7 +155,9 @@ def main() -> int:
             ),
         },
         "trained_generation": _summarize_trained_details(
-            args.trained_details, generation_limit=generation_limit
+            args.trained_details,
+            generation_limit=generation_limit,
+            changed_records=records,
         ),
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
