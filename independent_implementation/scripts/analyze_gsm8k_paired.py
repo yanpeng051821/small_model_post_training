@@ -36,18 +36,25 @@ def _generation_length(value: Any) -> int:
     return lengths[0]
 
 
-def _summarize_trained_details(path: Path) -> dict[str, Any]:
+def _summarize_trained_details(
+    path: Path, *, generation_limit: int
+) -> dict[str, Any]:
     try:
         import pyarrow.parquet as pq
     except ImportError as exc:
         raise RuntimeError("pyarrow is required to inspect LightEval parquet details") from exc
 
     rows = pq.read_table(
-        path, columns=["cont_tokens", "truncated", "padded"]
+        path, columns=["cont_tokens", "truncated", "padded", "metrics"]
     ).to_pylist()
     lengths = [_generation_length(row["cont_tokens"]) for row in rows]
     truncated = sum(any(bool(value) for value in row["truncated"]) for row in rows)
     padded = sum(any(bool(value) for value in row["padded"]) for row in rows)
+    at_limit = sum(length >= generation_limit for length in lengths)
+    at_limit_wrong = sum(
+        length >= generation_limit and row["metrics"]["qem"] == 0
+        for row, length in zip(rows, lengths, strict=True)
+    )
     return {
         "sample_count": len(rows),
         "generation_tokens": {
@@ -55,10 +62,12 @@ def _summarize_trained_details(path: Path) -> dict[str, Any]:
             "mean": mean(lengths),
             "median": median(lengths),
             "max": max(lengths),
-            "at_512": sum(length >= 512 for length in lengths),
+            "generation_limit": generation_limit,
+            "at_generation_limit": at_limit,
+            "at_generation_limit_qem_wrong": at_limit_wrong,
         },
-        "truncated_count": truncated,
-        "padded_count": padded,
+        "lighteval_truncated_field_count": truncated,
+        "lighteval_padded_field_count": padded,
     }
 
 
@@ -67,6 +76,7 @@ def main() -> int:
     parser.add_argument("--comparison-summary", type=Path, required=True)
     parser.add_argument("--changed-samples", type=Path, required=True)
     parser.add_argument("--trained-details", type=Path, required=True)
+    parser.add_argument("--trained-invocation-manifest", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
 
@@ -79,6 +89,10 @@ def main() -> int:
         unchanged=metric["unchanged"],
     )
     records = _read_jsonl(args.changed_samples)
+    invocation = json.loads(args.trained_invocation_manifest.read_text(encoding="utf-8"))
+    generation_limit = invocation["model_args"]["generation_parameters"][
+        "max_new_tokens"
+    ]
     report = {
         "created_at": utc_now(),
         "contract": {
@@ -88,6 +102,9 @@ def main() -> int:
             "comparison_summary": str(args.comparison_summary.resolve()),
             "changed_samples": str(args.changed_samples.resolve()),
             "trained_details": str(args.trained_details.resolve()),
+            "trained_invocation_manifest": str(
+                args.trained_invocation_manifest.resolve()
+            ),
         },
         "paired_effect": {
             **metric,
@@ -103,7 +120,9 @@ def main() -> int:
                 "predictions are excluded from this proxy analysis."
             ),
         },
-        "trained_generation": _summarize_trained_details(args.trained_details),
+        "trained_generation": _summarize_trained_details(
+            args.trained_details, generation_limit=generation_limit
+        ),
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     atomic_write_json(args.output, report)
@@ -113,4 +132,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
