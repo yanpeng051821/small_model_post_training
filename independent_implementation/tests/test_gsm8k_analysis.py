@@ -1,8 +1,11 @@
+from collections import Counter
+
 import pytest
 
 from post_training_core.gsm8k_analysis import (
     classify_pair,
     exact_mcnemar_pvalue,
+    fixed_stratified_sample,
     prediction_text,
     summarize_changed_records,
 )
@@ -48,3 +51,30 @@ def test_changed_record_summary_separates_metric_and_format():
         "present_to_present": 1,
     }
 
+
+def test_fixed_stratified_sample_is_reproducible_and_covers_outcomes():
+    records = []
+    for index in range(12):
+        baseline, trained = ((0, 1), (1, 0), (0, 0))[index % 3]
+        records.append(
+            {
+                "row_index": index,
+                "example": f"question {index}",
+                "baseline_predictions": [f"baseline {index} #### {index}"],
+                "trained_predictions": [f"trained {index} #### {index}"],
+                "baseline_metrics": {"qem": baseline},
+                "trained_metrics": {"qem": trained},
+            }
+        )
+
+    first, _ = fixed_stratified_sample(records, per_outcome=3, seed="fixed")
+    second, _ = fixed_stratified_sample(records, per_outcome=3, seed="fixed")
+
+    assert [record["row_index"] for record in first] == [
+        record["row_index"] for record in second
+    ]
+    assert Counter(record["outcome"] for record in first) == {
+        "improved": 3,
+        "regressed": 3,
+        "both_wrong": 3,
+    }
