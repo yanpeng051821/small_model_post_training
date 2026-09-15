@@ -4,7 +4,7 @@
 
 本目录用于开展 `0.6B-3B` 小参数语言模型的后训练研究与实验，核心方向是：在固定数据、算力和评测预算下，比较 Reasoning SFT、偏好优化、RLVR/GRPO 与蒸馏对小模型推理、工具调用和输出效率的影响。
 
-## 当前文档
+## 01 相关文档
 
 - [`small_model_post_training_research_and_roadmap.md`](small_model_post_training_research_and_roadmap.md)：项目级七阶段主路线；从 Open-R1 真实复现走到 CS336 终验和论文研究。
 - [`PROGRESS.md`](PROGRESS.md)：父目录级专项进度、阶段门和当前活跃主线。
@@ -12,7 +12,7 @@
 - [`open_r1_reproduction/README.md`](open_r1_reproduction/README.md)：当前活跃的 Open-R1 学习与复现子项目。
 - [`experiments/README.md`](experiments/README.md)：后续实验记录的命名与最低记录要求。
 
-## 当前主线
+## 02 当前主线
 
 ```text
 当前阶段：核心后训练算法独立实现
@@ -23,7 +23,7 @@
 
 父目录的项目级主路线负责“依次学什么、学到什么程度”；Open-R1 八周运行子路线负责“服务器上如何得到可信 B0/B1/B2”。两者现在并行：独立 SFT 是主任务，Open-R1 只补证据。不能把跑通 Open-R1 等同于已经完成后训练基础阶段。
 
-## 计划中的实验主线
+## 03 实验主线
 
 暂定项目名：`TinyTutor-PostTrain`
 
@@ -41,7 +41,7 @@
 4. GRPO/RLVR
 5. 离线蒸馏；条件允许时扩展 On-Policy Distillation
 
-## 目录约定
+## 04 目录约定
 
 ```text
 small_model_post_training/
