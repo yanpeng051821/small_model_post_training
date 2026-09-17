@@ -59,6 +59,14 @@ def main() -> int:
     if args.stop_after_steps is not None and args.stop_after_steps <= 0:
         raise ValueError("stop-after-steps must be positive")
     config = ExperimentConfig.from_yaml(args.config)
+    config_output_dir = config.output_dir.resolve()
+    cli_output_dir = args.output_dir.resolve()
+    if config_output_dir != cli_output_dir:
+        raise ValueError(
+            "config output_dir must match --output-dir: "
+            f"{config_output_dir} != {cli_output_dir}"
+        )
+
     if config.resume_from_checkpoint is not None:
         raise ValueError("use --resume-from-checkpoint for native TRL checkpoints")
     root = Path(__file__).resolve().parents[1]
@@ -170,12 +178,18 @@ def main() -> int:
         )
         completed = trainer.state.global_step == training_args.max_steps
         if completed:
-            memory_callback.record("before_final_model_save", training_args, trainer.state)
+            memory_callback.record(
+                "before_final_model_save", training_args, trainer.state
+            )
             model.config.use_cache = True
             trainer.save_model(args.output_dir / "final_model")
             tokenizer.save_pretrained(args.output_dir / "final_model")
-            memory_callback.record("after_final_model_save", training_args, trainer.state)
-        memory_callback.record("before_trainer_state_save", training_args, trainer.state)
+            memory_callback.record(
+                "after_final_model_save", training_args, trainer.state
+            )
+        memory_callback.record(
+            "before_trainer_state_save", training_args, trainer.state
+        )
         trainer.save_state()
         memory_callback.record("after_trainer_state_save", training_args, trainer.state)
         memory_summary = memory_callback.summary()
@@ -184,12 +198,8 @@ def main() -> int:
         if memory_summary["records"]:
             metrics.update(
                 {
-                    "cuda_peak_allocated_gib": memory_summary.get(
-                        "peak_allocated_gib"
-                    ),
-                    "cuda_peak_reserved_gib": memory_summary.get(
-                        "peak_reserved_gib"
-                    ),
+                    "cuda_peak_allocated_gib": memory_summary.get("peak_allocated_gib"),
+                    "cuda_peak_reserved_gib": memory_summary.get("peak_reserved_gib"),
                 }
             )
         manifest.update(
@@ -206,7 +216,9 @@ def main() -> int:
         if memory_callback is not None and "cuda_memory" not in manifest:
             memory_summary = memory_callback.summary()
             manifest["cuda_memory"] = memory_summary
-            atomic_write_json(args.output_dir / "cuda_memory_summary.json", memory_summary)
+            atomic_write_json(
+                args.output_dir / "cuda_memory_summary.json", memory_summary
+            )
         manifest["finished_at"] = utc_now()
         atomic_write_json(manifest_path, manifest)
         atomic_write_json(attempt_path, manifest)

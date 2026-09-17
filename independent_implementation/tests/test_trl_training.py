@@ -206,6 +206,59 @@ def test_native_trl_tail_update_and_resume_match_independent(tmp_path, num_worke
     assert full.lr_scheduler.state_dict() == resumed.lr_scheduler.state_dict()
 
 
+def test_formal_cli_rejects_mismatched_output_directories(tmp_path):
+    config_output_dir = tmp_path / "config-output"
+    cli_output_dir = tmp_path / "cli-output"
+
+    artifact = tmp_path / "train.jsonl"
+    artifact.write_text(
+        json.dumps(
+            {
+                "sample_id": "sample-1",
+                "input_ids": [3, 2],
+                "labels": [-100, 2],
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    config = _config(tmp_path).to_dict()
+    config.update(
+        train_artifact=str(artifact),
+        validation_artifact=str(artifact),
+        output_dir=str(config_output_dir),
+    )
+
+    config_path = tmp_path / "config.yaml"
+    config_path.write_text(yaml.safe_dump(config), encoding="utf-8")
+
+    root = Path(__file__).resolve().parents[1]
+    command = [
+        sys.executable,
+        str(root / "scripts/train_sft_trl.py"),
+        "--config",
+        str(config_path),
+        "--output-dir",
+        str(cli_output_dir),
+        "--dry-run",
+    ]
+    result = subprocess.run(
+        command,
+        cwd=root,
+        capture_output=True,
+        text=True,
+        timeout=90,
+    )
+
+    assert result.returncode != 0
+    assert (
+        f"config output_dir must match --output-dir: {config_output_dir} != {cli_output_dir}"
+        in result.stderr
+    )
+    assert not (cli_output_dir / "run_manifest.json").exists()
+
+
 def test_formal_cli_runs_pauses_and_resumes_offline(tmp_path):
     model_dir = tmp_path / "model"
     model = Qwen3ForCausalLM(
@@ -242,16 +295,19 @@ def test_formal_cli_runs_pauses_and_resumes_offline(tmp_path):
         ),
         encoding="utf-8",
     )
+
+    run_dir = tmp_path / "run"
     config = _config(tmp_path).to_dict()
     config.update(
         model_name_or_path=str(model_dir),
         train_artifact=str(artifact),
         validation_artifact=str(artifact),
+        output_dir=str(run_dir),
         save_every_steps=1,
     )
     config_path = tmp_path / "config.yaml"
     config_path.write_text(yaml.safe_dump(config), encoding="utf-8")
-    run_dir = tmp_path / "run"
+
     root = Path(__file__).resolve().parents[1]
     command = [
         sys.executable,
@@ -261,8 +317,13 @@ def test_formal_cli_runs_pauses_and_resumes_offline(tmp_path):
         "--output-dir",
         str(run_dir),
     ]
+    dry_run_dir = tmp_path / "dry-run"
     gpu_only_dry_config = dict(config)
-    gpu_only_dry_config.update(device="cuda", dtype="bfloat16")
+    gpu_only_dry_config.update(
+        device="cuda",
+        dtype="bfloat16",
+        output_dir=str(dry_run_dir),
+    )
     dry_config_path = tmp_path / "dry-config.yaml"
     dry_config_path.write_text(yaml.safe_dump(gpu_only_dry_config), encoding="utf-8")
     dry_run = subprocess.run(
@@ -272,7 +333,7 @@ def test_formal_cli_runs_pauses_and_resumes_offline(tmp_path):
             "--config",
             str(dry_config_path),
             "--output-dir",
-            str(tmp_path / "dry-run"),
+            str(dry_run_dir),
             "--dry-run",
         ],
         cwd=root,
@@ -281,9 +342,7 @@ def test_formal_cli_runs_pauses_and_resumes_offline(tmp_path):
         timeout=90,
     )
     assert dry_run.returncode == 0, dry_run.stdout + dry_run.stderr
-    dry_manifest = json.loads(
-        (tmp_path / "dry-run" / "run_manifest.json").read_text()
-    )
+    dry_manifest = json.loads((dry_run_dir / "run_manifest.json").read_text())
     assert dry_manifest["status"] == "dry_run"
     assert dry_manifest["identity"]["max_steps"] == 2
     assert dry_manifest["identity"]["source_git_commit"]
