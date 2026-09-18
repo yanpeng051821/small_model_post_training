@@ -30,6 +30,38 @@ def _records():
     ]
 
 
+def test_indexed_jsonl_dataset_pickle_separates_open_file_streams(tmp_path):
+    path = tmp_path / "train.jsonl"
+    records = _records()
+    path.write_text(
+        "".join(json.dumps(record) + "\n" for record in records),
+        encoding="utf-8",
+    )
+
+    dataset = IndexedTokenizedSFTDataset(path)
+
+    # Open the source stream before serializing the Dataset.
+    assert dataset[1] == records[1]
+    original_stream = dataset._stream
+
+    assert original_stream is not None
+    assert not original_stream.closed
+
+    restored = pickle.loads(pickle.dumps(dataset))
+
+    # Pickling must leave the original stream untouched.
+    assert dataset._stream is original_stream
+    assert not dataset._stream.closed
+
+    # The restored Dataset must lazily open an independent stream.
+    assert restored._stream is None
+
+    assert restored[2] == records[2]
+    assert restored._stream is not None
+    assert not restored._stream.closed
+    assert restored._stream is not original_stream
+
+
 def test_loads_frozen_tokenized_jsonl(tmp_path):
     path = tmp_path / "train.jsonl"
     path.write_text(
