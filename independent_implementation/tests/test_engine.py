@@ -156,6 +156,44 @@ def test_optimizer_step_uses_real_qwen_interface_and_updates_parameters(tmp_path
     assert state_dtypes == {torch.float32}
 
 
+class HalvingScheduler:
+    def __init__(self, optimizer):
+        self.optimizer = optimizer
+        self.calls = 0
+
+    def step(self):
+        self.calls += 1
+        for group in self.optimizer.param_groups:
+            group["lr"] *= 0.5
+
+
+def test_optimizer_step_reports_current_lr_before_scheduler_updates_next_lr():
+    model = _tiny_qwen()
+
+    optimizer = torch.optim.SGD(
+        model.parameters(),
+        lr=0.1,
+    )
+    scheduler = HalvingScheduler(optimizer)
+
+    collator = partial(collate_sft_batch, pad_token_id=0)
+    micro_batches = [collator(_records()[:1])]
+
+    metrics = run_optimizer_step(
+        model=model,
+        optimizer=optimizer,
+        scheduler=scheduler,
+        micro_batches=micro_batches,
+        device=torch.device("cpu"),
+        dtype="float32",
+        max_grad_norm=1.0,
+    )
+
+    assert metrics.learning_rate == 0.1
+    assert scheduler.calls == 1
+    assert optimizer.param_groups[0]["lr"] == 0.05
+
+
 def test_scheduler_rounds_warmup_up_like_transformers(tmp_path, monkeypatch):
     config = replace(_config(tmp_path), warmup_ratio=0.03)
     model = _tiny_qwen()
@@ -297,7 +335,8 @@ def test_training_records_final_validation_when_step_is_not_eval_interval(tmp_pa
     )
 
     records = [
-        json.loads(line) for line in (run_dir / "metrics.jsonl").read_text().splitlines()
+        json.loads(line)
+        for line in (run_dir / "metrics.jsonl").read_text().splitlines()
     ]
     assert state.optimizer_step == 3
     assert [
@@ -405,6 +444,7 @@ def test_soft_stop_saves_checkpoint_and_durable_event(tmp_path, monkeypatch):
     assert caught.value.state.optimizer_step == 23
     assert caught.value.checkpoint.is_dir()
     records = [
-        json.loads(line) for line in (run_dir / "metrics.jsonl").read_text().splitlines()
+        json.loads(line)
+        for line in (run_dir / "metrics.jsonl").read_text().splitlines()
     ]
     assert records[-1]["event"] == "soft_stop"
