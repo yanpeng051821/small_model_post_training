@@ -31,6 +31,23 @@ from post_training_core.trl_training import (
 )
 
 
+def test_save_and_stop_callback_rejects_non_finite_gradient():
+    model = torch.nn.Linear(2, 1)
+
+    parameter = next(model.parameters())
+    parameter.grad = torch.full_like(parameter, float("inf"))
+
+    callback = SaveAndStopCallback()
+
+    with pytest.raises(FloatingPointError, match="non-finite TRL gradient"):
+        callback.on_pre_optimizer_step(
+            args=None,
+            state=None,
+            control=None,
+            model=model,
+        )
+
+
 def test_cuda_memory_telemetry_records_named_optimizer_phases(tmp_path, monkeypatch):
     current = [
         2 * 1024**3,
