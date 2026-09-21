@@ -1,5 +1,7 @@
+import random
 import shutil
 
+import numpy as np
 import pytest
 import torch
 from torch.optim.lr_scheduler import LambdaLR
@@ -8,6 +10,7 @@ from transformers import Qwen3Config, Qwen3ForCausalLM
 import post_training_core.checkpointing as checkpointing
 from post_training_core.checkpointing import (
     TrainingState,
+    load_training_checkpoint,
     prune_training_checkpoints,
     save_training_checkpoint,
 )
@@ -40,6 +43,50 @@ def _components():
     )
     sampler = StatefulRandomSampler(dataset, seed=42)
     return model, optimizer, scheduler, sampler
+
+
+def test_checkpoint_restores_rng_state(tmp_path):
+    checkpoint_path = tmp_path / "checkpoint"
+    random.seed(7)
+    np.random.seed(7)
+    torch.manual_seed(7)
+
+    model, optimizer, scheduler, sampler = _components()
+
+    saved_state = TrainingState(
+        optimizer_step=2,
+        valid_tokens_seen=10,
+    )
+    save_training_checkpoint(
+        checkpoint_path,
+        model=model,
+        optimizer=optimizer,
+        scheduler=scheduler,
+        sampler=sampler,
+        training_state=saved_state,
+        config_hash="hash",
+    )
+
+    expected_python = random.random()
+    expected_numpy = np.random.random()
+    expected_torch = torch.rand(3)
+
+    random.seed(999)
+    np.random.seed(999)
+    torch.manual_seed(999)
+
+    restored_state = load_training_checkpoint(
+        checkpoint_path,
+        optimizer=optimizer,
+        scheduler=scheduler,
+        sampler=sampler,
+        expected_config_hash="hash",
+    )
+
+    assert restored_state == saved_state
+    assert random.random() == expected_python
+    assert np.random.random() == expected_numpy
+    torch.testing.assert_close(torch.rand(3), expected_torch)
 
 
 def test_checkpoint_refuses_to_start_without_required_disk_space(tmp_path, monkeypatch):
