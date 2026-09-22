@@ -7,10 +7,13 @@ from datasets import Dataset
 from post_training_core.eval_comparison import compare_lighteval_runs
 
 
-def _write_run(root: Path, *, model: str, metrics: list[float], prompts=None) -> None:
+def _write_run(
+    root: Path, *, model: str, metrics: list[float], prompts=None, predictions=None
+) -> None:
     suite = root / "math500"
     details = suite / "details" / model / "2026-09-04T00-00-00"
     details.mkdir(parents=True)
+
     manifest = {
         "contract_sha256": "contract-hash",
         "contract_version": "gate0b-eval-v1",
@@ -27,6 +30,7 @@ def _write_run(root: Path, *, model: str, metrics: list[float], prompts=None) ->
     (suite / "invocation_manifest.json").write_text(json.dumps(manifest))
     rows = []
     for index, score in enumerate(metrics):
+        prediction = f"answer-{score}" if predictions is None else predictions[index]
         prompt = f"question-{index}" if prompts is None else prompts[index]
         rows.append(
             {
@@ -35,17 +39,48 @@ def _write_run(root: Path, *, model: str, metrics: list[float], prompts=None) ->
                 "full_prompt": prompt,
                 "num_effective_few_shots": 0,
                 "num_asked_few_shots": 0,
-                "predictions": [f"answer-{score}"],
                 "input_tokens": [index, 1],
                 "gold": ["gold"],
                 "choices": [],
                 "gold_index": [],
                 "metrics": {"exact_match": score},
+                "predictions": [prediction],
             }
         )
     Dataset.from_list(rows).to_parquet(
         details / "details_math_500_2026-09-04T00-00-00.parquet"
     )
+
+
+def test_preserves_changed_predictions_when_metric_is_unchanged(tmp_path):
+    baseline = tmp_path / "b0"
+    trained = tmp_path / "s1"
+
+    _write_run(
+        baseline,
+        model="base",
+        metrics=[0.0],
+        predictions=["wrong answer A"],
+    )
+    _write_run(
+        trained,
+        model="trained",
+        metrics=[0.0],
+        predictions=["wrong answer B"],
+    )
+
+    summary, changed = compare_lighteval_runs(
+        baseline,
+        trained,
+    )
+
+    metric = summary["tasks"]["math_500"]["metrics"]["exact_match"]
+
+    assert metric["unchanged"] == 1
+    assert summary["changed_record_count"] == 1
+    assert len(changed) == 1
+    assert changed[0]["baseline_predictions"] == ["wrong answer A"]
+    assert changed[0]["trained_predictions"] == ["wrong answer B"]
 
 
 def test_compares_paired_lighteval_metrics_and_changed_samples(tmp_path):
