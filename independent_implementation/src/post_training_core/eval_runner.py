@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import subprocess
 from pathlib import Path
 from typing import Any
@@ -32,6 +33,8 @@ def _render_value(value: Any) -> str:
     if isinstance(value, dict):
         body = ",".join(f"{key}:{_render_value(item)}" for key, item in value.items())
         return f"{{{body}}}"
+    if isinstance(value, (list, tuple)):
+        return json.dumps(value, ensure_ascii=True, separators=(",", ":"))
     return str(value)
 
 
@@ -43,6 +46,7 @@ def build_lighteval_command(
     model_revision: str | None,
     output_dir: str | Path,
     max_samples: int | None = None,
+    allow_expensive_suite: bool = False,
 ) -> tuple[list[str], dict[str, Any]]:
     path = Path(config_path).resolve()
     with path.open(encoding="utf-8") as stream:
@@ -51,6 +55,16 @@ def build_lighteval_command(
     if suite_name not in suites:
         raise ValueError(f"unknown evaluation suite: {suite_name}")
     suite = suites[suite_name]
+    if suite.get("requires_explicit_approval") and not allow_expensive_suite:
+        raise ValueError(
+            f"suite {suite_name} requires explicit approval; "
+            "pass --allow-expensive-suite only after recording a new decision"
+        )
+    effective_max_samples = max_samples
+    if effective_max_samples is None:
+        effective_max_samples = suite.get("max_samples")
+    if effective_max_samples is not None and effective_max_samples <= 0:
+        raise ValueError("max_samples must be positive")
     model_args = {"model_name": model, **suite["model_args"]}
     if model_revision is not None:
         model_args["revision"] = model_revision
@@ -62,10 +76,8 @@ def build_lighteval_command(
     if suite.get("use_chat_template", False):
         command.append("--use-chat-template")
     command.extend(["--output-dir", str(Path(output_dir).resolve()), "--save-details"])
-    if max_samples is not None:
-        if max_samples <= 0:
-            raise ValueError("max_samples must be positive")
-        command.extend(["--max-samples", str(max_samples)])
+    if effective_max_samples is not None:
+        command.extend(["--max-samples", str(effective_max_samples)])
     evidence = {
         "contract_sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
         "contract_path": str(path),
@@ -78,6 +90,11 @@ def build_lighteval_command(
         "suite": suite_name,
         "tasks": tasks.split(","),
         "use_chat_template": suite.get("use_chat_template", False),
+        "effective_max_samples": effective_max_samples,
+        "evaluation_policy": suite.get("evaluation_policy"),
+        "requires_explicit_approval": bool(
+            suite.get("requires_explicit_approval", False)
+        ),
         "command": command,
     }
     return command, evidence

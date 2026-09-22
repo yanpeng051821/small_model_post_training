@@ -18,13 +18,18 @@ def main() -> int:
     )
     parser.add_argument(
         "--suite",
-        choices=("math500", "gsm8k", "regression"),
         required=True,
+        help="Suite key from the selected evaluation contract.",
     )
     parser.add_argument("--model", required=True)
     parser.add_argument("--model-revision")
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--max-samples", type=int)
+    parser.add_argument(
+        "--allow-expensive-suite",
+        action="store_true",
+        help="Acknowledge a recorded decision to run a guarded evaluation suite.",
+    )
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
     command, evidence = build_lighteval_command(
@@ -34,6 +39,7 @@ def main() -> int:
         model_revision=args.model_revision,
         output_dir=args.output_dir,
         max_samples=args.max_samples,
+        allow_expensive_suite=args.allow_expensive_suite,
     )
     print(json.dumps(evidence, indent=2, sort_keys=True))
     return run_lighteval(
